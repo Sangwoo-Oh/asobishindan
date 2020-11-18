@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/********************
+  共通スタイルシート
+********************/
+/**** 共通 ****/
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif; }
+
+a {
+  text-decoration: none; }
+
+/********************
+  導入フェーズスタイルシート
+********************/
+body.intro {
+  background-color: #000;
+  text-align: center;
+  padding: 80px 10px;
+  height: calc(100vh - 160px); }
+  body.intro main .image-treasure {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px; }
+  body.intro main .image-treasure img {
+    width: 100%; }
+  body.intro main .main-copy {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 2.7em;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+    margin-bottom: 25px; }
+  body.intro main .sub-copy {
+    color: #FFF;
+    font-size: 1.7em;
+    line-height: 1.2em;
+    letter-spacing: 2px;
+    margin-bottom: 50px; }
+  body.intro main .progress {
+    margin-bottom: 20px; }
+    body.intro main .progress ul {
+      text-align: center; }
+      body.intro main .progress ul li {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #d9d9d9;
+        margin: 0 2px; }
+        body.intro main .progress ul li.active {
+          background-color: #FFCD1E; }
+  body.intro main .next {
+    color: #000;
+    background-color: #FFF;
+    display: inline-block;
+    border-radius: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 80%;
+    padding: 5px 0px; }
