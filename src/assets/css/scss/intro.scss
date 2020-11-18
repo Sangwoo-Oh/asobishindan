@@ -2,12 +2,12 @@
   導入フェーズスタイルシート
 ********************/
 
-body.intro {
-  background-color: #000;
-  text-align: center;
-  padding: 80px 10px;
-  height: calc(100vh - 160px);
-  main {
+body {
+  main.intro  {
+    background-color: #000;
+    text-align: center;
+    padding: 80px 10px;
+    height: calc(100vh - 160px);
     .image-treasure {
       width: 50%;
       display: block;
