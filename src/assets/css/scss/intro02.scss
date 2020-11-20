@@ -1,10 +1,12 @@
 /********************
-  導入フェーズスタイルシート
+  導入フェーズ02スタイルシート
 ********************/
 
 body {
-  main.intro  {
-    background-color: #000;
+  main.intro02  {
+    background-image: url(../img/intro02_bg.jpg);
+    background-position: center;
+    background-size: cover;
     text-align: center;
     padding: 80px 10px;
     height: calc(100vh - 160px);
