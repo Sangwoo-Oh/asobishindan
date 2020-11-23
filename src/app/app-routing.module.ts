@@ -7,6 +7,8 @@ import { Intro02Component } from "./intro/intro02/intro02.component";
 import { Intro03Component } from "./intro/intro03/intro03.component";
 
 import { TestComponent } from "./test/test.component";
+import { EssenceComponent } from "./test/essence/essence.component";
+import { QuestionsComponent } from "./test/essence/questions/questions.component";
 
 const routes: Routes = [
   {
@@ -36,6 +38,10 @@ const routes: Routes = [
     data: {
       animation: 'intro03'
     }
+  },
+  {
+    path: 'essence/questions',
+    component: QuestionsComponent
   }
 ];
 
