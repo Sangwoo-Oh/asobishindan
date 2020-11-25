@@ -11,35 +11,11 @@
     </div>
     <div class="answer">
       <ul>
-        <li routerLink="/essence/questions/episodes/1">
-          <div class="label">
-            体育会系部活・サークル
+        <li *ngFor="let episode of episodes">
+          <div class="label" routerLink="/essence/questions/episodes/{{ episode.id }}">
+            {{ episode.label }}
           </div>
-          <div class="rectangle">
-            <img src="../assets/img/rectangle.png" alt="">
-          </div>
-        </li>
-        <li>
-          <div class="label">
-            体育会系部活・サークル
-          </div>
-          <div class="rectangle">
-            <img src="../assets/img/rectangle.png" alt="">
-          </div>
-        </li>
-        <li>
-          <div class="label">
-            体育会系部活・サークル
-          </div>
-          <div class="rectangle">
-            <img src="../assets/img/rectangle.png" alt="">
-          </div>
-        </li>
-        <li>
-          <div class="label">
-            体育会系部活・サークル
-          </div>
-          <div class="rectangle">
+          <div class="rectangle" routerLink="/essence/questions/episodes/{{ episode.id }}">
             <img src="../assets/img/rectangle.png" alt="">
           </div>
         </li>

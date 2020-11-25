@@ -215,10 +215,13 @@ main .wrap-essence .answer ul li {
   align-items: center; }
   main .wrap-essence .answer ul li .label {
     font-size: 2em;
-    font-weight: bold; }
-  main .wrap-essence .answer ul li .rectangle img {
-    display: block;
-    width: 75%; }
+    font-weight: bold;
+    width: 95%; }
+  main .wrap-essence .answer ul li .rectangle {
+    width: 5%; }
+    main .wrap-essence .answer ul li .rectangle img {
+      display: block;
+      width: 75%; }
 
 main .wrap-essence .episodes ul li {
   padding: 14px 20px;
