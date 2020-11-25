@@ -12,6 +12,7 @@ import { Intro03Component } from './intro/intro03/intro03.component';
 import { TestComponent } from './test/test.component';
 import { EssenceComponent } from './test/essence/essence.component';
 import { QuestionsComponent } from './test/essence/questions/questions.component';
+import { EpisodesComponent } from './test/essence/episodes/episodes.component';
 import { NonEssenceComponent } from './test/non-essence/non-essence.component';
 
 @NgModule({
@@ -23,8 +24,9 @@ import { NonEssenceComponent } from './test/non-essence/non-essence.component';
     Intro02Component,
     Intro03Component,
     EssenceComponent,
-    NonEssenceComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    EpisodesComponent,
+    NonEssenceComponent
   ],
   imports: [
     BrowserModule,
