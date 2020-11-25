@@ -10,6 +10,31 @@ html {
 a {
   text-decoration: none; }
 
+body {
+  max-width: 500px;
+  margin: 0 auto; }
+
+header {
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  padding: 11px 0; }
+  header .logo {
+    width: 110px;
+    margin: 0 auto; }
+    header .logo img {
+      width: 100%; }
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0; }
+  footer a.back {
+    background-color: #E4E4E4;
+    color: #595957;
+    display: block;
+    text-align: center;
+    padding: 13px;
+    font-size: 1.5em; }
+
 /********************
   導入フェーズ01スタイルシート
 ********************/
@@ -164,3 +189,55 @@ body main.intro03 {
     font-weight: bold;
     width: 80%;
     padding: 5px 0px; }
+
+/********************
+  診断フェーズ本質質問
+********************/
+/**** 質問 ****/
+main .wrap-essence .question {
+  max-width: 90%;
+  margin: 0 auto; }
+  main .wrap-essence .question p.main {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    margin: 12px; }
+  main .wrap-essence .question p.alert {
+    font-size: 1.1em;
+    text-align: center;
+    margin: 5px; }
+
+main .wrap-essence .answer ul li {
+  background-color: #F3F3F3;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  main .wrap-essence .answer ul li .label {
+    font-size: 2em;
+    font-weight: bold; }
+  main .wrap-essence .answer ul li .rectangle img {
+    display: block;
+    width: 75%; }
+
+main .wrap-essence .episodes ul li {
+  padding: 14px 20px;
+  display: flex;
+  align-items: center; }
+  main .wrap-essence .episodes ul li .checkmark {
+    width: 16px;
+    height: 7px;
+    border-left: 4px solid #C4C4C4;
+    border-bottom: 4px solid #C4C4C4;
+    transform: rotate(-45deg); }
+  main .wrap-essence .episodes ul li .label {
+    font-size: 1.7em;
+    font-weight: bold;
+    margin-left: 15px; }
+  main .wrap-essence .episodes ul li.active .checkmark {
+    border-left: 4px solid #F95344;
+    border-bottom: 4px solid #F95344; }
+  main .wrap-essence .episodes ul li.active .label {
+    color: #F95344; }
+
+/**** 嗜好性選択 ****/
