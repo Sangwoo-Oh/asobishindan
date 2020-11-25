@@ -5,17 +5,17 @@
 main {
   .wrap-essence {
     .question {
-      max-width: 80%;
+      max-width: 90%;
       margin: 0 auto;
       p {
         &.main {
-          font-size: 1.3em;
+          font-size: 1.5em;
           text-align: center;
           font-weight: bold;
           margin: 12px ;
         }
         &.alert {
-          font-size: 1em;
+          font-size: 1.1em;
           text-align: center;
           margin: 5px ;
         }
@@ -24,8 +24,19 @@ main {
     .answer ul li {
       background-color: #F3F3F3;
       padding: 14px 20px;
-      font-size: 1.6em;
-      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .label {
+        font-size: 2em;
+        font-weight: bold;
+      }
+      .rectangle {
+        img {
+          display: block;
+          width: 75%;
+        }
+      }
     }
   }
 }
