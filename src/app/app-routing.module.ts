@@ -21,31 +21,36 @@ import { RecommendDetailComponent } from "./recommend/recommend-detail/recommend
 const routes: Routes = [
   {
     path: '',
-    component: Intro01Component,
-    data: {
-      animation: 'intro01'
-    }
+    redirectTo: "intro/01",
+    pathMatch: "full"
   },
   {
-    path: 'intro/01',
-    component: Intro01Component,
-    data: {
-      animation: 'intro01'
-    }
-  },
-  {
-    path: 'intro/02',
-    component: Intro02Component,
-    data: {
-      animation: 'intro02'
-    }
-  },
-  {
-    path: 'intro/03',
-    component: Intro03Component,
-    data: {
-      animation: 'intro03'
-    }
+    path: 'intro',
+    component: IntroComponent,
+    children: [
+      {
+        path: '01',
+        component: Intro01Component,
+        data: {
+          animation: 'intro01'
+        },
+      },
+      {
+        path: '02',
+        component: Intro02Component,
+        data: {
+          animation: 'intro02'
+        },
+      },
+      {
+        path: '03',
+        component: Intro03Component,
+        data: {
+          animation: 'intro03'
+        },
+      },
+
+    ]
   },
   {
     path: 'essence',
