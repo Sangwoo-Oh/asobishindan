@@ -84,7 +84,10 @@ body main.intro01 {
     font-size: 1.5em;
     font-weight: bold;
     width: 80%;
-    padding: 5px 0px; }
+    padding: 5px 0px;
+    transition: .15s ease; }
+    body main.intro01 .next:active {
+      background-color: #FFCD1E; }
 
 /********************
   導入フェーズ02スタイルシート
@@ -212,7 +215,10 @@ main .wrap-essence .answer ul li {
   padding: 14px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  transition: .1s ease; }
+  main .wrap-essence .answer ul li:active {
+    background-color: #777777; }
   main .wrap-essence .answer ul li .label {
     font-size: 2em;
     font-weight: bold;

@@ -14,19 +14,27 @@ import { EssenceComponent } from './test/essence/essence.component';
 import { QuestionsComponent } from './test/essence/questions/questions.component';
 import { EpisodesComponent } from './test/essence/episodes/episodes.component';
 import { NonEssenceComponent } from './test/non-essence/non-essence.component';
+import { BasicComponent } from './test/basic/basic.component';
+import { RecommendComponent } from './recommend/recommend.component';
+import { RecommendDetailComponent } from './recommend/recommend-detail/recommend-detail.component';
+import { RecommendListComponent } from './recommend/recommend-list/recommend-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IntroComponent,
-    TestComponent,
     Intro01Component,
     Intro02Component,
     Intro03Component,
+    TestComponent,
     EssenceComponent,
     QuestionsComponent,
     EpisodesComponent,
-    NonEssenceComponent
+    NonEssenceComponent,
+    BasicComponent,
+    RecommendComponent,
+    RecommendDetailComponent,
+    RecommendListComponent
   ],
   imports: [
     BrowserModule,
