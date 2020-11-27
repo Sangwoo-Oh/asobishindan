@@ -236,7 +236,6 @@ main .wrap-basic .answer {
       display: none; }
     main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio {
       box-sizing: border-box;
-      cursor: pointer;
       display: block;
       position: relative;
       width: auto;
