@@ -53,22 +53,22 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'essence',
-    component: EssenceComponent,
+    path: 'test',
+    component: TestComponent,
     children: [
       {
-        path: 'questions',
-        component: QuestionsComponent,
+        path: 'basic',
+        component: BasicComponent
       },
       {
-        path: 'questions/episodes/:id',
-        component: EpisodesComponent,
+        path: 'essence',
+        component: QuestionsComponent
+      },
+      {
+        path: 'essence/episodes/:id',
+        component: EpisodesComponent
       }
     ]
-  },
-  {
-    path: 'basic',
-    component: BasicComponent
   },
   {
     path: 'recommend',

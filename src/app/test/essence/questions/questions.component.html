@@ -7,10 +7,10 @@
     <div class="answer">
       <ul>
         <li *ngFor="let episode of episodes" ontouchstart="">
-          <div class="label" routerLink="/essence/questions/episodes/{{ episode.id }}">
+          <div class="label" routerLink="/test/essence/episodes/{{ episode.id }}">
             {{ episode.label }}
           </div>
-          <div class="rectangle" routerLink="/essence/questions/episodes/{{ episode.id }}">
+          <div class="rectangle" routerLink="/test/essence/episodes/{{ episode.id }}">
             <img src="../assets/img/rectangle.png" alt="">
           </div>
         </li>
