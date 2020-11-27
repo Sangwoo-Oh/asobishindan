@@ -6,7 +6,7 @@
     </div>
     <div class="answer">
       <ul>
-        <li *ngFor="let episode of episodes">
+        <li *ngFor="let episode of episodes" ontouchstart="">
           <div class="label" routerLink="/essence/questions/episodes/{{ episode.id }}">
             {{ episode.label }}
           </div>
