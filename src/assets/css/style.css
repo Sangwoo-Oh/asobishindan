@@ -8,7 +8,8 @@ html {
   font-family: 'Roboto', sans-serif; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   max-width: 500px;
@@ -235,7 +236,6 @@ main .wrap-basic .answer {
     main .wrap-basic .answer ul.question-list li.question-index ul.choices li input[type=radio] {
       display: none; }
     main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio {
-      box-sizing: border-box;
       display: block;
       position: relative;
       width: auto;
