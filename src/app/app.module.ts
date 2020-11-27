@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { CommonComponent } from './common/common.component';
+import { HeaderComponent } from './common/header/header.component';
+
 import { IntroComponent } from './intro/intro.component';
 import { Intro01Component } from './intro/intro01/intro01.component';
 import { Intro02Component } from './intro/intro02/intro02.component';
@@ -34,7 +38,9 @@ import { RecommendListComponent } from './recommend/recommend-list/recommend-lis
     BasicComponent,
     RecommendComponent,
     RecommendDetailComponent,
-    RecommendListComponent
+    RecommendListComponent,
+    CommonComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

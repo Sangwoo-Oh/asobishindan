@@ -48,12 +48,18 @@ const routes: Routes = [
     }
   },
   {
-    path: 'essence/questions',
-    component: QuestionsComponent
-  },
-  {
-    path: 'essence/questions/episodes/:id',
-    component: EpisodesComponent
+    path: 'essence',
+    component: EssenceComponent,
+    children: [
+      {
+        path: 'questions',
+        component: QuestionsComponent,
+      },
+      {
+        path: 'questions/episodes/:id',
+        component: EpisodesComponent,
+      }
+    ]
   },
   {
     path: 'basic',
