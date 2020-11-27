@@ -5,103 +5,23 @@
     </div>
     <div class="answer">
       <ul class="question-list">
-        <li class="question-index">
+        <li class="question-index" *ngFor="let basic of basics">
           <p class="title"><span>1.</span>あなたが自身が認識している性別を教えてください</p>
           <ul class="choices">
             <li>
-              <input type="radio" id="03-D" name="radio" checked="checked">
-              <label for="03-D" class="radio"></label>
-              <p>男性</p>
+              <input type="radio" id="{{ basic.label01 }}{{ basic.id }}" name="{{ basic.id }}" checked="checked">
+              <label for="{{ basic.label01 }}{{ basic.id }}" class="radio"></label>
+              <p>{{ basic.label01 }}</p>
             </li>
             <li>
-              <input type="radio" id="03-E" name="radio">
-              <label for="03-E" class="radio"></label>
-              <p>女性</p>
+              <input type="radio" id="{{ basic.label02 }}{{ basic.id }}" name="{{ basic.id }}">
+              <label for="{{ basic.label02 }}{{ basic.id }}" class="radio"></label>
+              <p>{{ basic.label02 }}</p>
             </li>
             <li>
-              <input type="radio" id="03-F" name="radio">
-              <label for="03-2" class="radio"></label>
-              <p>その他</p>
-            </li>
-          </ul>
-        </li>
-        <li class="question-index">
-          <p class="title"><span>1.</span>あなたが自身が認識している性別を教えてください</p>
-          <ul class="choices">
-            <li>
-              <input type="radio" id="03-D" name="radio" checked="checked">
-              <label for="03-D" class="radio"></label>
-              <p>男性</p>
-            </li>
-            <li>
-              <input type="radio" id="03-E" name="radio">
-              <label for="03-E" class="radio"></label>
-              <p>女性</p>
-            </li>
-            <li>
-              <input type="radio" id="03-F" name="radio">
-              <label for="03-2" class="radio"></label>
-              <p>その他</p>
-            </li>
-          </ul>
-        </li>
-        <li class="question-index">
-          <p class="title"><span>1.</span>あなたが自身が認識している性別を教えてください</p>
-          <ul class="choices">
-            <li>
-              <input type="radio" id="03-D" name="radio" checked="checked">
-              <label for="03-D" class="radio"></label>
-              <p>男性</p>
-            </li>
-            <li>
-              <input type="radio" id="03-E" name="radio">
-              <label for="03-E" class="radio"></label>
-              <p>女性</p>
-            </li>
-            <li>
-              <input type="radio" id="03-F" name="radio">
-              <label for="03-2" class="radio"></label>
-              <p>その他</p>
-            </li>
-          </ul>
-        </li>
-        <li class="question-index">
-          <p class="title"><span>1.</span>あなたが自身が認識している性別を教えてください</p>
-          <ul class="choices">
-            <li>
-              <input type="radio" id="03-D" name="radio" checked="checked">
-              <label for="03-D" class="radio"></label>
-              <p>男性</p>
-            </li>
-            <li>
-              <input type="radio" id="03-E" name="radio">
-              <label for="03-E" class="radio"></label>
-              <p>女性</p>
-            </li>
-            <li>
-              <input type="radio" id="03-F" name="radio">
-              <label for="03-2" class="radio"></label>
-              <p>その他</p>
-            </li>
-          </ul>
-        </li>
-        <li class="question-index">
-          <p class="title"><span>1.</span>あなたが自身が認識している性別を教えてください</p>
-          <ul class="choices">
-            <li>
-              <input type="radio" id="03-D" name="radio" checked="checked">
-              <label for="03-D" class="radio"></label>
-              <p>男性</p>
-            </li>
-            <li>
-              <input type="radio" id="03-E" name="radio">
-              <label for="03-E" class="radio"></label>
-              <p>女性</p>
-            </li>
-            <li>
-              <input type="radio" id="03-F" name="radio">
-              <label for="03-2" class="radio"></label>
-              <p>その他</p>
+              <input type="radio" id="{{ basic.label03 }}{{ basic.id }}" name="{{ basic.id }}">
+              <label for="{{ basic.label03 }}{{ basic.id }}" class="radio"></label>
+              <p>{{ basic.label03 }}</p>
             </li>
           </ul>
         </li>
