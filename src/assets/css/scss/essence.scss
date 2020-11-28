@@ -23,24 +23,26 @@ main {
     }
     .answer ul li {
       background-color: #F3F3F3;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       transition: .1s ease;
       &:active {
         background-color: #777777;
       }
-      .label {
-        font-size: 2em;
-        font-weight: bold;
-        width: 95%;
-      }
-      .rectangle {
-        width: 5%;
-        img {
-          display: block;
-          width: 75%;
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        .label {
+          font-size: 2em;
+          font-weight: bold;
+          width: 95%;
+        }
+        .rectangle {
+          width: 18px;
+          height: 18px;
+          border-left: 4px solid #C4C4C4;
+          border-bottom: 4px solid #C4C4C4;
+          transform: rotate(225deg);
         }
       }
     }

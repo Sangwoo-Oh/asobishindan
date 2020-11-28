@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Episode } from '../../../shared/models/episode';
+import { EpisodeCat } from "./episode-cat";
 
 @Component({
   selector: 'app-questions',
@@ -7,21 +7,37 @@ import { Episode } from '../../../shared/models/episode';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-  episodes: Episode[] = [
-    new Episode(1, '体育会系部活・サークル')
-  ];
+  episodeCats:EpisodeCat[] = [
+    {
+      id: 1,
+      label: '体育会系部活・サークル'
+    },
+    {
+      id: 2,
+      label: '文化系部活・サークル'
+    },
+    {
+      id: 3,
+      label: 'アルバイト'
+    },
+    {
+      id: 4,
+      label: '学業・ゼミ活動'
+    },
+    {
+      id: 5,
+      label: 'ビジネス系課外活動・長期インターン'
+    },
+    {
+      id: 6,
+      label: 'ソーシャル系課外活動・ボランティア'
+    }
+  ]
+
 
   constructor() { }
 
   ngOnInit() {
-    this.episodes = [
-      new Episode(1, '体育会系部活・サークル'),
-      new Episode(2, '文科系部活・サークル'),
-      new Episode(3, 'アルバイト'),
-      new Episode(4, '学業・ゼミ活動'),
-      new Episode(5, 'ビジネス系課外活動・長期インターン'),
-      new Episode(5, 'ソーシャル系課外活動・ボランティア')
-    ];
   }
 
 }

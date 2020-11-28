@@ -6,13 +6,11 @@
     </div>
     <div class="answer">
       <ul>
-        <li *ngFor="let episode of episodes" ontouchstart="">
-          <div class="label" routerLink="/test/essence/episodes/{{ episode.id }}">
-            {{ episode.label }}
-          </div>
-          <div class="rectangle" routerLink="/test/essence/episodes/{{ episode.id }}">
-            <img src="../assets/img/rectangle.png" alt="">
-          </div>
+        <li *ngFor="let episodeCat of episodeCats" ontouchstart="">
+          <a href="#" routerLink="/test/essence/episodes/{{ episodeCat.id }}">
+            <div class="label">{{ episodeCat.label }}</div>
+            <div class="rectangle"></div>
+          </a>
         </li>
       </ul>
     </div>
