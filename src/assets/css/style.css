@@ -237,13 +237,15 @@ main .wrap-basic .answer {
     justify-content: space-between;
     margin-bottom: 40px; }
     main .wrap-basic .answer ul.question-list li.question-index ul.choices li input[type=radio] {
-      display: none; }
+      display: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
     main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio {
       display: block;
       position: relative;
       width: auto;
       width: 50px;
-      height: 50px; }
+      height: 50px;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
       main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio::before {
         background: #FFF;
         border: 3px solid #E4E4E4;
