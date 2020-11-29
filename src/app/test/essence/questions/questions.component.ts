@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { EpisodeCat } from "./episode-cat";
+import { FormGroup, FormControl } from '@angular/forms';
+import { TestService } from '../../test.service';
+import { Router } from '@angular/router';
+import { ResponseModel } from '../../../model/response.model';
+
 
 @Component({
   selector: 'app-questions',
@@ -34,10 +39,30 @@ export class QuestionsComponent implements OnInit {
     }
   ]
 
+  data: ResponseModel[];
+  testForm = new FormGroup({
+    zipCode: new FormControl('')
+  });
 
-  constructor() { }
+
+  constructor(
+    private testService: TestService,
+    private router: Router) {
+    this.data = new Array()
+  }
 
   ngOnInit() {
   }
-
+  public onSubmit(event: any): void {
+    this.testService.getEpisode(event.target.id).subscribe(
+      //response =>  console.log(response),
+      response =>  {
+        this.data.push(response),
+        this.data.forEach(response => this.data = JSON.parse(JSON.stringify(response)));
+        this.testService.setData(this.data);
+      },
+      err => alert(err)
+    );
+    this.router.navigate(['/test/essence/episodes/'+ event.target.id]);
+  }
 }

@@ -6,43 +6,11 @@
     </div>
     <div class="episodes">
       <ul>
-        <li class="active">
+        <li *ngFor="let data of datas">
           <div class="checkmark">
           </div>
           <div class="label">
-            選択肢1
-          </div>
-        </li>
-        <li>
-          <div class="checkmark">
-            <img src="" alt="">
-          </div>
-          <div class="label">
-            選択肢1
-          </div>
-        </li>
-        <li>
-          <div class="checkmark">
-            <img src="" alt="">
-          </div>
-          <div class="label">
-            選択肢1
-          </div>
-        </li>
-        <li>
-          <div class="checkmark">
-            <img src="" alt="">
-          </div>
-          <div class="label">
-            選択肢1
-          </div>
-        </li>
-        <li>
-          <div class="checkmark">
-            <img src="" alt="">
-          </div>
-          <div class="label">
-            選択肢1
+            {{ data.epi_label }}
           </div>
         </li>
       </ul>

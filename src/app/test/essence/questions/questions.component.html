@@ -7,12 +7,19 @@
     <div class="answer">
       <ul>
         <li *ngFor="let episodeCat of episodeCats" ontouchstart="">
-          <a href="#" routerLink="/test/essence/episodes/{{ episodeCat.id }}">
-            <div class="label">{{ episodeCat.label }}</div>
-            <div class="rectangle"></div>
+          <a href="javascript:void(0);">
+            <div class="label" (click)="onSubmit($event)" id="{{ episodeCat.id }}">{{ episodeCat.label }}</div>
+            <div class="rectangle" (click)="onSubmit($event)" id="{{ episodeCat.id }}"></div>
           </a>
         </li>
       </ul>
     </div>
   </div>
+  <!-- <form [formGroup]="testForm" (ngSubmit)="onSubmit()">
+    <label>
+      郵便番号：<input type="text" formControlName="zipCode">
+    </label>
+    <button type="submit" [disabled]="!testForm.valid">Submit</button>
+  </form>
+  <p>住所：{{ fullAddress }}</p> -->
 </main>
