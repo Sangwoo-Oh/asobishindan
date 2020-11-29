@@ -1,0 +1,69 @@
+/********************
+  提案フェーズ
+********************/
+/**** 質問 ****/
+main {
+  .wrap-recommend{
+    .recommend-list {
+      max-width: 100%;
+      margin: 0 auto;
+      p {
+        &.main {
+          font-size: 1.5em;
+          text-align: center;
+          font-weight: bold;
+          margin: 12px ;
+          span {
+            font-size: 1.5em;
+            color: #FF786B;
+          }
+        }
+      }
+      .recommendations {
+        .recommend-item {
+          background-position: center;
+          background-size: cover;
+          color: #FFF;
+          padding: 140px 15px 10px 15px;
+          .top {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            .title {
+              width: 60%;
+              font-size: 1.8em;
+              font-weight: bold;
+            }
+            .info {
+              width: 35%;
+              margin-left: 5%;
+              span {
+                font-size: 1.1em;
+              }
+            }
+          }
+          .bottom {
+            ul {
+              width: 100%;
+              overflow-x: auto;
+              white-space: nowrap;
+              display: flex;
+              &::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+                display:none;
+              }
+              li {
+                background-color: #FFCD1E;
+                border-radius: 50px;
+                margin-right: 7px;
+                padding: 2px 8px;
+                font-size: 1.1em;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/**** 嗜好性選択 ****/

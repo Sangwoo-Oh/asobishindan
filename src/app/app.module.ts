@@ -19,6 +19,9 @@ import { TestComponent } from './test/test.component';
 import { EssenceComponent } from './test/essence/essence.component';
 import { QuestionsComponent } from './test/essence/questions/questions.component';
 import { EpisodesComponent } from './test/essence/episodes/episodes.component';
+import { ConfirmComponent } from './test/essence/confirm/confirm.component';
+import { PreferencesComponent } from './test/essence/preferences/preferences.component';
+
 import { NonEssenceComponent } from './test/non-essence/non-essence.component';
 import { BasicComponent } from './test/basic/basic.component';
 import { RecommendComponent } from './recommend/recommend.component';
@@ -36,13 +39,15 @@ import { RecommendListComponent } from './recommend/recommend-list/recommend-lis
     EssenceComponent,
     QuestionsComponent,
     EpisodesComponent,
+    ConfirmComponent,
+    PreferencesComponent,
     NonEssenceComponent,
     BasicComponent,
     RecommendComponent,
     RecommendDetailComponent,
     RecommendListComponent,
     CommonComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

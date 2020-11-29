@@ -10,6 +10,11 @@ import { TestComponent } from "./test/test.component";
 import { EssenceComponent } from "./test/essence/essence.component";
 import { QuestionsComponent } from "./test/essence/questions/questions.component";
 import { EpisodesComponent } from './test/essence/episodes/episodes.component';
+import { ConfirmComponent } from './test/essence/confirm/confirm.component';
+import { PreferencesComponent } from './test/essence/preferences/preferences.component';
+
+import { NonEssenceComponent } from './test/non-essence/non-essence.component';
+
 import { BasicComponent } from "./test/basic/basic.component";
 
 import { RecommendComponent } from "./recommend/recommend.component";
@@ -67,16 +72,36 @@ const routes: Routes = [
       {
         path: 'essence/episodes/:id',
         component: EpisodesComponent
-      }
+      },
+      {
+        path: 'confirm',
+        component: ConfirmComponent
+      },
+      {
+        path: 'preferences',
+        component: PreferencesComponent
+      },
+      {
+        path: 'non-essence',
+        component: NonEssenceComponent
+      },
     ]
   },
   {
     path: 'recommend',
-    component: RecommendListComponent
-  },
-  {
-    path: 'recommend/:id',
-    component: RecommendDetailComponent
+    component: RecommendComponent,
+    children: [
+      {
+        path: '',
+        component: RecommendListComponent,
+        children: [
+          {
+            path: ':id',
+            component: RecommendDetailComponent
+          }
+        ]
+      }
+    ]
   }
 ];
 

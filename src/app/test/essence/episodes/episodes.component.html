@@ -7,11 +7,8 @@
     <div class="episodes">
       <ul>
         <li *ngFor="let data of datas">
-          <div class="checkmark">
-          </div>
-          <div class="label">
-            {{ data.epi_label }}
-          </div>
+          <div class="checkmark"></div>
+          <div class="label" routerLink="/test/confirm">{{ data.epi_label }}</div>
         </li>
       </ul>
     </div>

@@ -4,12 +4,16 @@ import { NgModule } from '@angular/core';
 
 import { QuestionsComponent } from './questions/questions.component';
 import { EpisodesComponent } from './episodes/episodes.component';
+import { ConfirmComponent } from './confirm/confirm.component';
+import { PreferencesComponent } from './preferences/preferences.component';
 
 
 @NgModule({
   declarations: [
     QuestionsComponent,
-    EpisodesComponent
+    EpisodesComponent,
+    ConfirmComponent,
+    PreferencesComponent
   ],
   imports: [
     CommonModule
