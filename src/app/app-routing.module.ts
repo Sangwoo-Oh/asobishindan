@@ -94,12 +94,10 @@ const routes: Routes = [
       {
         path: '',
         component: RecommendListComponent,
-        children: [
-          {
-            path: ':id',
-            component: RecommendDetailComponent
-          }
-        ]
+      },
+      {
+        path: ':id',
+        component: RecommendDetailComponent
       }
     ]
   }

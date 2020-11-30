@@ -52,6 +52,61 @@ footer {
       background-color: #FFCD1E;
       color: #FFF; }
 
+.rate {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 16px;
+  font-size: 16px; }
+  .rate:before, .rate:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '★★★★★';
+    display: inline-block;
+    height: 16px;
+    line-height: 16px; }
+  .rate:before {
+    color: #ddd; }
+  .rate:after {
+    color: #FFCD1E;
+    overflow: hidden;
+    white-space: nowrap; }
+
+.rate0:after {
+  width: 0; }
+
+.rate1:after {
+  width: 16px; }
+
+.rate1-5:after {
+  width: 24px; }
+
+.rate2:after {
+  width: 32px; }
+
+.rate2-5:after {
+  width: 40px; }
+
+.rate3:after {
+  width: 48px; }
+
+.rate3-5:after {
+  width: 56px; }
+
+.rate4:after {
+  width: 64px; }
+
+.rate4-5:after {
+  width: 72px; }
+
+.rate5:after {
+  width: 80px; }
+
+.star-wrap {
+  width: 80px;
+  margin: 0 auto; }
+
 /********************
   導入フェーズ01スタイルシート
 ********************/
@@ -391,5 +446,76 @@ main .wrap-recommend .recommend-list {
         padding: 2px 8px;
         font-size: 1.1em;
         font-weight: bold; }
+
+main .wrap-recommend .recommend-detail .fv {
+  margin-bottom: 30px; }
+  main .wrap-recommend .recommend-detail .fv img {
+    width: 100%;
+    display: block; }
+
+main .wrap-recommend .recommend-detail .info-wrap {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px; }
+  main .wrap-recommend .recommend-detail .info-wrap .top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; }
+    main .wrap-recommend .recommend-detail .info-wrap .top .title {
+      width: 60%;
+      font-size: 2em;
+      font-weight: bold; }
+    main .wrap-recommend .recommend-detail .info-wrap .top .info {
+      width: 35%;
+      margin-left: 5%; }
+      main .wrap-recommend .recommend-detail .info-wrap .top .info span {
+        font-size: 1.1em; }
+      main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex {
+        display: flex;
+        align-items: center; }
+        main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex .star-wrap {
+          width: 80px; }
+          main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex .star-wrap .rate {
+            font-size: 16px; }
+        main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex .number {
+          width: calc(100% - 80px);
+          font-size: 21px;
+          text-align: center;
+          font-weight: bold; }
+  main .wrap-recommend .recommend-detail .info-wrap .bottom ul {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex; }
+    main .wrap-recommend .recommend-detail .info-wrap .bottom ul::-webkit-scrollbar {
+      /* Chrome, Safari 対応 */
+      display: none; }
+    main .wrap-recommend .recommend-detail .info-wrap .bottom ul li {
+      background-color: #FFCD1E;
+      border-radius: 50px;
+      margin-right: 7px;
+      padding: 2px 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #FFF; }
+
+main .wrap-recommend .recommend-detail .blocks {
+  width: 90%;
+  display: block;
+  margin: 0 auto; }
+  main .wrap-recommend .recommend-detail .blocks li {
+    margin-bottom: 30px; }
+    main .wrap-recommend .recommend-detail .blocks li .heading {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-bottom: 30px; }
+    main .wrap-recommend .recommend-detail .blocks li .image {
+      margin-bottom: 30px; }
+      main .wrap-recommend .recommend-detail .blocks li .image img {
+        width: 100%;
+        display: block; }
+    main .wrap-recommend .recommend-detail .blocks li .content p {
+      font-size: 1.1em; }
 
 /**** 嗜好性選択 ****/

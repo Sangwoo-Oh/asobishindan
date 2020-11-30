@@ -64,6 +64,99 @@ main {
         }
       }
     }
+    .recommend-detail {
+      .fv {
+        margin-bottom: 30px;
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+      .info-wrap {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        .top {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          .title {
+            width: 60%;
+            font-size: 2em;
+            font-weight: bold;
+          }
+          .info {
+            width: 35%;
+            margin-left: 5%;
+            span {
+              font-size: 1.1em;
+            }
+            .star-flex {
+              display: flex;
+              align-items: center;
+              .star-wrap {
+                width: 80px;
+                .rate {
+                  font-size: 16px;
+                }
+              }
+              .number {
+                width: calc(100% - 80px);
+                font-size: 21px;
+                text-align: center;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .bottom {
+          ul {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            display: flex;
+            &::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+              display:none;
+            }
+            li {
+              background-color: #FFCD1E;
+              border-radius: 50px;
+              margin-right: 7px;
+              padding: 2px 8px;
+              font-size: 1.1em;
+              font-weight: bold;
+              color: #FFF;
+            }
+          }
+        }
+      }
+      .blocks {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        li {
+          margin-bottom: 30px;
+          .heading {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 30px;
+          }
+          .image {
+            margin-bottom: 30px;
+            img {
+              width: 100%;
+              display: block;
+            }
+          }
+          .content {
+            p {
+              font-size: 1.1em;
+            }
+          }
+        }
+      }
+    }
   }
 }
 /**** 嗜好性選択 ****/
