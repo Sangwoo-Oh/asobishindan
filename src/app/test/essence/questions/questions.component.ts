@@ -38,8 +38,7 @@ export class QuestionsComponent implements OnInit {
       label: 'ソーシャル系課外活動・ボランティア'
     }
   ]
-
-  data: ResponseModel[];
+  data: any;
   testForm = new FormGroup({
     zipCode: new FormControl('')
   });
@@ -55,14 +54,19 @@ export class QuestionsComponent implements OnInit {
   }
   public onSubmit(event: any): void {
     this.testService.getEpisode(event.target.id).subscribe(
-      //response =>  console.log(response),
       response =>  {
+        /*
         this.data.push(response),
         this.data.forEach(response => this.data = JSON.parse(JSON.stringify(response)));
+        this.testService.setData(this.data);
+        this.json = response;
+        */
+        this.data = response;
         this.testService.setData(this.data);
       },
       err => alert(err)
     );
     this.router.navigate(['/test/essence/episodes/'+ event.target.id]);
   }
+
 }

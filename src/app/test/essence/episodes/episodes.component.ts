@@ -25,5 +25,4 @@ export class EpisodesComponent implements OnInit {
   ngDoCheck() {
     this.datas = this.testService.getData();
   }
-
 }
