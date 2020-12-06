@@ -51,6 +51,21 @@ footer {
     footer a.next:active {
       background-color: #FFCD1E;
       color: #FFF; }
+  footer.half {
+    display: flex; }
+    footer.half a {
+      width: 50%; }
+      footer.half a.next {
+        background-color: #E4E4E4;
+        color: #595957;
+        display: block;
+        text-align: center;
+        padding: 13px;
+        font-size: 1.5em;
+        transition: .1s ease; }
+        footer.half a.next:active {
+          background-color: #FFCD1E;
+          color: #FFF; }
 
 .rate {
   position: relative;
@@ -381,21 +396,51 @@ main .wrap-essence .episodes ul li {
   padding: 14px 20px;
   display: flex;
   align-items: center; }
-  main .wrap-essence .episodes ul li .checkmark {
-    width: 16px;
-    height: 7px;
-    border-left: 4px solid #C4C4C4;
-    border-bottom: 4px solid #C4C4C4;
-    transform: rotate(-45deg); }
-  main .wrap-essence .episodes ul li .label {
-    font-size: 1.7em;
-    font-weight: bold;
-    margin-left: 15px; }
-  main .wrap-essence .episodes ul li.active .checkmark {
-    border-left: 4px solid #F95344;
-    border-bottom: 4px solid #F95344; }
-  main .wrap-essence .episodes ul li.active .label {
-    color: #F95344; }
+  main .wrap-essence .episodes ul li input {
+    display: none; }
+    main .wrap-essence .episodes ul li input:checked + label .checkmark {
+      border-left: 4px solid #F95344;
+      border-bottom: 4px solid #F95344; }
+    main .wrap-essence .episodes ul li input:checked + label .label {
+      color: #F95344; }
+  main .wrap-essence .episodes ul li label {
+    display: flex;
+    align-items: center; }
+    main .wrap-essence .episodes ul li label .checkmark {
+      width: 16px;
+      height: 7px;
+      border-left: 4px solid #C4C4C4;
+      border-bottom: 4px solid #C4C4C4;
+      transform: rotate(-45deg); }
+    main .wrap-essence .episodes ul li label .label {
+      font-size: 1.7em;
+      font-weight: bold;
+      margin-left: 15px; }
+
+main .wrap-essence .confirm {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 5%;
+  height: calc(100vh - 113px);
+  background-color: #222; }
+  main .wrap-essence .confirm p {
+    color: #FFF; }
+    main .wrap-essence .confirm p.main {
+      font-size: 1.5em;
+      text-align: center;
+      font-weight: bold;
+      padding: 12px; }
+    main .wrap-essence .confirm p.alert {
+      font-size: 1.1em;
+      text-align: center;
+      margin: 5px; }
+  main .wrap-essence .confirm .select-episode {
+    margin-top: 30px; }
+    main .wrap-essence .confirm .select-episode li {
+      font-size: 1.5em;
+      color: #FFF;
+      font-weight: bold;
+      margin-bottom: 10px; }
 
 main .wrap-essence .preferences {
   max-width: 90%;

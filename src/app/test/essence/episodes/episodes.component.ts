@@ -11,18 +11,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EpisodesComponent implements OnInit {
   public datas: any[];
+  public episodeArrays: any[];
 
   constructor(
     private testService: TestService,
     private router: Router,
   ) {
     this.datas = [];
+    this.episodeArrays = new Array();
   }
   ngOnInit(): void {
-    //this.datas = this.testService.getData();
-    //console.log(this.datas);
   }
   ngDoCheck() {
     this.datas = this.testService.getData();
+  }
+  public onClickEpisode(event: any) {
+   this.episodeArrays.push(event.currentTarget.id);
+   if(this.episodeArrays.length >= 3) {
+     this.testService.setEpiArrayData(this.episodeArrays);
+     this.router.navigate(['/test/confirm']);
+   }
   }
 }

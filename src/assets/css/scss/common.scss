@@ -59,6 +59,25 @@ footer {
       }
     }
   }
+  &.half {
+    display: flex;
+    a {
+      width: 50%;
+      &.next {
+        background-color: #E4E4E4;
+        color: #595957;
+        display: block;
+        text-align: center;
+        padding: 13px;
+        font-size: 1.5em;
+        transition: .1s ease;
+        &:active {
+          background-color: #FFCD1E;
+          color: #FFF;
+        }
+      }
+    }
+  }
 }
 
 //レート評価 変数

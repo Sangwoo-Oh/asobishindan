@@ -5,12 +5,19 @@
       <p class="alert">あとエピソードを3つ選んでね</p>
     </div>
     <div class="episodes">
-      <ul>
-        <li *ngFor="let data of datas">
-          <div class="checkmark"></div>
-          <div class="label" routerLink="/test/confirm">{{ data.epi_label }}</div>
-        </li>
-      </ul>
+      <form class="" action="index.html" method="post">
+        <ul>
+          <li *ngFor="let data of datas">
+            <!-- <div class="checkmark"></div>
+            <div class="label" routerLink="/test/confirm">{{ data.epi_label }}</div> -->
+            <input id="{{ data.epi_label }}" type="checkbox" name="" value="">
+            <label id="{{ data.epi_label }}" class="{{ data.epi_label }}" for="{{ data.epi_label }}" (click)="onClickEpisode($event)">
+              <div class="checkmark"></div>
+              <p class="label">{{ data.epi_label }}</p>
+            </label>
+          </li>
+        </ul>
+      </form>
     </div>
   </div>
 </main>

@@ -14,7 +14,9 @@ export class TestService {
 
   constructor(private http: HttpClient) {}
 
-  //エピソード情報取得
+  /**
+   * エピソード情報取得
+   */
   public getEpisode(id: string): Observable<ResponseModel>{
 
     /*return this.http.get<ResponseModel>('http://127.0.0.1:8000/api/ver/', { params: new HttpParams().set('zipcode', zipCode) })*/
@@ -32,5 +34,17 @@ export class TestService {
   public getData():any{
     return this.data;
   }
+  
+  /**
+   * エピソードから嗜好性取得
+   */
+  public setEpiArrayData(data: any) {
+    this.data = data;
+  }
+  public getEpiArrayData():any{
+    return this.data;
+  }
+  public getEpiPreferences() {
 
+  }
 }
