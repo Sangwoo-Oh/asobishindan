@@ -26,10 +26,16 @@ export class EpisodesComponent implements OnInit {
     this.datas = this.testService.getData();
   }
   public onClickEpisode(event: any) {
-   this.episodeArrays.push(event.currentTarget.id);
-   if(this.episodeArrays.length >= 3) {
-     this.testService.setEpiArrayData(this.episodeArrays);
-     this.router.navigate(['/test/confirm']);
-   }
+    this.episodeArrays.push(
+      {
+        id: event.currentTarget.id,
+        epi_label: event.currentTarget.className
+      }
+    );
+    console.log(this.episodeArrays)
+    if(this.episodeArrays.length >= 3) {
+      this.testService.setEpiArrayData(this.episodeArrays);
+      this.router.navigate(['/test/confirm']);
+    }
   }
 }

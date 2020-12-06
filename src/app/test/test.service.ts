@@ -3,6 +3,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { ResponseModel } from '../model/response.model';
+import { PreferenceModel } from '../model/preference.model';
 
 const URL_PROD = 'https://agile-basin-62653.herokuapp.com';
 const URL_TEST = 'http://127.0.0.1:8000';
@@ -10,9 +11,12 @@ const URL_TEST = 'http://127.0.0.1:8000';
 
 @Injectable({ providedIn: 'root' })
 export class TestService {
-  data: any;
+  data: any
+  pref: string
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.pref = ""
+  }
 
   /**
    * エピソード情報取得
@@ -34,7 +38,7 @@ export class TestService {
   public getData():any{
     return this.data;
   }
-  
+
   /**
    * エピソードから嗜好性取得
    */
@@ -44,7 +48,16 @@ export class TestService {
   public getEpiArrayData():any{
     return this.data;
   }
-  public getEpiPreferences() {
-
+  public getEpiPreferences(id: string): Observable<PreferenceModel>{
+    return this.http.get<PreferenceModel>(URL_PROD + '/api/getPreferences/' + id)
   }
+  /**
+   * 親要素(PreferencesComponent)から子要素(PreferenceListComponent)へのデータ受け渡し
+   */
+   public setPrefId(id: string) {
+     this.pref = id;
+   }
+   public getPrefId():string {
+     return this.pref;
+   }
 }

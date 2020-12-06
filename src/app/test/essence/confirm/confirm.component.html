@@ -4,8 +4,8 @@
       <p class="main">こちらの三つを選びました</p>
       <p class="alert">間違いないですか？</p>
       <ul class="select-episode">
-        <li *ngFor="let epi of this.selectedEpisode">
-          {{ epi }}
+        <li *ngFor="let episode of this.selectedEpisode">
+          {{ episode.epi_label }}
         </li>
       </ul>
     </div>

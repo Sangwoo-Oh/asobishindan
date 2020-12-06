@@ -7,7 +7,7 @@ import { TestService } from '../../test.service';
   styleUrls: ['./confirm.component.css']
 })
 export class ConfirmComponent implements OnInit {
-  selectedEpisode: string[];
+  selectedEpisode: any[];
 
   constructor(
     private testService: TestService

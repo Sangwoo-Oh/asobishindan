@@ -6,6 +6,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { EpisodesComponent } from './episodes/episodes.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { PreferencesComponent } from './preferences/preferences.component';
+import { PreferenceListComponent } from './preferences/preference-list.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { PreferencesComponent } from './preferences/preferences.component';
     QuestionsComponent,
     EpisodesComponent,
     ConfirmComponent,
-    PreferencesComponent
+    PreferencesComponent,
+    PreferenceListComponent
   ],
   imports: [
     CommonModule

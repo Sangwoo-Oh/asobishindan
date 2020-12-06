@@ -21,6 +21,7 @@ import { QuestionsComponent } from './test/essence/questions/questions.component
 import { EpisodesComponent } from './test/essence/episodes/episodes.component';
 import { ConfirmComponent } from './test/essence/confirm/confirm.component';
 import { PreferencesComponent } from './test/essence/preferences/preferences.component';
+import { PreferenceListComponent } from './test/essence/preferences/preference-list.component';
 
 import { NonEssenceComponent } from './test/non-essence/non-essence.component';
 import { BasicComponent } from './test/basic/basic.component';
@@ -41,6 +42,7 @@ import { RecommendListComponent } from './recommend/recommend-list/recommend-lis
     EpisodesComponent,
     ConfirmComponent,
     PreferencesComponent,
+    PreferenceListComponent,
     NonEssenceComponent,
     BasicComponent,
     RecommendComponent,

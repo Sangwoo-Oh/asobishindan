@@ -6,49 +6,9 @@
     </div>
     <div class="preferences">
       <ul>
-        <li>
-          <p class="episode">エピソード</p>
-          <ul class="preference-list">
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-          </ul>
-        </li>
-        <li>
-          <p class="episode">エピソード</p>
-          <ul class="preference-list">
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-          </ul>
-        </li>
-        <li>
-          <p class="episode">エピソード</p>
-          <ul class="preference-list">
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-          </ul>
-        </li>
-        <li>
-          <p class="episode">エピソード</p>
-          <ul class="preference-list">
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-          </ul>
+        <li *ngFor="let selectedEpisode of this.selectedEpisode">
+          <p class="episode">{{ selectedEpisode.epi_label }}{{ this.toChild(selectedEpisode.id) }}</p>
+          <app-preference-list></app-preference-list>
         </li>
       </ul>
     </div>
