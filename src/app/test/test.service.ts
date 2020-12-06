@@ -49,7 +49,7 @@ export class TestService {
     return this.data;
   }
   public getEpiPreferences(id: string): Observable<PreferenceModel>{
-    return this.http.get<PreferenceModel>(URL_PROD + '/api/getPreferences/' + id)
+    return this.http.get<PreferenceModel>(URL_PROD + '/api/preferences/' + id)
   }
   /**
    * 親要素(PreferencesComponent)から子要素(PreferenceListComponent)へのデータ受け渡し
