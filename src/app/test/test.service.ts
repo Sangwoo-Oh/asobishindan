@@ -24,7 +24,7 @@ export class TestService {
   public getEpisode(id: string): Observable<ResponseModel>{
 
     /*return this.http.get<ResponseModel>('http://127.0.0.1:8000/api/ver/', { params: new HttpParams().set('zipcode', zipCode) })*/
-    return this.http.get<ResponseModel>(URL_PROD + '/api/episode/' + id)
+    return this.http.get<ResponseModel>(URL_TEST + '/api/episode/' + id)
       /*
       .pipe(
         tap( response => { if(response.code != 200) throw new Error(response.message) } ),
@@ -49,7 +49,7 @@ export class TestService {
     return this.data;
   }
   public getEpiPreferences(id: string): Observable<PreferenceModel>{
-    return this.http.get<PreferenceModel>(URL_PROD + '/api/preferences/' + id)
+    return this.http.get<PreferenceModel>(URL_TEST + '/api/preferences/' + id)
   }
   /**
    * 親要素(PreferencesComponent)から子要素(PreferenceListComponent)へのデータ受け渡し
