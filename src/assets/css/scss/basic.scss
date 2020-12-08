@@ -19,17 +19,19 @@ main {
       width: 85%;
       margin: 0 auto;
       ul {
+        margin-bottom: 80px;
         &.question-list {
           li {
             &.question-index {
               p {
                 &.title {
                   text-align: center;
-                  font-size: 1.6em;
+                  font-size: 1.7em;
                   font-weight: bold;
                   span {
                     font-size: 1.6em;
                     font-weight: bold;
+                    margin-right: 10px;
                   }
                 }
               }
@@ -45,6 +47,7 @@ main {
                     }
                     .radio {
                       display: block;
+                      margin: 0 auto;
                       position: relative;
                       width: auto;
                       width: 50px;
@@ -88,8 +91,41 @@ main {
                     }
                     p {
                       text-align: center;
-                      margin-top: 10px;
+                      margin-top: 14px;
                       font-size: 1.2em;
+                    }
+                  }
+                }
+                &.five {
+                  li {
+                    &:nth-child(3) {
+                      .radio {
+                        &::before {
+                          width: 20px;
+                          height: 20px;
+                          top: 51%;
+                        }
+                        &::after {
+                          width: 20px;
+                          height: 20px;
+                          top: 57%;
+                        }
+                      }
+                    }
+                    &:nth-child(1),
+                    &:nth-child(5) {
+                      .radio {
+                        &::before {
+                          width: 40px;
+                          height: 40px;
+                          top: 34%;
+                        }
+                        &::after {
+                          width: 40px;
+                          height: 40px;
+                          top: 40%;
+                        }
+                      }
                     }
                   }
                 }

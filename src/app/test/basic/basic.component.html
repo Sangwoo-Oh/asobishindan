@@ -5,23 +5,135 @@
     </div>
     <div class="answer">
       <ul class="question-list">
-        <li class="question-index" *ngFor="let basic of basics">
+        <li class="question-index">
           <p class="title"><span>1.</span>あなたが自身が認識している性別を教えてください</p>
           <ul class="choices">
             <li>
-              <input type="radio" id="{{ basic.label01 }}{{ basic.id }}" name="{{ basic.id }}">
-              <label for="{{ basic.label01 }}{{ basic.id }}" class="radio"></label>
-              <p>{{ basic.label01 }}</p>
+              <input type="radio" id="q-1-1" name="q-1">
+              <label for="q-1-1" class="radio"></label>
+              <p>男性</p>
             </li>
             <li>
-              <input type="radio" id="{{ basic.label02 }}{{ basic.id }}" name="{{ basic.id }}">
-              <label for="{{ basic.label02 }}{{ basic.id }}" class="radio"></label>
-              <p>{{ basic.label02 }}</p>
+              <input type="radio" id="q-1-3" name="q-1">
+              <label for="q-1-3" class="radio"></label>
+              <p>女性</p>
             </li>
             <li>
-              <input type="radio" id="{{ basic.label03 }}{{ basic.id }}" name="{{ basic.id }}">
-              <label for="{{ basic.label03 }}{{ basic.id }}" class="radio"></label>
-              <p>{{ basic.label03 }}</p>
+              <input type="radio" id="q-1-5" name="q-1">
+              <label for="q-1-5" class="radio"></label>
+              <p>その他</p>
+            </li>
+          </ul>
+        </li>
+        <li class="question-index">
+          <p class="title"><span>2.</span>あなたの遊びの楽しみ方を教えてください。</p>
+          <ul class="choices five">
+            <li>
+              <input type="radio" id="q-2-1" name="q-2">
+              <label for="q-2-1" class="radio"></label>
+              <p>見て楽しむ</p>
+            </li>
+            <li>
+              <input type="radio" id="q-2-2" name="q-2">
+              <label for="q-2-2" class="radio"></label>
+            </li>
+            <li>
+              <input type="radio" id="q-2-3" name="q-2">
+              <label for="q-2-3" class="radio"></label>
+              <p>どちらとも<br>言えない</p>
+            </li>
+            <li>
+              <input type="radio" id="q-2-4" name="q-2">
+              <label for="q-2-4" class="radio"></label>
+            </li>
+            <li>
+              <input type="radio" id="q-2-5" name="q-2">
+              <label for="q-2-5" class="radio"></label>
+              <p>動いて楽しむ</p>
+            </li>
+          </ul>
+        </li>
+        <li class="question-index">
+          <p class="title"><span>3.</span>あなたの遊びに対する傾向を教えてください。</p>
+          <ul class="choices five">
+            <li>
+              <input type="radio" id="q-3-1" name="q-3">
+              <label for="q-3-1" class="radio"></label>
+              <p>インドア派</p>
+            </li>
+            <li>
+              <input type="radio" id="q-3-2" name="q-3">
+              <label for="q-3-2" class="radio"></label>
+            </li>
+            <li>
+              <input type="radio" id="q-3-3" name="q-3">
+              <label for="q-3-3" class="radio"></label>
+              <p>どちらとも<br>言えない</p>
+            </li>
+            <li>
+              <input type="radio" id="q-3-4" name="q-3">
+              <label for="q-3-4" class="radio"></label>
+            </li>
+            <li>
+              <input type="radio" id="q-3-5" name="q-3">
+              <label for="q-3-5" class="radio"></label>
+              <p>アウトドア派</p>
+            </li>
+          </ul>
+        </li>
+        <li class="question-index">
+          <p class="title"><span>4.</span>独特な世界観や非日常な空間であることが楽しさや満足感につながる。</p>
+          <ul class="choices five">
+            <li>
+              <input type="radio" id="q-4-1" name="q-4">
+              <label for="q-4-1" class="radio"></label>
+              <p>当てはまる</p>
+            </li>
+            <li>
+              <input type="radio" id="q-4-2" name="q-4">
+              <label for="q-4-2" class="radio"></label>
+            </li>
+            <li>
+              <input type="radio" id="q-4-3" name="q-4">
+              <label for="q-4-3" class="radio"></label>
+              <p>どちらとも<br>言えない</p>
+            </li>
+            <li>
+              <input type="radio" id="q-4-4" name="q-4">
+              <label for="q-4-4" class="radio"></label>
+            </li>
+            <li>
+              <input type="radio" id="q-4-5" name="q-4">
+              <label for="q-4-5" class="radio"></label>
+              <p>当てはまらない</p>
+            </li>
+          </ul>
+        </li>
+        <li class="question-index">
+          <p class="title"><span>5.</span>日常的な空間や自然の空気感があることが楽しさや満足感につながる。</p>
+          <ul class="choices five">
+            <li>
+              <input type="radio" id="q-5-1" name="q-5">
+              <label for="q-5-1" class="radio"></label>
+              <p>当てはまる</p>
+            </li>
+            <li>
+              <input type="radio" id="q-5-2" name="q-5">
+              <label for="q-5-2" class="radio"></label>
+            </li>
+            <li>
+              <input type="radio" id="q-5-3" name="q-5">
+              <label for="q-5-3" class="radio"></label>
+              <p>どちらとも<br>言えない</p>
+            </li>
+            <li>
+              <input type="radio" id="q-5-4" name="q-5">
+              <label for="q-5-4" class="radio"></label>
+            </li>
+            <li>
+              <input type="radio" id="q-5-5" name="q-5">
+              <label for="q-5-5" class="radio"></label>
+              <p>当てはまらない</p>
             </li>
           </ul>
         </li>
