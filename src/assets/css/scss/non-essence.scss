@@ -21,59 +21,43 @@ main {
         }
       }
     }
-    .answer ul li {
-      background-color: #F3F3F3;
-      transition: .1s ease;
-      &:active {
-        background-color: #777777;
-      }
-      a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 14px 20px;
-        .label {
-          font-size: 2em;
-          font-weight: bold;
-          width: 95%;
-        }
-        .rectangle {
-          width: 18px;
-          height: 18px;
-          border-left: 4px solid #C4C4C4;
-          border-bottom: 4px solid #C4C4C4;
-          transform: rotate(225deg);
-        }
-      }
-    }
-    .episodes {
+    .answer {
+      max-width: 90%;
+      margin: 0 auto;
       ul {
         li {
-          padding: 14px 20px;
-          display: flex;
-          align-items: center;
-          .checkmark {
-            width: 16px;
-            height: 7px;
-            border-left: 4px solid #C4C4C4;
-            border-bottom: 4px solid #C4C4C4;
-            transform: rotate(-45deg);
-          }
-          .label {
-            font-size: 1.7em;
-            font-weight: bold;
-            margin-left: 15px;
-          }
-          &.active {
-            .checkmark {
-              border-left: 4px solid #F95344;
-              border-bottom: 4px solid #F95344;
+          .content-area {
+            background-color: #F3F3F3;
+            padding: 15px;
+            .q-mark {
+              font-weight: bold;
+              font-size: 1.5em;
             }
-            .label {
-              color: #F95344;
+            .q-title {
+              font-weight: bold;
+              font-size: 1.4em;
+              margin: 7px 0;
+            }
+            textarea {
+              resize: none;
+              border: 1px solid #eee;
+              width: calc(100% - 18px);
+              height: 70px;
+              border-radius: 5px;
+              font-size: 1.3em;
+              padding: 9px;
             }
           }
         }
+      }
+      .add-q {
+        background-color: #FFCD1E;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.4em;
+        margin-top: 20px;
+        border-radius: 5px;
       }
     }
   }

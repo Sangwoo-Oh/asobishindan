@@ -24,6 +24,7 @@ import { PreferencesComponent } from './test/essence/preferences/preferences.com
 import { PreferenceListComponent } from './test/essence/preferences/preference-list.component';
 
 import { NonEssenceComponent } from './test/non-essence/non-essence.component';
+import { NonEssenceQuestionsComponent } from './test/non-essence/non-essence-questions/non-essence-questions.component';
 import { BasicComponent } from './test/basic/basic.component';
 import { RecommendComponent } from './recommend/recommend.component';
 import { RecommendDetailComponent } from './recommend/recommend-detail/recommend-detail.component';
@@ -44,6 +45,7 @@ import { RecommendListComponent } from './recommend/recommend-list/recommend-lis
     PreferencesComponent,
     PreferenceListComponent,
     NonEssenceComponent,
+    NonEssenceQuestionsComponent,
     BasicComponent,
     RecommendComponent,
     RecommendDetailComponent,

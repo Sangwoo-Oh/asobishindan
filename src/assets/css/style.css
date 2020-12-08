@@ -466,6 +466,54 @@ main .wrap-essence .preferences {
 
 /**** 嗜好性選択 ****/
 /********************
+  診断フェーズ非本質質問
+********************/
+/**** 質問 ****/
+main .wrap-non-essence .question {
+  max-width: 90%;
+  margin: 0 auto; }
+  main .wrap-non-essence .question p.main {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    margin: 12px; }
+  main .wrap-non-essence .question p.alert {
+    font-size: 1.1em;
+    text-align: center;
+    margin: 5px; }
+
+main .wrap-non-essence .answer {
+  max-width: 90%;
+  margin: 0 auto; }
+  main .wrap-non-essence .answer ul li .content-area {
+    background-color: #F3F3F3;
+    padding: 15px; }
+    main .wrap-non-essence .answer ul li .content-area .q-mark {
+      font-weight: bold;
+      font-size: 1.5em; }
+    main .wrap-non-essence .answer ul li .content-area .q-title {
+      font-weight: bold;
+      font-size: 1.4em;
+      margin: 7px 0; }
+    main .wrap-non-essence .answer ul li .content-area textarea {
+      resize: none;
+      border: 1px solid #eee;
+      width: calc(100% - 18px);
+      height: 70px;
+      border-radius: 5px;
+      font-size: 1.3em;
+      padding: 9px; }
+  main .wrap-non-essence .answer .add-q {
+    background-color: #FFCD1E;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.4em;
+    margin-top: 20px;
+    border-radius: 5px; }
+
+/**** 嗜好性選択 ****/
+/********************
   提案フェーズ
 ********************/
 /**** 質問 ****/

@@ -14,6 +14,7 @@ import { ConfirmComponent } from './test/essence/confirm/confirm.component';
 import { PreferencesComponent } from './test/essence/preferences/preferences.component';
 
 import { NonEssenceComponent } from './test/non-essence/non-essence.component';
+import { NonEssenceQuestionsComponent } from './test/non-essence/non-essence-questions/non-essence-questions.component';
 
 import { BasicComponent } from "./test/basic/basic.component";
 
@@ -83,7 +84,7 @@ const routes: Routes = [
       },
       {
         path: 'non-essence',
-        component: NonEssenceComponent
+        component: NonEssenceQuestionsComponent
       },
     ]
   },
