@@ -16,6 +16,7 @@ import { Intro02Component } from './intro/intro02/intro02.component';
 import { Intro03Component } from './intro/intro03/intro03.component';
 
 import { TestComponent } from './test/test.component';
+import { BasicComponent } from './test/basic/basic.component';
 import { EssenceComponent } from './test/essence/essence.component';
 import { QuestionsComponent } from './test/essence/questions/questions.component';
 import { EpisodesComponent } from './test/essence/episodes/episodes.component';
@@ -25,7 +26,8 @@ import { PreferenceListComponent } from './test/essence/preferences/preference-l
 
 import { NonEssenceComponent } from './test/non-essence/non-essence.component';
 import { NonEssenceQuestionsComponent } from './test/non-essence/non-essence-questions/non-essence-questions.component';
-import { BasicComponent } from './test/basic/basic.component';
+import { NonEssencePreferencesComponent } from './test/non-essence/non-essence-preferences/non-essence-preferences.component';
+
 import { RecommendComponent } from './recommend/recommend.component';
 import { RecommendDetailComponent } from './recommend/recommend-detail/recommend-detail.component';
 import { RecommendListComponent } from './recommend/recommend-list/recommend-list.component';
@@ -46,6 +48,7 @@ import { RecommendListComponent } from './recommend/recommend-list/recommend-lis
     PreferenceListComponent,
     NonEssenceComponent,
     NonEssenceQuestionsComponent,
+    NonEssencePreferencesComponent,
     BasicComponent,
     RecommendComponent,
     RecommendDetailComponent,

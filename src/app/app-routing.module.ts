@@ -15,6 +15,7 @@ import { PreferencesComponent } from './test/essence/preferences/preferences.com
 
 import { NonEssenceComponent } from './test/non-essence/non-essence.component';
 import { NonEssenceQuestionsComponent } from './test/non-essence/non-essence-questions/non-essence-questions.component';
+import { NonEssencePreferencesComponent } from './test/non-essence/non-essence-preferences/non-essence-preferences.component';
 
 import { BasicComponent } from "./test/basic/basic.component";
 
@@ -85,6 +86,10 @@ const routes: Routes = [
       {
         path: 'non-essence',
         component: NonEssenceQuestionsComponent
+      },
+      {
+        path: 'non-essence/preferences',
+        component: NonEssencePreferencesComponent
       },
     ]
   },
