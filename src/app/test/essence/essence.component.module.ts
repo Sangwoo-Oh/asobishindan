@@ -1,6 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { EssenceRoutingModule } from "./essence-routing.module";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { QuestionsComponent } from './questions/questions.component';
 import { EpisodesComponent } from './episodes/episodes.component';
@@ -18,7 +21,10 @@ import { PreferenceListComponent } from './preferences/preference-list.component
     PreferenceListComponent
   ],
   imports: [
-    CommonModule
+    //BrowserModule,
+    CommonModule,
+    EssenceRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: []

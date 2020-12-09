@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { EpisodeCat } from "./episode-cat";
-import { FormGroup, FormControl } from '@angular/forms';
 import { TestService } from '../../test.service';
 import { Router } from '@angular/router';
 import { ResponseModel } from '../../../model/response.model';
@@ -23,25 +22,18 @@ export class QuestionsComponent implements OnInit {
     },
     {
       id: 3,
-      label: 'アルバイト'
+      label: '学業関連（研究・留学など）'
     },
     {
       id: 4,
-      label: '学業・ゼミ活動'
+      label: 'ソーシャル系課外活動'
     },
     {
       id: 5,
-      label: 'ビジネス系課外活動・長期インターン'
-    },
-    {
-      id: 6,
-      label: 'ソーシャル系課外活動・ボランティア'
+      label: 'ビジネス系課外活動'
     }
   ]
   data: any;
-  testForm = new FormGroup({
-    zipCode: new FormControl('')
-  });
 
 
   constructor(
@@ -52,15 +44,13 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  /*
+   * 選択した活動ジャンルからエピソード取得
+   */
   public onSubmit(event: any): void {
     this.testService.getEpisode(event.target.id).subscribe(
       response =>  {
-        /*
-        this.data.push(response),
-        this.data.forEach(response => this.data = JSON.parse(JSON.stringify(response)));
-        this.testService.setData(this.data);
-        this.json = response;
-        */
         this.data = response;
         this.testService.setData(this.data);
       },

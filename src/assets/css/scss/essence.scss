@@ -18,6 +18,11 @@ main {
           font-size: 1.1em;
           text-align: center;
           margin: 5px ;
+          span {
+            font-size: 1.7em;
+            font-weight: bold;
+            color: #F95344;
+          }
         }
       }
     }
@@ -26,6 +31,9 @@ main {
       transition: .1s ease;
       &:active {
         background-color: #777777;
+      }
+      &:not(last-child) {
+        border-bottom:solid 1px #000;
       }
       a {
         display: flex;

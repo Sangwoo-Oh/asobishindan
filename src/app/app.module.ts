@@ -32,6 +32,9 @@ import { RecommendComponent } from './recommend/recommend.component';
 import { RecommendDetailComponent } from './recommend/recommend-detail/recommend-detail.component';
 import { RecommendListComponent } from './recommend/recommend-list/recommend-list.component';
 
+import { TestModule } from './test/test.component.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,16 +43,16 @@ import { RecommendListComponent } from './recommend/recommend-list/recommend-lis
     Intro02Component,
     Intro03Component,
     TestComponent,
-    EssenceComponent,
-    QuestionsComponent,
-    EpisodesComponent,
-    ConfirmComponent,
-    PreferencesComponent,
-    PreferenceListComponent,
-    NonEssenceComponent,
-    NonEssenceQuestionsComponent,
-    NonEssencePreferencesComponent,
-    BasicComponent,
+    //EssenceComponent,
+    //QuestionsComponent,
+    //EpisodesComponent,
+    //ConfirmComponent,
+    //PreferencesComponent,
+    //PreferenceListComponent,
+    //NonEssenceComponent,
+    //NonEssenceQuestionsComponent,
+    //NonEssencePreferencesComponent,
+    // BasicComponent,
     RecommendComponent,
     RecommendDetailComponent,
     RecommendListComponent,
@@ -62,7 +65,8 @@ import { RecommendListComponent } from './recommend/recommend-list/recommend-lis
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TestModule
   ],
   providers: [],
   bootstrap: [AppComponent]

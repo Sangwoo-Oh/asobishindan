@@ -390,12 +390,18 @@ main .wrap-essence .question {
     font-size: 1.1em;
     text-align: center;
     margin: 5px; }
+    main .wrap-essence .question p.alert span {
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #F95344; }
 
 main .wrap-essence .answer ul li {
   background-color: #F3F3F3;
   transition: .1s ease; }
   main .wrap-essence .answer ul li:active {
     background-color: #777777; }
+  main .wrap-essence .answer ul li:not(last-child) {
+    border-bottom: solid 1px #000; }
   main .wrap-essence .answer ul li a {
     display: flex;
     justify-content: space-between;

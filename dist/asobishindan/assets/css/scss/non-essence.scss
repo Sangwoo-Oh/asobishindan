@@ -1,0 +1,65 @@
+/********************
+  診断フェーズ非本質質問
+********************/
+/**** 質問 ****/
+main {
+  .wrap-non-essence {
+    .question {
+      max-width: 90%;
+      margin: 0 auto;
+      p {
+        &.main {
+          font-size: 1.5em;
+          text-align: center;
+          font-weight: bold;
+          margin: 12px ;
+        }
+        &.alert {
+          font-size: 1.1em;
+          text-align: center;
+          margin: 5px ;
+        }
+      }
+    }
+    .answer {
+      max-width: 90%;
+      margin: 0 auto;
+      ul {
+        li {
+          .content-area {
+            background-color: #F3F3F3;
+            padding: 15px;
+            .q-mark {
+              font-weight: bold;
+              font-size: 1.5em;
+            }
+            .q-title {
+              font-weight: bold;
+              font-size: 1.4em;
+              margin: 7px 0;
+            }
+            textarea {
+              resize: none;
+              border: 1px solid #eee;
+              width: calc(100% - 18px);
+              height: 70px;
+              border-radius: 5px;
+              font-size: 1.3em;
+              padding: 9px;
+            }
+          }
+        }
+      }
+      .add-q {
+        background-color: #FFCD1E;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.4em;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+/**** 嗜好性選択 ****/

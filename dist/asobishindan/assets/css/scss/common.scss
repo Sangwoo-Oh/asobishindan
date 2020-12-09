@@ -9,6 +9,11 @@ html {
 }
 a {
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: #000;
+  &:hover {
+    color: #000;
+  }
 }
 body {
   max-width: 500px;
@@ -18,7 +23,7 @@ header {
   box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2);
   padding: 11px 0;
   .logo {
-    width: 110px;
+    width: 150px;
     margin: 0 auto;
     img {
       width: 100%;
@@ -29,6 +34,8 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+  right: 0;
+  left: 0;
   a {
     &.back {
       background-color: #E4E4E4;
@@ -38,5 +45,110 @@ footer {
       padding: 13px;
       font-size: 1.5em;
     }
+    &.next {
+      background-color: #E4E4E4;
+      color: #595957;
+      display: block;
+      text-align: center;
+      padding: 13px;
+      font-size: 1.5em;
+      transition: .1s ease;
+      &:active {
+        background-color: #FFCD1E;
+        color: #FFF;
+      }
+    }
   }
+  &.half {
+    display: flex;
+    a {
+      width: 50%;
+      &.next {
+        background-color: #E4E4E4;
+        color: #595957;
+        display: block;
+        text-align: center;
+        padding: 13px;
+        font-size: 1.5em;
+        transition: .1s ease;
+        &:active {
+          background-color: #FFCD1E;
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
+
+//レート評価 変数
+$starFull: 16px;//星1個の幅
+$starHalf: $starFull / 2;//星半分（0.5）の幅
+
+$rate1: $starFull;//星1
+$rate1-5: $starFull + $starHalf;//星1.5
+$rate2: $starFull * 2;//星2
+$rate2-5: ($starFull * 2) + $starHalf;//星2.5
+$rate3: $starFull * 3;//星3
+$rate3-5: ($starFull * 3) + $starHalf;//星3.5
+$rate4: $starFull * 4;//星4
+$rate4-5: ($starFull * 4) + $starHalf;//星4.5
+$rate5 :$starFull * 5;//星5
+
+.rate{
+  position: relative;
+  display: inline-block;
+  width: $starFull * 5;
+  height: $starFull;
+  font-size: $starFull;
+  &:before,&:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '★★★★★';
+    display: inline-block;
+    height: $starFull;
+    line-height: $starFull;
+  }
+  &:before{
+  color: #ddd;
+  }
+  &:after{
+  color: #FFCD1E;
+  overflow: hidden;
+  white-space: nowrap;//これがないと改行されて星の半分（0.5）が表現できなくなる
+  }
+}
+.rate0:after{//星0
+  width: 0;
+}
+.rate1:after{//星1
+  width: $rate1;
+}
+.rate1-5:after{//星1.5
+  width: $rate1-5;
+}
+.rate2:after{//星2
+  width: $rate2;
+}
+.rate2-5:after{//星2.5
+  width: $rate2-5;
+}
+.rate3:after{//星3
+  width: $rate3;
+}
+.rate3-5:after{//星3.5
+  width: $rate3-5;
+}
+.rate4:after{//星4
+  width: $rate4;
+}
+.rate4-5:after{//星4.5
+  width: $rate4-5;
+}
+.rate5:after{//星5
+  width: $rate5;
+}
+.star-wrap{
+  width: 80px;
+  margin: 0 auto;
 }

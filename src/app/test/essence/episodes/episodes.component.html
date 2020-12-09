@@ -2,22 +2,21 @@
   <div class="wrap-essence">
     <div class="question">
       <p class="main">学生の時に頑張ったことを教えて！！<br>エピソードを三つ選んで！</p>
-      <p class="alert">あとエピソードを3つ選んでね</p>
+      <p class="alert">あとエピソードを<span>{{ 3 - count }}</span>つ選んでね</p>
     </div>
     <div class="episodes">
       <form class="" action="index.html" method="post">
         <ul>
           <li *ngFor="let data of datas">
-            <!-- <div class="checkmark"></div>
-            <div class="label" routerLink="/test/confirm">{{ data.epi_label }}</div> -->
-            <input id="{{ data.epi_label }}" type="checkbox" name="" value="">
-            <label id="{{ data.id }}" class="{{ data.epi_label }}" for="{{ data.epi_label }}" (click)="onClickEpisode($event)">
+            <input id="{{ data.epi_label }}" type="checkbox" [(ngModel)]="data.checked" (ngModelChange)="changed()" name="test" checked="false">
+            <label id="{{ data.id }}" class="{{ data.epi_label }}" for="{{ data.epi_label }}">
               <div class="checkmark"></div>
               <p class="label">{{ data.epi_label }}</p>
             </label>
           </li>
         </ul>
       </form>
+      <p>Total Items Checked :- {{count}}</p>
     </div>
   </div>
 </main>
