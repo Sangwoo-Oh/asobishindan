@@ -8,19 +8,22 @@ import { PreferenceModel } from '../model/preference.model';
 const URL_PROD = 'https://agile-basin-62653.herokuapp.com';
 const URL_TEST = 'http://127.0.0.1:8000';
 
-
 @Injectable({ providedIn: 'root' })
 export class TestService {
   data: any
   pref: string
+  datas: any[]
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient
+  ) {
     this.pref = ""
+    this.datas = new Array();
   }
 
   /**
    * エピソード情報取得
-   */
+  **/
   public getEpisode(id: string): Observable<ResponseModel>{
 
     /*return this.http.get<ResponseModel>('http://127.0.0.1:8000/api/ver/', { params: new HttpParams().set('zipcode', zipCode) })*/
@@ -32,7 +35,7 @@ export class TestService {
       );
       */
   }
-  public setData(data: ResponseModel[]) {
+  public setData(data: any) {
     this.data = data;
   }
   public getData():any{
@@ -41,7 +44,7 @@ export class TestService {
 
   /**
    * エピソードから嗜好性取得
-   */
+  **/
   public setEpiArrayData(data: any) {
     this.data = data;
   }
@@ -53,11 +56,24 @@ export class TestService {
   }
   /**
    * 親要素(PreferencesComponent)から子要素(PreferenceListComponent)へのデータ受け渡し
-   */
-   public setPrefId(id: string) {
-     this.pref = id;
-   }
-   public getPrefId():string {
-     return this.pref;
-   }
+  **/
+  public setPrefId(id: string) {
+   this.pref = id;
+  }
+  public getPrefId():string {
+   return this.pref;
+  }
+
+  /**
+   * 嗜好性をgetパラメーターに渡す
+  **/
+  public setPrefData(data: any) {
+    this.data = data;
+    console.log(this.data);
+  }
+  public getPrefData():any{
+    this.datas.push(this.data);
+    console.log(this.datas);
+    return this.datas;
+  }
 }

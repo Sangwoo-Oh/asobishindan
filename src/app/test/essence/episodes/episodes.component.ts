@@ -20,11 +20,14 @@ export class EpisodesComponent implements OnInit {
     private testService: TestService,
     private router: Router,
   ) {
-    this.datas = [];
     this.count = 0;
     this.episodeArrays = new Array();
+    this.datas = new Array();
   }
   ngOnInit(): void {
+    this.datas.forEach(item => {
+      item['checked'] = true;
+    })
   }
   ngDoCheck() {
     this.datas = this.testService.getData();
@@ -49,8 +52,7 @@ export class EpisodesComponent implements OnInit {
     this.episodeArrays = new Array();
     this.datas.forEach(item => {
       if (item['checked']) {
-        this.count = this.count + 1
-        console.log(item['epi_label'])
+        this.count = this.count + 1;
         this.episodeArrays.push(
           {
             id: item['id'],

@@ -1,3 +1,9 @@
 <ul class="preference-list">
-  <li  *ngFor="let data of this.data">{{ data.pref_label }}</li>
+  <li  *ngFor="let data of this.data">
+    <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [(ngModel)]="data.checked" (ngModelChange)="changed()">
+    <label for="{{data.epi_id}}-{{ data.id }}">
+      <div class="checkmark"></div>
+      <p class="label">{{ data.pref_label }}</p>
+    </label>
+  </li>
 </ul>

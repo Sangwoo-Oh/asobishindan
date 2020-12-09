@@ -18,7 +18,7 @@ export class PreferencesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.selectedEpisode = this.testService.getEpiArrayData()
+    this.selectedEpisode = this.testService.getEpiArrayData();
   }
   public toChild(id: any):any{
     this.testService.setPrefId(id)

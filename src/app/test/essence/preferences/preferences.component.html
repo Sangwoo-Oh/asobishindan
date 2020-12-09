@@ -1,13 +1,13 @@
 <main>
   <div class="wrap-essence">
     <div class="question">
-      <p class="main">それぞれのエピソードについて<br>楽しさや充実感の元は何？</p>
-      <p class="alert">各ジャンルから必ず一つは選んでね</p>
+      <p class="main">選んだエピソードに力を入れることが<br>できた理由を選んでください。</p>
+      <p class="alert">それぞれから必ず一つは選んでね</p>
     </div>
     <div class="preferences">
       <ul>
-        <li *ngFor="let selectedEpisode of this.selectedEpisode">
-          <p class="episode">{{ selectedEpisode.epi_label }}{{ this.toChild(selectedEpisode.id) }}</p>
+        <li *ngFor="let selectedEpisode of this.selectedEpisode; let i = index;">
+          <p class="episode" >{{ selectedEpisode.epi_label }}{{ this.toChild(selectedEpisode.id) }}</p>
           <app-preference-list></app-preference-list>
         </li>
       </ul>
@@ -16,5 +16,5 @@
 </main>
 
 <footer>
-  <a href="#" class="next" routerLink="/test/non-essence">非本質質問へ進む</a>
+  <a href="#" (click)="this.testService.getPrefData()" class="next" routerLink="/test/non-essence">非本質質問へ進む</a>
 </footer>

@@ -48,7 +48,7 @@ export class QuestionsComponent implements OnInit {
   /*
    * 選択した活動ジャンルからエピソード取得
    */
-  public onSubmit(event: any): void {
+  public onSubmit(event: any) {
     this.testService.getEpisode(event.target.id).subscribe(
       response =>  {
         this.data = response;
@@ -58,5 +58,4 @@ export class QuestionsComponent implements OnInit {
     );
     this.router.navigate(['/test/essence/episodes/'+ event.target.id]);
   }
-
 }
