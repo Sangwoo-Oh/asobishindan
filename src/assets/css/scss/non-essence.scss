@@ -24,6 +24,7 @@ main {
     .answer {
       max-width: 90%;
       margin: 0 auto;
+      margin-bottom: 70px;
       ul {
         li {
           .content-area {
@@ -57,6 +58,16 @@ main {
         padding: 10px;
         font-size: 1.4em;
         margin-top: 20px;
+        border-radius: 5px;
+      }
+      .remove-q {
+        background-color: #F3F3F3;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.4em;
+        margin-top: 20px;
+        margin-bottom: 20px;
         border-radius: 5px;
       }
     }

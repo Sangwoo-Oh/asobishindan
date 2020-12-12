@@ -522,7 +522,8 @@ main .wrap-non-essence .question {
 
 main .wrap-non-essence .answer {
   max-width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-bottom: 70px; }
   main .wrap-non-essence .answer ul li .content-area {
     background-color: #F3F3F3;
     padding: 15px; }
@@ -548,6 +549,15 @@ main .wrap-non-essence .answer {
     padding: 10px;
     font-size: 1.4em;
     margin-top: 20px;
+    border-radius: 5px; }
+  main .wrap-non-essence .answer .remove-q {
+    background-color: #F3F3F3;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 5px; }
 
 /**** 嗜好性選択 ****/

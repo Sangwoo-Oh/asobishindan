@@ -7,6 +7,7 @@ import { EssenceComponent } from './essence/essence.component';
 import { NonEssenceComponent } from './non-essence/non-essence.component';
 import { BasicComponent } from './basic/basic.component';
 import { EssenceModule } from "./essence/essence.component.module";
+import { NonEssenceModule } from "./non-essence/non-essence.component.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EssenceModule } from "./essence/essence.component.module";
   imports: [
     CommonModule,
     EssenceModule,
-    TestRoutingModule
+    TestRoutingModule,
+    NonEssenceModule
   ],
   providers: [],
   bootstrap: []
