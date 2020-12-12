@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { ResponseModel } from '../model/response.model';
 import { PreferenceModel } from '../model/preference.model';
+import { AllPreferenceModel } from '../model/all-preference.model';
+
 
 const URL_PROD = 'https://agile-basin-62653.herokuapp.com';
 const URL_TEST = 'http://127.0.0.1:8000';
@@ -75,5 +77,12 @@ export class TestService {
     this.datas.push(this.data);
     console.log(this.datas);
     return this.datas;
+  }
+
+  /**
+   * 嗜好性データ全取得
+  **/
+  public getAllPreferences(): Observable<AllPreferenceModel>{
+    return this.http.get<AllPreferenceModel>(URL_PROD + '/api/preferences');
   }
 }

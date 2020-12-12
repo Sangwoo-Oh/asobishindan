@@ -11,8 +11,26 @@ import { PreferenceListComponent } from './preferences/preference-list.component
 
 const routes: Routes = [
   {
-    path: '',
-    component: EssenceComponent
+    path: 'essence',
+    component: EssenceComponent,
+    children: [
+      {
+        path: '',
+        component: QuestionsComponent
+      },
+      {
+        path: 'episodes/:id',
+        component: EpisodesComponent
+      },
+      {
+        path: 'confirm',
+        component: ConfirmComponent
+      },
+      {
+        path: 'preferences',
+        component: PreferencesComponent
+      }
+    ]
   }
 ];
 

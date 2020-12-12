@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NonEssenceQuestionsComponent } from './non-essence-questions/non-essence-questions.component';
 import { NonEssencePreferencesComponent } from './non-essence-preferences/non-essence-preferences.component';
 
+import { NonEssenceRoutingModule } from './non-essence-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NonEssencePreferencesComponent } from './non-essence-preferences/non-es
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NonEssenceRoutingModule,
   ],
   providers: [],
   bootstrap: []
