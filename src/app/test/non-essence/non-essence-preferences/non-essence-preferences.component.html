@@ -5,22 +5,24 @@
       <p class="alert">○個以上選んでください。</p>
     </div>
     <div class="preferences">
-      <ul>
-        <li>
-          <ul class="preference-list">
-            <li *ngFor="let data of datas">
-              <input id="{{ data.id }}" type="checkbox" name="preference">
-              <label for="{{ data.id }}">
-                <div class="checkmark"></div>
-                <p class="label">{{ data.pref_label }}</p>
-              </label>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <form [formGroup]="form">
+        <ul>
+          <li>
+            <ul class="preference-list" formArrayName="preference">
+              <li *ngFor="let data of datas">
+                <input id="{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.id, $event)">
+                <label for="{{ data.id }}">
+                  <div class="checkmark"></div>
+                  <p class="label">{{ data.pref_label }}</p>
+                </label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </form>
     </div>
   </div>
 </main>
 <footer>
-  <a href="#" class="next" routerLink="/recommend">提案画面へ進む</a>
+  <a href="javascript:void(0)" class="next" (click)="onSubmit()">提案画面へ進む</a>
 </footer>

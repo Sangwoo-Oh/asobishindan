@@ -24,6 +24,7 @@ main {
     .answer {
       max-width: 90%;
       margin: 0 auto;
+      margin-bottom: 70px;
       ul {
         li {
           .content-area {
@@ -58,6 +59,68 @@ main {
         font-size: 1.4em;
         margin-top: 20px;
         border-radius: 5px;
+      }
+      .remove-q {
+        background-color: #F3F3F3;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.4em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+    }
+    .preferences {
+      max-width: 90%;
+      margin: 0 auto;
+      ul {
+        li {
+          .episode {
+            font-size: 1.7em;
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 7px;
+            border-bottom: solid 1px #000;
+          }
+          ul.preference-list {
+            li {
+              padding: 10px 0px;
+              display: flex;
+              align-items: center;
+              input {
+                display: none;
+                &:checked {
+                  & + label {
+                    .checkmark {
+                      border-left: 3px solid #F95344;
+                      border-bottom: 3px solid #F95344;
+                    }
+                    .label {
+                      color: #F95344;
+                    }
+                  }
+                }
+              }
+              label {
+                display: flex;
+                align-items: center;
+                .checkmark {
+                  width: 13px;
+                  height: 5px;
+                  border-left: 3px solid #C4C4C4;
+                  border-bottom: 3px solid #C4C4C4;
+                  transform: rotate(-45deg);
+                }
+                .label {
+                  font-size: 1.5em;
+                  font-weight: bold;
+                  margin-left: 15px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

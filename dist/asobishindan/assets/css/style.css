@@ -27,6 +27,9 @@ header {
     header .logo img {
       width: 100%; }
 
+main {
+  margin-bottom: 60px; }
+
 footer {
   position: fixed;
   width: 100%;
@@ -390,6 +393,10 @@ main .wrap-essence .question {
     font-size: 1.1em;
     text-align: center;
     margin: 5px; }
+    main .wrap-essence .question p.alert span {
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #F95344; }
 
 main .wrap-essence .answer ul li {
   background-color: #F3F3F3;
@@ -473,18 +480,30 @@ main .wrap-essence .preferences {
     padding-top: 10px;
     padding-bottom: 7px;
     border-bottom: solid 1px #000; }
-  main .wrap-essence .preferences ul li ul.preference-list {
+  main .wrap-essence .preferences ul li ul.preference-list li {
+    padding: 10px 0px;
     display: flex;
-    flex-wrap: wrap; }
-    main .wrap-essence .preferences ul li ul.preference-list li {
-      color: #FFF;
-      background-color: #FFCD1E;
-      border-radius: 50px;
-      margin-right: 11px;
-      padding: 2px 8px;
-      font-size: 1.1em;
-      font-weight: bold;
-      margin-top: 9px; }
+    align-items: center; }
+    main .wrap-essence .preferences ul li ul.preference-list li input {
+      display: none; }
+      main .wrap-essence .preferences ul li ul.preference-list li input:checked + label .checkmark {
+        border-left: 3px solid #F95344;
+        border-bottom: 3px solid #F95344; }
+      main .wrap-essence .preferences ul li ul.preference-list li input:checked + label .label {
+        color: #F95344; }
+    main .wrap-essence .preferences ul li ul.preference-list li label {
+      display: flex;
+      align-items: center; }
+      main .wrap-essence .preferences ul li ul.preference-list li label .checkmark {
+        width: 13px;
+        height: 5px;
+        border-left: 3px solid #C4C4C4;
+        border-bottom: 3px solid #C4C4C4;
+        transform: rotate(-45deg); }
+      main .wrap-essence .preferences ul li ul.preference-list li label .label {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-left: 15px; }
 
 /**** 嗜好性選択 ****/
 /********************
@@ -506,7 +525,8 @@ main .wrap-non-essence .question {
 
 main .wrap-non-essence .answer {
   max-width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-bottom: 70px; }
   main .wrap-non-essence .answer ul li .content-area {
     background-color: #F3F3F3;
     padding: 15px; }
@@ -533,6 +553,49 @@ main .wrap-non-essence .answer {
     font-size: 1.4em;
     margin-top: 20px;
     border-radius: 5px; }
+  main .wrap-non-essence .answer .remove-q {
+    background-color: #F3F3F3;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px; }
+
+main .wrap-non-essence .preferences {
+  max-width: 90%;
+  margin: 0 auto; }
+  main .wrap-non-essence .preferences ul li .episode {
+    font-size: 1.7em;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    border-bottom: solid 1px #000; }
+  main .wrap-non-essence .preferences ul li ul.preference-list li {
+    padding: 10px 0px;
+    display: flex;
+    align-items: center; }
+    main .wrap-non-essence .preferences ul li ul.preference-list li input {
+      display: none; }
+      main .wrap-non-essence .preferences ul li ul.preference-list li input:checked + label .checkmark {
+        border-left: 3px solid #F95344;
+        border-bottom: 3px solid #F95344; }
+      main .wrap-non-essence .preferences ul li ul.preference-list li input:checked + label .label {
+        color: #F95344; }
+    main .wrap-non-essence .preferences ul li ul.preference-list li label {
+      display: flex;
+      align-items: center; }
+      main .wrap-non-essence .preferences ul li ul.preference-list li label .checkmark {
+        width: 13px;
+        height: 5px;
+        border-left: 3px solid #C4C4C4;
+        border-bottom: 3px solid #C4C4C4;
+        transform: rotate(-45deg); }
+      main .wrap-non-essence .preferences ul li ul.preference-list li label .label {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-left: 15px; }
 
 /**** 嗜好性選択 ****/
 /********************

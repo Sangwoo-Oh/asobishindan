@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TestService } from '../../test.service';
 import { AllPreferenceModel } from '../../../model/all-preference.model';
 
@@ -12,9 +13,13 @@ import { AllPreferenceModel } from '../../../model/all-preference.model';
 export class NonEssencePreferencesComponent implements OnInit {
   data: any;
   datas: any;
+  form: FormGroup;
+  prefArray: any;
 
   constructor(
     private testService: TestService,
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.testService.getAllPreferences().subscribe(
       response => {
@@ -31,8 +36,38 @@ export class NonEssencePreferencesComponent implements OnInit {
       },
       err => alert(err)
     );
+    this.form = this.formBuilder.group({
+      preference :  new FormArray([
+        // new FormControl('',Validators.required)
+      ])
+    });
   }
 
   ngOnInit(): void {
+  }
+
+  onChange(pref_id: number, event: any) {
+    let isChecked = <HTMLInputElement>event.target.checked;
+    const preferenceFormArray = <FormArray>this.form.controls.preference;
+    if (isChecked) {
+      preferenceFormArray.push(new FormControl(pref_id));
+    } else {
+      let index = preferenceFormArray.controls.findIndex(x => x.value == pref_id)
+      preferenceFormArray.removeAt(index);
+    }
+  }
+
+  onSubmit() {
+    // console.log(this.form.value['preference']);
+    this.router.navigate(
+      ['/recommend'],
+      {
+        queryParams: {
+          id: [
+            this.form.value['preference']
+          ]
+        }
+      }
+    );
   }
 }
