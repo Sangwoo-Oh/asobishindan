@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TestRoutingModule } from "./test-routing.module";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { EssenceComponent } from './essence/essence.component';
@@ -19,7 +20,9 @@ import { NonEssenceModule } from "./non-essence/non-essence.component.module";
     CommonModule,
     EssenceModule,
     TestRoutingModule,
-    NonEssenceModule
+    NonEssenceModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: []

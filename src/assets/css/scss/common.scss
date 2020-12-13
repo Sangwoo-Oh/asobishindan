@@ -31,7 +31,7 @@ header {
   }
 }
 main {
-  margin-bottom: 60px;  
+  margin-bottom: 60px;
 }
 footer {
   position: fixed;
@@ -60,6 +60,35 @@ footer {
         background-color: #FFCD1E;
         color: #FFF;
       }
+    }
+  }
+  button {
+    width: 100%;
+    border: none;
+    &.back {
+      background-color: #E4E4E4;
+      color: #595957;
+      display: block;
+      text-align: center;
+      padding: 13px;
+      font-size: 1.5em;
+    }
+    &.next {
+      background-color: #FFCD1E;
+      color: #FFF;
+      display: block;
+      text-align: center;
+      padding: 13px;
+      font-size: 1.5em;
+      transition: .1s ease;
+      &:active {
+        background-color: #FFCD1E;
+        color: #FFF;
+      }
+    }
+    &:disabled {
+      background-color: #E4E4E4;
+      color: #595957;
     }
   }
   &.half {

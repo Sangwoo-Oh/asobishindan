@@ -54,6 +54,30 @@ footer {
     footer a.next:active {
       background-color: #FFCD1E;
       color: #FFF; }
+  footer button {
+    width: 100%;
+    border: none; }
+    footer button.back {
+      background-color: #E4E4E4;
+      color: #595957;
+      display: block;
+      text-align: center;
+      padding: 13px;
+      font-size: 1.5em; }
+    footer button.next {
+      background-color: #FFCD1E;
+      color: #FFF;
+      display: block;
+      text-align: center;
+      padding: 13px;
+      font-size: 1.5em;
+      transition: .1s ease; }
+      footer button.next:active {
+        background-color: #FFCD1E;
+        color: #FFF; }
+    footer button:disabled {
+      background-color: #E4E4E4;
+      color: #595957; }
   footer.half {
     display: flex; }
     footer.half a {

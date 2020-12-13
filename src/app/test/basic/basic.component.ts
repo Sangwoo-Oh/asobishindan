@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Basic } from '../../shared/models/basic';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-basic',
@@ -7,20 +10,26 @@ import { Basic } from '../../shared/models/basic';
   styleUrls: ['./basic.component.css']
 })
 export class BasicComponent implements OnInit {
-  basics: Basic[] = [
-    new Basic(1, '男性', '女性', 'その他')
-  ];
+  form: FormGroup;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.basics = [
-      new Basic(1, '男性', '女性' ,'その他'),
-      new Basic(2, '男性', '女性' ,'その他'),
-      new Basic(3, '男性', '女性' ,'その他'),
-      new Basic(4, '男性', '女性' ,'その他'),
-      new Basic(5, '男性', '女性' ,'その他'),
-    ];
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+  ) {
+    this.form = this.formBuilder.group({
+      sex : new FormControl('', Validators.required),
+      howtoenjoy : new FormControl('', Validators.required),
+      trend : new FormControl('', Validators.required),
+      normal : new FormControl('', Validators.required),
+      unique : new FormControl('', Validators.required)
+    });
   }
 
+  ngOnInit(): void {
+  }
+
+  register(form: any) {
+    console.log(form.value)
+    this.router.navigate(['/test/essence'])
+  }
 }
