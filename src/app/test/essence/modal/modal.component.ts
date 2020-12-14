@@ -3,13 +3,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 // モーダルダイアログを閉じるためのイベントを管理するサービス
 import { ModalService } from '../service/modal.service';
 
+import { TestService } from '../../test.service';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit, OnDestroy {
-
+  public datas: any[];
   /**
    * コンストラクタ
    *
@@ -17,15 +18,20 @@ export class ModalComponent implements OnInit, OnDestroy {
    * @memberof ModalComponent
    */
   constructor(
-    private modalService: ModalService
-  ) {}
+    private modalService: ModalService,
+    private testService: TestService
+  ) {
+    this.datas = new Array();
+  }
 
   /**
    * 初期処理
    *
    * @memberof ModalComponent
    */
-  ngOnInit() {}
+  ngOnInit() {
+    this.datas = this.testService.getData();
+  }
 
   /**
    * 終了処理

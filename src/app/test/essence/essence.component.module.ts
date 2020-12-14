@@ -9,6 +9,7 @@ import { EpisodesComponent } from './episodes/episodes.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { PreferenceListComponent } from './preferences/preference-list.component';
+import { ModalComponent } from "./modal/modal.component";
 
 import { EssenceRoutingModule } from './essence-routing.module';
 
@@ -19,7 +20,8 @@ import { EssenceRoutingModule } from './essence-routing.module';
     EpisodesComponent,
     ConfirmComponent,
     PreferencesComponent,
-    PreferenceListComponent
+    PreferenceListComponent,
+    ModalComponent
   ],
   imports: [
     //BrowserModule,

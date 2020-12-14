@@ -84,6 +84,13 @@ export class QuestionsComponent implements OnInit, OnDestroy {
    */
   public onClick(event: any) {
     this.setModal();
+    this.testService.getEpisode(event.target.id).subscribe(
+      response =>  {
+        this.data = response;
+        this.testService.setData(this.data);
+      },
+      err => alert(err)
+    );
   }
 
   /**
