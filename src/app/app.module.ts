@@ -35,6 +35,7 @@ import { RecommendListComponent } from './recommend/recommend-list/recommend-lis
 import { TestModule } from './test/test.component.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +67,7 @@ import { TestModule } from './test/test.component.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    TestModule
+    TestModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -29,6 +29,7 @@
     "@angular/router": "~11.0.0",
     "compression": "^1.7.4",
     "express": "^4.17.1",
+    "igniteui-angular": "^11.0.7",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

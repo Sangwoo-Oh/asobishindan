@@ -5,11 +5,16 @@
       <p class="alert">あとエピソードを3つ選んでね</p>
     </div>
     <div class="answer">
+      <ng-container *ngComponentOutlet="modal"></ng-container>
       <ul>
         <li *ngFor="let episodeCat of episodeCats" ontouchstart="">
           <a href="javascript:void(0);">
+            <div class="label" (click)="onClick($event)" id="{{ episodeCat.id }}">{{ episodeCat.label }}</div>
+            <div class="rectangle" (click)="onClick($event)" id="{{ episodeCat.id }}"></div>
+            <!--
             <div class="label" (click)="onSubmit($event)" id="{{ episodeCat.id }}">{{ episodeCat.label }}</div>
             <div class="rectangle" (click)="onSubmit($event)" id="{{ episodeCat.id }}"></div>
+            -->
           </a>
         </li>
       </ul>
