@@ -87,6 +87,7 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     this.testService.getEpisode(event.target.id).subscribe(
       response =>  {
         this.data = response;
+        console.log(response);
         this.testService.setData(this.data);
       },
       err => alert(err)

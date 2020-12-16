@@ -1,17 +1,19 @@
 <div class="overlay">
   <div class="modal">
-    <div class="header">
-      <label id="header_label">header title</label>
-    </div>
     <div class="contents">
-      <ul>
-        <li *ngFor="let data of datas">
-          {{ data.epi_label }}
-        </li>
-      </ul>
+      <form [formGroup]="form">
+        <ul>
+          <li *ngFor="let data of datas" formArrayName="episode">
+            <input id="{{ data.id }}" type="checkbox" name="episode" [value]="data.epi_label_2" (change)="onChange(data.id, $event)">
+            <label for="{{ data.id }}">
+              <div class="checkmark"></div>
+              <p class="label">{{ data.epi_label }}</p>
+            </label>
+          </li>
+        </ul>
+        <pre>{{ form.value | json }}</pre>
+      </form>
     </div>
-    <div class="footer">
-      <input id="close_button" type="button" value="close" (click)="onClick($event)">
-    </div>
+    <input id="close_button" type="button" value="close" (click)="onClick($event)">
   </div>
 </div>

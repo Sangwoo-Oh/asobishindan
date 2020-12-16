@@ -4,6 +4,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ModalService } from '../service/modal.service';
 
 import { TestService } from '../../test.service';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -11,6 +13,7 @@ import { TestService } from '../../test.service';
 })
 export class ModalComponent implements OnInit, OnDestroy {
   public datas: any[];
+  public form: FormGroup;
   /**
    * コンストラクタ
    *
@@ -19,9 +22,15 @@ export class ModalComponent implements OnInit, OnDestroy {
    */
   constructor(
     private modalService: ModalService,
-    private testService: TestService
+    private testService: TestService,
+    private formBuilder: FormBuilder,
   ) {
     this.datas = new Array();
+    this.form = this.formBuilder.group({
+      episode :  new FormArray([
+        // new FormControl('',Validators.required)
+      ])
+    });
   }
 
   /**
@@ -61,5 +70,16 @@ export class ModalComponent implements OnInit, OnDestroy {
    */
   private notifyCloseModal() {
     this.modalService.requestCloseModal();
+  }
+
+  onChange(epi_id: number, event: any) {
+    let isChecked = <HTMLInputElement>event.target.checked;
+    const preferenceFormArray = <FormArray>this.form.controls.episode;
+    if (isChecked) {
+      preferenceFormArray.push(new FormControl(epi_id));
+    } else {
+      let index = preferenceFormArray.controls.findIndex(x => x.value == epi_id)
+      preferenceFormArray.removeAt(index);
+    }
   }
 }

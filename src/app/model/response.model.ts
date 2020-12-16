@@ -11,8 +11,15 @@ export interface ResponseModel {
     };
   */
   id: number;
-  epi_label: string;
-  epi_cat_id: string;
-  created_at: string;
-  updated_at: string;
+  label: string;
+  epi_label_ph: string;
+  epi_flag_ph: number;
+  epi_label_cl: string;
+  epi_flag_cl: number;
+  epi_label_sc: string;
+  epi_flag_sc: number;
+  epi_label_bz: string;
+  epi_flag_bz: number;
+  epi_label_ac: string;
+  epi_flag_ac: number;
 }

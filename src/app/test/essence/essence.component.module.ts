@@ -28,6 +28,7 @@ import { EssenceRoutingModule } from './essence-routing.module';
     CommonModule,
     EssenceRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     EssenceRoutingModule,
   ],
   providers: [],
