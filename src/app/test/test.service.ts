@@ -15,12 +15,14 @@ export class TestService {
   data: any
   pref: string
   datas: any[]
+  modalData: any
 
   constructor(
     private http: HttpClient
   ) {
     this.pref = ""
     this.datas = new Array();
+    this.modalData = new Array();
   }
 
   /**
@@ -42,6 +44,16 @@ export class TestService {
   }
   public getData():any{
     return this.data;
+  }
+
+  /**
+   * モーダル間データやりとりサービス
+  **/
+  public setModalData(data: any) {
+    this.modalData = data
+  }
+  public getModalData(): any {
+    return this.modalData
   }
 
   /**

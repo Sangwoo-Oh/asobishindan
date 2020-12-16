@@ -17,12 +17,62 @@ import { ResponseModel } from '../../../model/response.model';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit, OnDestroy {
+  items: number = 0;
+  items_ph: string[] = new Array();
+  items_cl: string[] = new Array();
+  items_ac: string[] = new Array();
+  items_sc: string[] = new Array();
+  items_bz: string[] = new Array();
+
+
+  flag = false;
+  index_ph = 0;
+  index_cl = 0;
+  index_ac = 0;
+  index_sc = 0;
+  index_bz = 0;
+  addItem(newItem: any) {
+    this.items = 0;
+    if (newItem.param == 1) {
+      newItem.data.episode.forEach((element: any) => {
+          this.items_ph[this.index_ph] = element
+          this.index_ph++
+      });
+    } else if (newItem.param == 2) {
+      newItem.data.episode.forEach((element: any) => {
+          this.items_cl[this.index_cl] = element
+          this.index_cl++
+      });
+    } else if (newItem.param == 3) {
+      newItem.data.episode.forEach((element: any) => {
+          this.items_ac[this.index_ac] = element
+          this.index_ac++
+      });
+    } else if (newItem.param == 4) {
+      newItem.data.episode.forEach((element: any) => {
+          this.items_sc[this.index_sc] = element
+          this.index_sc++
+      });
+    } else if (newItem.param == 5) {
+      newItem.data.episode.forEach((element: any) => {
+          this.items_bz[this.index_bz] = element
+          this.index_bz++
+      });
+    }
+    this.items = this.items_ph.length + this.items_cl.length + this.items_ac.length + this.items_sc.length + this.items_bz.length;
+    if (this.items > 3) {
+
+    }
+    console.log(this.items)
+    this.flag = false;
+  }
 
   // モーダルダイアログが閉じた際のイベントをキャッチするための subscription
   private subscription: Subscription = new Subscription();
 
   // ngComponentOutlet にセットするためのプロパティ
   public modal: any = null;
+  public modalData: any = null;
 
   episodeCats:EpisodeCat[] = [
     {
@@ -84,6 +134,12 @@ export class QuestionsComponent implements OnInit, OnDestroy {
    */
   public onClick(event: any) {
     this.setModal();
+    this.flag = true;
+    this.router.navigate(['/test/essence'], {
+      queryParams: {
+        id: event.target.id
+      }
+    });
     this.testService.getEpisode(event.target.id).subscribe(
       response =>  {
         this.data = response;

@@ -4,16 +4,16 @@
       <form [formGroup]="form">
         <ul>
           <li *ngFor="let data of datas" formArrayName="episode">
-            <input id="{{ data.id }}" type="checkbox" name="episode" [value]="data.epi_label_2" (change)="onChange(data.id, $event)">
+            <input id="{{ data.id }}" type="checkbox" name="episode" [value]="data.epi_label_2" (change)="onChange(data.id, $event)" #newItem>
             <label for="{{ data.id }}">
               <div class="checkmark"></div>
               <p class="label">{{ data.epi_label }}</p>
             </label>
           </li>
         </ul>
-        <pre>{{ form.value | json }}</pre>
+        <input id="close_button" type="button" value="戻る" (click)="addNewItem(form.value)">
       </form>
     </div>
-    <input id="close_button" type="button" value="close" (click)="onClick($event)">
+    <!-- <label>Add an item: <input #newItem></label> -->
   </div>
 </div>

@@ -5,10 +5,16 @@
       <p class="alert">あとエピソードを3つ選んでね</p>
     </div>
     <div class="answer">
-      <ng-container *ngComponentOutlet="modal"></ng-container>
+      <!-- <ng-template *ngComponentOutlet="modal" (newItemEvent)="addItem($event)"></ng-template> -->
+      <app-modal *ngIf="flag == true" (newItemEvent)="addItem($event)"></app-modal>
       <ul>
-        <li *ngFor="let episodeCat of episodeCats" ontouchstart="">
+        <li *ngFor="let episodeCat of episodeCats; index as i" ontouchstart="">
           <a href="javascript:void(0);">
+            <ng-container *ngIf = "i == 0">{{ items_ph.length }}</ng-container>
+            <ng-container *ngIf = "i == 1">{{ items_cl.length }}</ng-container>
+            <ng-container *ngIf = "i == 2">{{ items_sc.length }}</ng-container>
+            <ng-container *ngIf = "i == 3">{{ items_ac.length }}</ng-container>
+            <ng-container *ngIf = "i == 4">{{ items_bz.length }}</ng-container>
             <div class="label" (click)="onClick($event)" id="{{ episodeCat.id }}">{{ episodeCat.label }}</div>
             <div class="rectangle" (click)="onClick($event)" id="{{ episodeCat.id }}"></div>
             <!--

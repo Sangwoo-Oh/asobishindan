@@ -550,7 +550,6 @@ main .wrap-essence .overlay {
     main .wrap-essence .overlay .modal .contents {
       height: 60%;
       width: 100%;
-      text-align: center;
       font-size: 1.8em; }
       main .wrap-essence .overlay .modal .contents ul li {
         padding: 5px 0px;
@@ -578,6 +577,17 @@ main .wrap-essence .overlay {
             font-size: 0.7em;
             font-weight: bold;
             margin-left: 15px; }
+    main .wrap-essence .overlay .modal #close_button {
+      background-color: #E4E4E4;
+      color: #595957;
+      display: block;
+      text-align: center;
+      padding: 7px;
+      font-size: 1.2em;
+      transition: .1s ease;
+      width: 100%;
+      border: none;
+      border-radius: 50px; }
 
 /**** 嗜好性選択 ****/
 /********************

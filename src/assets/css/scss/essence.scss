@@ -196,7 +196,6 @@ main {
         .contents {
           height: 60%;
           width: 100%;
-          text-align: center;
           font-size: 1.8em;
           ul {
             li {
@@ -237,6 +236,18 @@ main {
               }
             }
           }
+        }
+        #close_button {
+          background-color: #E4E4E4;
+          color: #595957;
+          display: block;
+          text-align: center;
+          padding: 7px;
+          font-size: 1.2em;
+          transition: .1s ease;
+          width: 100%;
+          border: none;
+          border-radius: 50px;
         }
       }
     }

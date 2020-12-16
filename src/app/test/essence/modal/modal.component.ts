@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, EventEmitter, OnInit, OnDestroy, Input ,Output } from '@angular/core';
 
 // モーダルダイアログを閉じるためのイベントを管理するサービス
 import { ModalService } from '../service/modal.service';
 
 import { TestService } from '../../test.service';
 import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -14,6 +15,11 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@ang
 export class ModalComponent implements OnInit, OnDestroy {
   public datas: any[];
   public form: FormGroup;
+  public toParent: any[];
+  public param: any;
+
+  @Output() newItemEvent = new EventEmitter<{ data: string; param: string; }>();
+
   /**
    * コンストラクタ
    *
@@ -24,8 +30,11 @@ export class ModalComponent implements OnInit, OnDestroy {
     private modalService: ModalService,
     private testService: TestService,
     private formBuilder: FormBuilder,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     this.datas = new Array();
+    this.toParent = new Array();
     this.form = this.formBuilder.group({
       episode :  new FormArray([
         // new FormControl('',Validators.required)
@@ -39,6 +48,8 @@ export class ModalComponent implements OnInit, OnDestroy {
    * @memberof ModalComponent
    */
   ngOnInit() {
+  }
+  ngDoCheck() {
     this.datas = this.testService.getData();
   }
 
@@ -50,6 +61,8 @@ export class ModalComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     // モーダルダイアログが閉じたタイミングで出力される
     console.log('destroyed');
+    this.toParent = this.form.value;
+    this.testService.setModalData(this.form.value);
   }
 
   /**
@@ -60,6 +73,7 @@ export class ModalComponent implements OnInit, OnDestroy {
    */
   public onClick(event: any) {
     this.notifyCloseModal();
+    this.newItemEvent.emit();
   }
 
   /**
@@ -81,5 +95,16 @@ export class ModalComponent implements OnInit, OnDestroy {
       let index = preferenceFormArray.controls.findIndex(x => x.value == epi_id)
       preferenceFormArray.removeAt(index);
     }
+  }
+
+  addNewItem(toParent: any) {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.param = params['id'];
+    })
+    this.newItemEvent.emit({
+      data: toParent,
+      param: this.param
+    });
+    this.router.navigate(['/test/essence']);
   }
 }
