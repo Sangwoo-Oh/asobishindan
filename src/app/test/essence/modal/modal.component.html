@@ -4,7 +4,7 @@
       <form [formGroup]="form">
         <ul>
           <li *ngFor="let data of datas" formArrayName="episode">
-            <input id="{{ data.id }}" type="checkbox" name="episode" [value]="data.epi_label_2" (change)="onChange(data.id, $event)" #newItem>
+            <input id="{{ data.id }}" type="checkbox" name="episode" [value]="data.epi_label_2" (change)="onChange(data.id, $event)" [checked]="checked" #newItem>
             <label for="{{ data.id }}">
               <div class="checkmark"></div>
               <p class="label">{{ data.epi_label }}</p>

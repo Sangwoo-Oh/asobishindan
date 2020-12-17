@@ -422,28 +422,59 @@ main .wrap-essence .question {
       font-weight: bold;
       color: #F95344; }
 
-main .wrap-essence .answer ul li {
+main .wrap-essence .answer ul.epi-categories > li {
   background-color: #F3F3F3;
   transition: .1s ease; }
-  main .wrap-essence .answer ul li:active {
-    background-color: #777777; }
-  main .wrap-essence .answer ul li:not(last-child) {
+  main .wrap-essence .answer ul.epi-categories > li:not(last-child) {
     border-bottom: solid 1px #000; }
-  main .wrap-essence .answer ul li a {
+  main .wrap-essence .answer ul.epi-categories > li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 14px 20px; }
-    main .wrap-essence .answer ul li a .label {
+    main .wrap-essence .answer ul.epi-categories > li a .label {
       font-size: 2em;
       font-weight: bold;
       width: 95%; }
-    main .wrap-essence .answer ul li a .rectangle {
+    main .wrap-essence .answer ul.epi-categories > li a .rectangle {
       width: 18px;
       height: 18px;
       border-left: 4px solid #C4C4C4;
       border-bottom: 4px solid #C4C4C4;
       transform: rotate(225deg); }
+    main .wrap-essence .answer ul.epi-categories > li a.opened .rectangle {
+      transform: rotate(315deg); }
+    main .wrap-essence .answer ul.epi-categories > li a.opened + ul {
+      display: block; }
+    main .wrap-essence .answer ul.epi-categories > li a.closed .rectangle {
+      transform: rotate(225deg); }
+    main .wrap-essence .answer ul.epi-categories > li a.closed + ul {
+      display: none; }
+  main .wrap-essence .answer ul.epi-categories > li > ul li {
+    background-color: #fff;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center; }
+    main .wrap-essence .answer ul.epi-categories > li > ul li input {
+      display: none; }
+      main .wrap-essence .answer ul.epi-categories > li > ul li input:checked + label .checkmark {
+        border-left: 3px solid #F95344;
+        border-bottom: 3px solid #F95344; }
+      main .wrap-essence .answer ul.epi-categories > li > ul li input:checked + label .label {
+        color: #F95344; }
+    main .wrap-essence .answer ul.epi-categories > li > ul li label {
+      display: flex;
+      align-items: center; }
+      main .wrap-essence .answer ul.epi-categories > li > ul li label .checkmark {
+        width: 16px;
+        height: 7px;
+        border-left: 3px solid #C4C4C4;
+        border-bottom: 3px solid #C4C4C4;
+        transform: rotate(-45deg); }
+      main .wrap-essence .answer ul.epi-categories > li > ul li label .label {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-left: 15px; }
 
 main .wrap-essence .episodes ul li {
   padding: 14px 20px;
@@ -578,12 +609,13 @@ main .wrap-essence .overlay {
             font-weight: bold;
             margin-left: 15px; }
     main .wrap-essence .overlay .modal #close_button {
+      margin-top: 20px;
       background-color: #E4E4E4;
       color: #595957;
       display: block;
       text-align: center;
       padding: 7px;
-      font-size: 1.2em;
+      font-size: 0.8em;
       transition: .1s ease;
       width: 100%;
       border: none;

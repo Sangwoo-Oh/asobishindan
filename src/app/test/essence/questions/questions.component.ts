@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 // モーダルダイアログとして表示するコンポーネント
 import { ModalComponent } from '../modal/modal.component';
 
@@ -9,6 +9,7 @@ import { EpisodeCat } from "./episode-cat";
 import { TestService } from '../../test.service';
 import { Router } from '@angular/router';
 import { ResponseModel } from '../../../model/response.model';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -31,48 +32,6 @@ export class QuestionsComponent implements OnInit, OnDestroy {
   index_ac = 0;
   index_sc = 0;
   index_bz = 0;
-  addItem(newItem: any) {
-    this.items = 0;
-    if (newItem.param == 1) {
-      newItem.data.episode.forEach((element: any) => {
-          this.items_ph[this.index_ph] = element
-          this.index_ph++
-      });
-    } else if (newItem.param == 2) {
-      newItem.data.episode.forEach((element: any) => {
-          this.items_cl[this.index_cl] = element
-          this.index_cl++
-      });
-    } else if (newItem.param == 3) {
-      newItem.data.episode.forEach((element: any) => {
-          this.items_ac[this.index_ac] = element
-          this.index_ac++
-      });
-    } else if (newItem.param == 4) {
-      newItem.data.episode.forEach((element: any) => {
-          this.items_sc[this.index_sc] = element
-          this.index_sc++
-      });
-    } else if (newItem.param == 5) {
-      newItem.data.episode.forEach((element: any) => {
-          this.items_bz[this.index_bz] = element
-          this.index_bz++
-      });
-    }
-    this.items = this.items_ph.length + this.items_cl.length + this.items_ac.length + this.items_sc.length + this.items_bz.length;
-    if (this.items > 3) {
-
-    }
-    console.log(this.items)
-    this.flag = false;
-  }
-
-  // モーダルダイアログが閉じた際のイベントをキャッチするための subscription
-  private subscription: Subscription = new Subscription();
-
-  // ngComponentOutlet にセットするためのプロパティ
-  public modal: any = null;
-  public modalData: any = null;
 
   episodeCats:EpisodeCat[] = [
     {
@@ -97,24 +56,42 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     }
   ]
   data: any;
+  subscription = new Subscription();
+  episodes: any;
+  i: number;
+  opened: string[];
+  public form: FormGroup;
 
 
   constructor(
     private testService: TestService,
     private modalService: ModalService,
-    private router: Router) {
+    private router: Router,
+    private formBuilder: FormBuilder) {
     this.data = new Array()
+    this.episodes = new Array()
+    this.i = 0;
+    this.episodeCats.forEach(element => {
+      this.getEpi(element['id'])
+    });
+    this.subscription = this.testService.data.subscribe((data: any) => {
+      this.episodes.push(data);
+    });
+    this.opened = new Array(
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+    )
+    this.form = this.formBuilder.group({
+      episode :  new FormArray([
+        //new FormControl('')
+      ])
+    });
   }
 
   ngOnInit() {
-    // モーダルダイアログを閉じた際のイベントを処理する
-    this.subscription = this.modalService.closeEventObservable$.subscribe(
-      () => {
-        // プロパティ modal に null をセットすることでコンポーネントを破棄する
-        // このタイミングで ModalComponent では ngOnDestroy が走る
-        this.modal = null;
-      }
-    );
   }
 
   /**
@@ -123,7 +100,6 @@ export class QuestionsComponent implements OnInit, OnDestroy {
    * @memberof AppComponent
    */
   ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
   /**
@@ -133,7 +109,6 @@ export class QuestionsComponent implements OnInit, OnDestroy {
    * @memberof AppComponent
    */
   public onClick(event: any) {
-    this.setModal();
     this.flag = true;
     this.router.navigate(['/test/essence'], {
       queryParams: {
@@ -150,16 +125,6 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     );
   }
 
-  /**
-   * モーダルダイアログを表示する
-   *
-   * @private
-   * @memberof AppComponent
-   */
-  private setModal() {
-    this.modal = ModalComponent;
-  }
-
   /*
    * 選択した活動ジャンルからエピソード取得
    */
@@ -172,5 +137,40 @@ export class QuestionsComponent implements OnInit, OnDestroy {
       err => alert(err)
     );
     this.router.navigate(['/test/essence/episodes/'+ event.target.id]);
+  }
+  public getEpi(id: number) {
+    this.testService.getEpisode(id).subscribe(
+      response =>  {
+        this.data = response;
+        this.testService.setData(response);
+        this.testService.getData();
+      },
+      err => alert(err)
+    );
+  }
+  /*
+   * アコーディオン開閉フック
+   */
+  addClass(i: number) {
+    if (this.opened[i] == "closed") {
+      this.opened[i] = "opened";
+    } else if(this.opened[i] == "opened") {
+      this.opened[i] = "closed";
+    }
+  }
+
+  onChange(epi_label_2: string, event: any) {
+    let isChecked = <HTMLInputElement>event.target.checked;
+    const preferenceFormArray = <FormArray>this.form.controls.episode;
+    if (isChecked) {
+      preferenceFormArray.push(new FormControl(epi_label_2));
+    } else {
+      let index = preferenceFormArray.controls.findIndex(x => x.value == epi_label_2)
+      preferenceFormArray.removeAt(index);
+    }
+    if (this.form.value.episode.length >= 3) {
+      this.testService.setEpiArrayData(this.form.value.episode);
+      this.router.navigate(['/test/confirm']);
+    }
   }
 }

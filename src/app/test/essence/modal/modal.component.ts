@@ -17,6 +17,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   public form: FormGroup;
   public toParent: any[];
   public param: any;
+  public checked: boolean;
 
   @Output() newItemEvent = new EventEmitter<{ data: string; param: string; }>();
 
@@ -40,6 +41,7 @@ export class ModalComponent implements OnInit, OnDestroy {
         // new FormControl('',Validators.required)
       ])
     });
+    this.checked = false;
   }
 
   /**
@@ -51,6 +53,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   }
   ngDoCheck() {
     this.datas = this.testService.getData();
+    this.doCheck(this.datas, 1)
   }
 
   /**
@@ -95,6 +98,10 @@ export class ModalComponent implements OnInit, OnDestroy {
       let index = preferenceFormArray.controls.findIndex(x => x.value == epi_id)
       preferenceFormArray.removeAt(index);
     }
+  }
+
+  doCheck(array: any, id: any) {
+    //const found = array.find((element: any) => element.id === id);
   }
 
   addNewItem(toParent: any) {

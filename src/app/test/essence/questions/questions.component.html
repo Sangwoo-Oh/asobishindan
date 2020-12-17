@@ -2,28 +2,98 @@
   <div class="wrap-essence">
     <div class="question">
       <p class="main">あなたが大学時代に頑張った<br>活動カテゴリーを選んでください。</p>
-      <p class="alert">あとエピソードを3つ選んでね</p>
+      <p class="alert">あとエピソードを<span>{{ 3 - form.value.episode.length }}</span>つ選んでね</p>
     </div>
     <div class="answer">
-      <!-- <ng-template *ngComponentOutlet="modal" (newItemEvent)="addItem($event)"></ng-template> -->
-      <app-modal *ngIf="flag == true" (newItemEvent)="addItem($event)"></app-modal>
-      <ul>
-        <li *ngFor="let episodeCat of episodeCats; index as i" ontouchstart="">
-          <a href="javascript:void(0);">
-            <ng-container *ngIf = "i == 0">{{ items_ph.length }}</ng-container>
-            <ng-container *ngIf = "i == 1">{{ items_cl.length }}</ng-container>
-            <ng-container *ngIf = "i == 2">{{ items_sc.length }}</ng-container>
-            <ng-container *ngIf = "i == 3">{{ items_ac.length }}</ng-container>
-            <ng-container *ngIf = "i == 4">{{ items_bz.length }}</ng-container>
-            <div class="label" (click)="onClick($event)" id="{{ episodeCat.id }}">{{ episodeCat.label }}</div>
-            <div class="rectangle" (click)="onClick($event)" id="{{ episodeCat.id }}"></div>
-            <!--
-            <div class="label" (click)="onSubmit($event)" id="{{ episodeCat.id }}">{{ episodeCat.label }}</div>
-            <div class="rectangle" (click)="onSubmit($event)" id="{{ episodeCat.id }}"></div>
-            -->
-          </a>
-        </li>
-      </ul>
+      <form [formGroup]="form">
+        <ul class="epi-categories">
+          <li>
+            <a href="javascript:void(0);" (click)="addClass(0)" [class]="opened[0]">
+              <div class="label" id="{{ episodeCats[0].id }}">{{ episodeCats[0].label }}</div>
+              <div class="rectangle" id="{{ episodeCats[0].id }}"></div>
+            </a>
+            <ng-container *ngIf="episodes[0]">
+              <ul>
+                <li *ngFor="let item of episodes[0]" formArrayName="episode">
+                  <input id="{{ episodeCats[0].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, $event)">
+                  <label for="{{ episodeCats[0].id }}{{ item.id }}">
+                    <div class="checkmark"></div>
+                    <p class="label">{{ item.epi_label_2 }}</p>
+                  </label>
+                </li>
+              </ul>
+            </ng-container>
+          </li>
+          <li>
+            <a href="javascript:void(0);" (click)="addClass(1)" [class]="opened[1]">
+              <div class="label" (click)="onClick($event)" id="{{ episodeCats[1].id }}">{{ episodeCats[1].label }}</div>
+              <div class="rectangle" (click)="onClick($event)" id="{{ episodeCats[1].id }}"></div>
+            </a>
+            <ng-container *ngIf="episodes[1]">
+              <ul>
+                <li *ngFor="let item of episodes[1]" formArrayName="episode">
+                  <input id="{{ episodeCats[1].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, $event)">
+                  <label for="{{ episodeCats[1].id }}{{ item.id }}">
+                    <div class="checkmark"></div>
+                    <p class="label">{{ item.epi_label_2 }}</p>
+                  </label>
+                </li>
+              </ul>
+            </ng-container>
+          </li>
+          <li>
+            <a href="javascript:void(0);" (click)="addClass(2)" [class]="opened[2]">
+              <div class="label" (click)="onClick($event)" id="{{ episodeCats[2].id }}">{{ episodeCats[2].label }}</div>
+              <div class="rectangle" (click)="onClick($event)" id="{{ episodeCats[2].id }}"></div>
+            </a>
+            <ng-container *ngIf="episodes[2]">
+              <ul>
+                <li *ngFor="let item of episodes[2]" formArrayName="episode">
+                  <input id="{{ episodeCats[2].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, $event)">
+                  <label for="{{ episodeCats[2].id }}{{ item.id }}">
+                    <div class="checkmark"></div>
+                    <p class="label">{{ item.epi_label_2 }}</p>
+                  </label>
+                </li>
+              </ul>
+            </ng-container>
+          </li>
+          <li>
+            <a href="javascript:void(0);" (click)="addClass(3)" [class]="opened[3]">
+              <div class="label" (click)="onClick($event)" id="{{ episodeCats[3].id }}">{{ episodeCats[3].label }}</div>
+              <div class="rectangle" (click)="onClick($event)" id="{{ episodeCats[3].id }}"></div>
+            </a>
+            <ng-container *ngIf="episodes[3]">
+              <ul>
+                <li *ngFor="let item of episodes[3]" formArrayName="episode">
+                  <input id="{{ episodeCats[3].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, $event)">
+                  <label for="{{ episodeCats[3].id }}{{ item.id }}">
+                    <div class="checkmark"></div>
+                    <p class="label">{{ item.epi_label_2 }}</p>
+                  </label>
+                </li>
+              </ul>
+            </ng-container>
+          </li>
+          <li>
+            <a href="javascript:void(0);" (click)="addClass(4)" [class]="opened[4]">
+              <div class="label" (click)="onClick($event)" id="{{ episodeCats[4].id }}">{{ episodeCats[4].label }}</div>
+              <div class="rectangle" (click)="onClick($event)" id="{{ episodeCats[4].id }}"></div>
+            </a>
+            <ng-container *ngIf="episodes[4]">
+              <ul>
+                <li *ngFor="let item of episodes[4]" formArrayName="episode">
+                  <input id="{{ episodeCats[4].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, $event)">
+                  <label for="{{ episodeCats[4].id }}{{ item.id }}">
+                    <div class="checkmark"></div>
+                    <p class="label">{{ item.epi_label_2 }}</p>
+                  </label>
+                </li>
+              </ul>
+            </ng-container>
+          </li>
+        </ul>
+      </form>
     </div>
   </div>
 </main>
