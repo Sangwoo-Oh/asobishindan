@@ -5,19 +5,50 @@
       <p class="alert">それぞれから必ず一つは選んでね</p>
     </div>
     <div class="preferences">
-      <form class="" action="http://localhost:4200/test/non-essence" method="get">
+      <form [formGroup]="form">
         <ul>
-          <li *ngFor="let selectedEpisode of this.selectedEpisode; let i = index;">
-            <p class="episode" >{{ selectedEpisode.epi_label }}{{ this.toChild(selectedEpisode.id) }}</p>
-            <app-preference-list></app-preference-list>
+          <li>
+            <p class="episode" >{{ selectedEpisode[0].label }}{{ this.toChild(selectedEpisode[0].id) }}</p>
+            <ul class="preference-list">
+              <li *ngFor="let data of this.data[0]" formArrayName="preference">
+                <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.pref_label, data.id, $event)">
+                <label for="{{data.epi_id}}-{{ data.id }}">
+                  <div class="checkmark"></div>
+                  <p class="label">{{ data.pref_label }}</p>
+                </label>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p class="episode" >{{ selectedEpisode[1].label }}{{ this.toChild(selectedEpisode[1].id) }}</p>
+            <ul class="preference-list">
+              <li *ngFor="let data of this.data[1]" formArrayName="preference">
+                <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.pref_label, data.id, $event)">
+                <label for="{{data.epi_id}}-{{ data.id }}">
+                  <div class="checkmark"></div>
+                  <p class="label">{{ data.pref_label }}</p>
+                </label>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p class="episode" >{{ selectedEpisode[2].label }}{{ this.toChild(selectedEpisode[2].id) }}</p>
+            <ul class="preference-list">
+              <li *ngFor="let data of this.data[2]" formArrayName="preference">
+                <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.pref_label, data.id, $event)">
+                <label for="{{data.epi_id}}-{{ data.id }}">
+                  <div class="checkmark"></div>
+                  <p class="label">{{ data.pref_label }}</p>
+                </label>
+              </li>
+            </ul>
           </li>
         </ul>
-        <input type="button" name="" value="送信" (click)="submit()">
       </form>
     </div>
   </div>
 </main>
 
 <footer>
-  <a href="#" (click)="getArray()" class="next" routerLink="/test/non-essence">非本質質問へ進む</a>
+  <button class="next" type="button" name="button" ontouchstart="" (click)="submit()">非本質質問へ進む</button>
 </footer>

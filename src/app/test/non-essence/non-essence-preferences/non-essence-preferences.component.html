@@ -10,7 +10,7 @@
           <li>
             <ul class="preference-list" formArrayName="preference">
               <li *ngFor="let data of datas">
-                <input id="{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.id, $event)">
+                <input id="{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.pref_label ,data.id, $event)">
                 <label for="{{ data.id }}">
                   <div class="checkmark"></div>
                   <p class="label">{{ data.pref_label }}</p>

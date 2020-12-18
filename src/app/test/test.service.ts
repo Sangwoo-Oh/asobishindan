@@ -17,6 +17,8 @@ export class TestService {
   pref: string
   datas: any[]
   modalData: any
+  essencePrefs: any;
+  nonessencePrefs: any;
 
   constructor(
     private http: HttpClient
@@ -67,7 +69,6 @@ export class TestService {
   **/
   public setEpiArrayData(data: any) {
     this.epiData = data
-    console.log(this.epiData)
   }
   public getEpiArrayData():any{
     return this.epiData;
@@ -103,5 +104,27 @@ export class TestService {
   **/
   public getAllPreferences(): Observable<AllPreferenceModel>{
     return this.http.get<AllPreferenceModel>(URL_PROD + '/api/preferences');
+  }
+
+
+  /**
+   * 本質質問嗜好性データの保存
+  **/
+  public saveEssencePreferences(essencePrefs: any) {
+    this.essencePrefs = essencePrefs;
+    console.log(essencePrefs)
+  }
+  public getEssencePreferences() {
+    return this.essencePrefs;
+  }
+  /**
+   * 非本質問嗜好性データの保存
+  **/
+  public saveNonEssencePreferences(nonessencePrefs: any) {
+    this.nonessencePrefs = nonessencePrefs;
+    console.log(nonessencePrefs)
+  }
+  public getNonEssencePreferences() {
+    return this.nonessencePrefs;
   }
 }

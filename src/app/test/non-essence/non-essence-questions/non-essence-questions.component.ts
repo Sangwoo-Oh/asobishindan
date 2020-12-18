@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-non-essence-questions',
@@ -15,8 +15,8 @@ export class NonEssenceQuestionsComponent implements OnInit {
     this.form = this.formBuilder.group({
       options: this.formBuilder.array([
         {
-          group: '',
-          asobi: ''
+          group: ['', Validators.required],
+          asobi: ['', Validators.required]
         }
       ])
     });

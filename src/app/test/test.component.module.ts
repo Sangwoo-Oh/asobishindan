@@ -9,12 +9,14 @@ import { NonEssenceComponent } from './non-essence/non-essence.component';
 import { BasicComponent } from './basic/basic.component';
 import { EssenceModule } from "./essence/essence.component.module";
 import { NonEssenceModule } from "./non-essence/non-essence.component.module";
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
     EssenceComponent,
     NonEssenceComponent,
-    BasicComponent
+    BasicComponent,
+    ResultComponent
   ],
   imports: [
     CommonModule,

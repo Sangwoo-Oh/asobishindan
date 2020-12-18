@@ -46,11 +46,16 @@ export class NonEssencePreferencesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChange(pref_id: number, event: any) {
+  onChange(pref_label: string, pref_id: number, event: any) {
     let isChecked = <HTMLInputElement>event.target.checked;
     const preferenceFormArray = <FormArray>this.form.controls.preference;
     if (isChecked) {
-      preferenceFormArray.push(new FormControl(pref_id));
+      preferenceFormArray.push(new FormControl(
+        {
+          label: pref_label,
+          id: pref_id
+        }
+      ));
     } else {
       let index = preferenceFormArray.controls.findIndex(x => x.value == pref_id)
       preferenceFormArray.removeAt(index);
@@ -58,16 +63,16 @@ export class NonEssencePreferencesComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.form.value['preference']);
+    this.testService.saveNonEssencePreferences(this.form.value.preference)
     this.router.navigate(
-      ['/recommend'],
+      ['/test/result']/*,
       {
         queryParams: {
           id: [
             this.form.value['preference']
           ]
         }
-      }
+      }*/
     );
   }
 }

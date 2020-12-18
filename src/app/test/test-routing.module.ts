@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { TestComponent } from './test.component';
+import { ResultComponent } from './result/result.component';
 /*
 import { EssenceComponent } from "./essence/essence.component";
 import { QuestionsComponent } from "./essence/questions/questions.component";
@@ -12,7 +13,13 @@ import { PreferencesComponent } from './essence/preferences/preferences.componen
 const routes: Routes = [
   {
     path: 'test',
-    component: TestComponent
+    component: TestComponent,
+    children: [
+      {
+        path: 'result',
+        component: ResultComponent
+      }
+    ]
   }
 ];
 

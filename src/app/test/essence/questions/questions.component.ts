@@ -118,7 +118,6 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     this.testService.getEpisode(event.target.id).subscribe(
       response =>  {
         this.data = response;
-        console.log(response);
         this.testService.setData(this.data);
       },
       err => alert(err)
@@ -159,11 +158,17 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     }
   }
 
-  onChange(epi_label_2: string, event: any) {
+  onChange(epi_label_2: string, id: number, event: any) {
     let isChecked = <HTMLInputElement>event.target.checked;
     const preferenceFormArray = <FormArray>this.form.controls.episode;
     if (isChecked) {
-      preferenceFormArray.push(new FormControl(epi_label_2));
+      preferenceFormArray.push(new FormControl(
+        {
+          label: epi_label_2,
+          id: id
+        }
+      ));
+
     } else {
       let index = preferenceFormArray.controls.findIndex(x => x.value == epi_label_2)
       preferenceFormArray.removeAt(index);
