@@ -1,4 +1,37 @@
-<p>嗜好性最終選択画面です</p>
-
-<pre>{{ essencePrefs | json }}</pre>
-<pre>{{ nonessencePrefs | json }}</pre>
+<main>
+  <div class="wrap-result">
+    <div class="question">
+      <p class="main">質問結果をもとにあなたに合いそうな遊びの楽しみ方の候補を出しました</p>
+      <p class="alert">自分に合いそうだと思う遊びの楽しみ方を<span>{{ 3 - form.value.preference.length }}</span>つ選んでください</p>
+    </div>
+    <div class="preferences">
+      <form [formGroup]="form">
+        <ul>
+          <li>
+            <ul class="preference-list" formArrayName="preference">
+              <li *ngFor="let data of allPrefs">
+                <input id="{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.pref_label ,data.id, $event)" [checked]="checked">
+                <label for="{{ data.id }}">
+                  <div class="checkmark"></div>
+                  <div class="flex">
+                    <p class="count"><span>{{ data.count }}</span>回選択されています！</p>
+                    <p class="label">{{ data.pref_label }}</p>
+                  </div>
+                </label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div class="overlay" *ngIf="form.value.preference.length >= 3">
+      <ul>
+        <li *ngFor="let item of form.value.preference">{{ item.label }}</li>
+      </ul>
+      <footer class="half">
+        <button class="back" type="button" name="button" (click)="reset()">選び直す</button>
+        <button class="next" type="button" name="button" (click)="next()">次へ</button>
+      </footer>
+    </div>
+  </div>
+</main>

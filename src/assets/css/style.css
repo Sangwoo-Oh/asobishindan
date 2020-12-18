@@ -715,6 +715,119 @@ main .wrap-non-essence .preferences {
 
 /**** 嗜好性選択 ****/
 /********************
+  診断フェーズ嗜好性結果
+********************/
+/**** 質問 ****/
+main .wrap-result .question {
+  max-width: 90%;
+  margin: 0 auto; }
+  main .wrap-result .question p.main {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    margin: 12px; }
+  main .wrap-result .question p.alert {
+    font-size: 1.1em;
+    text-align: center;
+    margin: 5px; }
+    main .wrap-result .question p.alert span {
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #F95344; }
+
+main .wrap-result .answer {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 70px; }
+  main .wrap-result .answer ul li .content-area {
+    background-color: #F3F3F3;
+    padding: 15px; }
+    main .wrap-result .answer ul li .content-area .q-mark {
+      font-weight: bold;
+      font-size: 1.5em; }
+    main .wrap-result .answer ul li .content-area .q-title {
+      font-weight: bold;
+      font-size: 1.4em;
+      margin: 7px 0; }
+    main .wrap-result .answer ul li .content-area textarea {
+      resize: none;
+      border: 1px solid #eee;
+      width: calc(100% - 18px);
+      height: 70px;
+      border-radius: 5px;
+      font-size: 1.3em;
+      padding: 9px; }
+  main .wrap-result .answer .add-q {
+    background-color: #FFCD1E;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.4em;
+    margin-top: 20px;
+    border-radius: 5px; }
+  main .wrap-result .answer .remove-q {
+    background-color: #F3F3F3;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px; }
+
+main .wrap-result .preferences {
+  max-width: 90%;
+  margin: 0 auto; }
+  main .wrap-result .preferences ul li .episode {
+    font-size: 1.7em;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    border-bottom: solid 1px #000; }
+  main .wrap-result .preferences ul li ul.preference-list li {
+    padding: 5px 0px;
+    display: flex;
+    align-items: center; }
+    main .wrap-result .preferences ul li ul.preference-list li input {
+      display: none; }
+      main .wrap-result .preferences ul li ul.preference-list li input:checked + label .checkmark {
+        border-left: 3px solid #F95344;
+        border-bottom: 3px solid #F95344; }
+      main .wrap-result .preferences ul li ul.preference-list li input:checked + label .label {
+        color: #F95344; }
+    main .wrap-result .preferences ul li ul.preference-list li label {
+      display: flex;
+      align-items: center; }
+      main .wrap-result .preferences ul li ul.preference-list li label .checkmark {
+        width: 13px;
+        height: 5px;
+        border-left: 3px solid #C4C4C4;
+        border-bottom: 3px solid #C4C4C4;
+        transform: rotate(-45deg); }
+      main .wrap-result .preferences ul li ul.preference-list li label .flex .count {
+        font-size: 1em;
+        margin-left: 15px; }
+        main .wrap-result .preferences ul li ul.preference-list li label .flex .count span {
+          color: #F95344;
+          font-weight: bold;
+          font-size: 1.2em; }
+      main .wrap-result .preferences ul li ul.preference-list li label .flex .label {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-left: 15px; }
+
+main .wrap-result .overlay {
+  position: absolute;
+  top: 64.14px;
+  width: 100%;
+  height: calc(100vh - 64.14px);
+  background: rgba(0, 0, 0, 0.8); }
+  main .wrap-result .overlay ul li {
+    font-size: 1.5em;
+    color: #FFF; }
+
+/**** 嗜好性選択 ****/
+/********************
   提案フェーズ
 ********************/
 /**** 質問 ****/
