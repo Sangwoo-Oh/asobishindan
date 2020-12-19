@@ -27,6 +27,72 @@ header {
     header .logo img {
       width: 100%; }
 
+.progress-bar {
+  width: 55%;
+  margin: 20px auto; }
+  .progress-bar .steps {
+    margin-bottom: 5px; }
+    .progress-bar .steps ul {
+      display: flex;
+      justify-content: space-between; }
+      .progress-bar .steps ul li {
+        width: calc(100% / 3);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .progress-bar .steps ul li p {
+          font-size: 1em; }
+        .progress-bar .steps ul li.now {
+          font-size: 1.2em;
+          font-weight: bold; }
+  .progress-bar .mark ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .progress-bar .mark ul li {
+      width: calc(100% / 3);
+      text-align: center; }
+      .progress-bar .mark ul li span {
+        display: block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #FFCD1E;
+        border: 2px solid #FFF;
+        margin: 0 auto; }
+        .progress-bar .mark ul li span.checkmark {
+          display: none; }
+      .progress-bar .mark ul li.past {
+        position: relative; }
+        .progress-bar .mark ul li.past span {
+          width: 17px;
+          height: 17px; }
+          .progress-bar .mark ul li.past span.checkmark {
+            height: 9px;
+            width: 4px;
+            display: block;
+            border-radius: inherit;
+            background: transparent;
+            border: inherit;
+            margin: 0 auto;
+            position: absolute;
+            top: 3px;
+            right: 0;
+            left: 0;
+            border-bottom: solid 3px #FFF;
+            border-right: solid 3px #FFF;
+            transform: rotate(45deg); }
+      .progress-bar .mark ul li.now span {
+        width: 17px;
+        height: 17px; }
+  .progress-bar .line {
+    width: 70%;
+    height: 3px;
+    background: #FFCD1E;
+    margin: 0 auto;
+    margin-top: -12px; }
+
 main {
   margin-bottom: 60px; }
 

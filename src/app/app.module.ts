@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 
 import { CommonComponent } from './common/common.component';
 import { HeaderComponent } from './common/header/header.component';
+import { ProgressBarComponent } from './common/progress-bar/progress-bar.component';
+
 
 import { IntroComponent } from './intro/intro.component';
 import { Intro01Component } from './intro/intro01/intro01.component';
@@ -59,6 +61,7 @@ import { TestModule } from './test/test.component.module';
     RecommendListComponent,
     CommonComponent,
     HeaderComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

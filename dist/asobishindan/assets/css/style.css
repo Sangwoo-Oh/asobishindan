@@ -27,6 +27,70 @@ header {
     header .logo img {
       width: 100%; }
 
+.progress-bar {
+  width: 55%;
+  margin: 20px auto; }
+  .progress-bar .steps {
+    margin-bottom: 5px; }
+    .progress-bar .steps ul {
+      display: flex;
+      justify-content: space-between; }
+      .progress-bar .steps ul li {
+        width: calc(100% / 3);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .progress-bar .steps ul li p {
+          font-size: 1em; }
+        .progress-bar .steps ul li.now {
+          font-size: 1.2em;
+          font-weight: bold; }
+  .progress-bar .mark ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .progress-bar .mark ul li {
+      width: calc(100% / 3);
+      text-align: center; }
+      .progress-bar .mark ul li span {
+        display: block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #FFCD1E;
+        border: 2px solid #FFF;
+        margin: 0 auto; }
+      .progress-bar .mark ul li.past {
+        position: relative; }
+        .progress-bar .mark ul li.past span {
+          width: 17px;
+          height: 17px; }
+        .progress-bar .mark ul li.past span.checkmark {
+          height: 9px;
+          width: 4px;
+          display: block;
+          border-radius: inherit;
+          background: transparent;
+          border: inherit;
+          margin: 0 auto;
+          position: absolute;
+          top: 3px;
+          right: 0;
+          left: 0;
+          border-bottom: solid 3px #FFF;
+          border-right: solid 3px #FFF;
+          transform: rotate(45deg); }
+      .progress-bar .mark ul li.now span {
+        width: 17px;
+        height: 17px; }
+  .progress-bar .line {
+    width: 70%;
+    height: 3px;
+    background: #FFCD1E;
+    margin: 0 auto;
+    margin-top: -12px; }
+
 main {
   margin-bottom: 60px; }
 
@@ -422,28 +486,59 @@ main .wrap-essence .question {
       font-weight: bold;
       color: #F95344; }
 
-main .wrap-essence .answer ul li {
+main .wrap-essence .answer ul.epi-categories > li {
   background-color: #F3F3F3;
   transition: .1s ease; }
-  main .wrap-essence .answer ul li:active {
-    background-color: #777777; }
-  main .wrap-essence .answer ul li:not(last-child) {
+  main .wrap-essence .answer ul.epi-categories > li:not(last-child) {
     border-bottom: solid 1px #000; }
-  main .wrap-essence .answer ul li a {
+  main .wrap-essence .answer ul.epi-categories > li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 14px 20px; }
-    main .wrap-essence .answer ul li a .label {
+    main .wrap-essence .answer ul.epi-categories > li a .label {
       font-size: 2em;
       font-weight: bold;
       width: 95%; }
-    main .wrap-essence .answer ul li a .rectangle {
+    main .wrap-essence .answer ul.epi-categories > li a .rectangle {
       width: 18px;
       height: 18px;
       border-left: 4px solid #C4C4C4;
       border-bottom: 4px solid #C4C4C4;
       transform: rotate(225deg); }
+    main .wrap-essence .answer ul.epi-categories > li a.opened .rectangle {
+      transform: rotate(315deg); }
+    main .wrap-essence .answer ul.epi-categories > li a.opened + ul {
+      display: block; }
+    main .wrap-essence .answer ul.epi-categories > li a.closed .rectangle {
+      transform: rotate(225deg); }
+    main .wrap-essence .answer ul.epi-categories > li a.closed + ul {
+      display: none; }
+  main .wrap-essence .answer ul.epi-categories > li > ul li {
+    background-color: #fff;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center; }
+    main .wrap-essence .answer ul.epi-categories > li > ul li input {
+      display: none; }
+      main .wrap-essence .answer ul.epi-categories > li > ul li input:checked + label .checkmark {
+        border-left: 3px solid #F95344;
+        border-bottom: 3px solid #F95344; }
+      main .wrap-essence .answer ul.epi-categories > li > ul li input:checked + label .label {
+        color: #F95344; }
+    main .wrap-essence .answer ul.epi-categories > li > ul li label {
+      display: flex;
+      align-items: center; }
+      main .wrap-essence .answer ul.epi-categories > li > ul li label .checkmark {
+        width: 16px;
+        height: 7px;
+        border-left: 3px solid #C4C4C4;
+        border-bottom: 3px solid #C4C4C4;
+        transform: rotate(-45deg); }
+      main .wrap-essence .answer ul.epi-categories > li > ul li label .label {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-left: 15px; }
 
 main .wrap-essence .episodes ul li {
   padding: 14px 20px;
@@ -578,12 +673,13 @@ main .wrap-essence .overlay {
             font-weight: bold;
             margin-left: 15px; }
     main .wrap-essence .overlay .modal #close_button {
+      margin-top: 20px;
       background-color: #E4E4E4;
       color: #595957;
       display: block;
       text-align: center;
       padding: 7px;
-      font-size: 1.2em;
+      font-size: 0.8em;
       transition: .1s ease;
       width: 100%;
       border: none;
@@ -680,6 +776,119 @@ main .wrap-non-essence .preferences {
         font-size: 1.5em;
         font-weight: bold;
         margin-left: 15px; }
+
+/**** 嗜好性選択 ****/
+/********************
+  診断フェーズ嗜好性結果
+********************/
+/**** 質問 ****/
+main .wrap-result .question {
+  max-width: 90%;
+  margin: 0 auto; }
+  main .wrap-result .question p.main {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    margin: 12px; }
+  main .wrap-result .question p.alert {
+    font-size: 1.1em;
+    text-align: center;
+    margin: 5px; }
+    main .wrap-result .question p.alert span {
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #F95344; }
+
+main .wrap-result .answer {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 70px; }
+  main .wrap-result .answer ul li .content-area {
+    background-color: #F3F3F3;
+    padding: 15px; }
+    main .wrap-result .answer ul li .content-area .q-mark {
+      font-weight: bold;
+      font-size: 1.5em; }
+    main .wrap-result .answer ul li .content-area .q-title {
+      font-weight: bold;
+      font-size: 1.4em;
+      margin: 7px 0; }
+    main .wrap-result .answer ul li .content-area textarea {
+      resize: none;
+      border: 1px solid #eee;
+      width: calc(100% - 18px);
+      height: 70px;
+      border-radius: 5px;
+      font-size: 1.3em;
+      padding: 9px; }
+  main .wrap-result .answer .add-q {
+    background-color: #FFCD1E;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.4em;
+    margin-top: 20px;
+    border-radius: 5px; }
+  main .wrap-result .answer .remove-q {
+    background-color: #F3F3F3;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px; }
+
+main .wrap-result .preferences {
+  max-width: 90%;
+  margin: 0 auto; }
+  main .wrap-result .preferences ul li .episode {
+    font-size: 1.7em;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    border-bottom: solid 1px #000; }
+  main .wrap-result .preferences ul li ul.preference-list li {
+    padding: 5px 0px;
+    display: flex;
+    align-items: center; }
+    main .wrap-result .preferences ul li ul.preference-list li input {
+      display: none; }
+      main .wrap-result .preferences ul li ul.preference-list li input:checked + label .checkmark {
+        border-left: 3px solid #F95344;
+        border-bottom: 3px solid #F95344; }
+      main .wrap-result .preferences ul li ul.preference-list li input:checked + label .label {
+        color: #F95344; }
+    main .wrap-result .preferences ul li ul.preference-list li label {
+      display: flex;
+      align-items: center; }
+      main .wrap-result .preferences ul li ul.preference-list li label .checkmark {
+        width: 13px;
+        height: 5px;
+        border-left: 3px solid #C4C4C4;
+        border-bottom: 3px solid #C4C4C4;
+        transform: rotate(-45deg); }
+      main .wrap-result .preferences ul li ul.preference-list li label .flex .count {
+        font-size: 1em;
+        margin-left: 15px; }
+        main .wrap-result .preferences ul li ul.preference-list li label .flex .count span {
+          color: #F95344;
+          font-weight: bold;
+          font-size: 1.2em; }
+      main .wrap-result .preferences ul li ul.preference-list li label .flex .label {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-left: 15px; }
+
+main .wrap-result .overlay {
+  position: absolute;
+  top: 64.14px;
+  width: 100%;
+  height: calc(100vh - 64.14px);
+  background: rgba(0, 0, 0, 0.8); }
+  main .wrap-result .overlay ul li {
+    font-size: 1.5em;
+    color: #FFF; }
 
 /**** 嗜好性選択 ****/
 /********************
