@@ -1,6 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { RecommendRoutingModule } from './recommend-routing.module';
+//import { RecommendComponent } from './recommend.component';
 import { RecommendListComponent } from './recommend-list/recommend-list.component';
 import { RecommendDetailComponent } from './recommend-detail/recommend-detail.component';
 
@@ -8,10 +10,13 @@ import { RecommendDetailComponent } from './recommend-detail/recommend-detail.co
 
 @NgModule({
   declarations: [
+    //RecommendComponent,
     RecommendListComponent,
     RecommendDetailComponent
   ],
   imports: [
+    CommonModule,
+    RecommendRoutingModule,
   ],
   providers: [],
   bootstrap: []

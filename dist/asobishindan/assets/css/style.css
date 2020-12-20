@@ -61,26 +61,28 @@ header {
         background: #FFCD1E;
         border: 2px solid #FFF;
         margin: 0 auto; }
+        .progress-bar .mark ul li span.checkmark {
+          display: none; }
       .progress-bar .mark ul li.past {
         position: relative; }
         .progress-bar .mark ul li.past span {
           width: 17px;
           height: 17px; }
-        .progress-bar .mark ul li.past span.checkmark {
-          height: 9px;
-          width: 4px;
-          display: block;
-          border-radius: inherit;
-          background: transparent;
-          border: inherit;
-          margin: 0 auto;
-          position: absolute;
-          top: 3px;
-          right: 0;
-          left: 0;
-          border-bottom: solid 3px #FFF;
-          border-right: solid 3px #FFF;
-          transform: rotate(45deg); }
+          .progress-bar .mark ul li.past span.checkmark {
+            height: 9px;
+            width: 4px;
+            display: block;
+            border-radius: inherit;
+            background: transparent;
+            border: inherit;
+            margin: 0 auto;
+            position: absolute;
+            top: 3px;
+            right: 0;
+            left: 0;
+            border-bottom: solid 3px #FFF;
+            border-right: solid 3px #FFF;
+            transform: rotate(45deg); }
       .progress-bar .mark ul li.now span {
         width: 17px;
         height: 17px; }

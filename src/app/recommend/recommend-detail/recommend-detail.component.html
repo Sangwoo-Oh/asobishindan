@@ -2,7 +2,7 @@
   <div class="wrap-recommend">
     <div class="recommend-detail">
       <div class="fv">
-        <img src="../assets/img/recommend_bg_01.jpg" alt="">
+        <img src="../assets/img/{{ actData.act_main_img }}.jpg" alt="">
       </div>
       <div class="info-wrap">
         <div class="top">
@@ -21,50 +21,18 @@
         </div>
         <div class="bottom">
           <ul>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
-            <li>嗜好性ラベル</li>
+            <li *ngFor="let pref of actData.preferences">{{ pref.label }}</li>
           </ul>
         </div>
       </div>
       <ul class="blocks">
-        <li>
-          <h2 class="heading">これもちっちゃい。見出し見出し見出し</h2>
+        <li *ngFor="let info of actData.act_info">
+          <h2 class="heading">{{ info.act_heading }}</h2>
           <div class="image">
             <img src="../assets/img/recommend_datail_01.jpg" alt="">
           </div>
           <div class="content">
-            <p>14pxってちっちゃすぎないか。こんだけの量の魅力あるっけ。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。</p>
-          </div>
-        </li>
-        <li>
-          <h2 class="heading">これもちっちゃい。見出し見出し見出し</h2>
-          <div class="image">
-            <img src="../assets/img/recommend_datail_01.jpg" alt="">
-          </div>
-          <div class="content">
-            <p>14pxってちっちゃすぎないか。こんだけの量の魅力あるっけ。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。</p>
-          </div>
-        </li>
-        <li>
-          <h2 class="heading">これもちっちゃい。見出し見出し見出し</h2>
-          <div class="image">
-            <img src="../assets/img/recommend_datail_01.jpg" alt="">
-          </div>
-          <div class="content">
-            <p>14pxってちっちゃすぎないか。こんだけの量の魅力あるっけ。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。</p>
-          </div>
-        </li>
-        <li>
-          <h2 class="heading">これもちっちゃい。見出し見出し見出し</h2>
-          <div class="image">
-            <img src="../assets/img/recommend_datail_01.jpg" alt="">
-          </div>
-          <div class="content">
-            <p>14pxってちっちゃすぎないか。こんだけの量の魅力あるっけ。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。これはダミー文章です。</p>
+            <p>{{ info.act_text }}</p>
           </div>
         </li>
       </ul>

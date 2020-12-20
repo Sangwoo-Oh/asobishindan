@@ -94,20 +94,12 @@ const routes: Routes = [
       },
     ]
   },
+  /*
   {
     path: 'recommend',
-    component: RecommendComponent,
-    children: [
-      {
-        path: '',
-        component: RecommendListComponent,
-      },
-      {
-        path: ':id',
-        component: RecommendDetailComponent
-      }
-    ]
+    component: RecommendComponent
   }
+  */
 ];
 
 @NgModule({

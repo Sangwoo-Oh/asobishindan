@@ -1,11 +1,11 @@
 <main>
   <div class="wrap-recommend">
     <div class="recommend-list">
-      <p class="main">あなたにおすすめする遊びを<br><span>5</span>件見つけました</p>
+      <p class="main">あなたにおすすめする遊びを<br><span>{{ activity.length }}</span>件見つけました</p>
       <ul class="recommendations">
-        <li class="recommend-item" style="background-image: url('../assets/img/recommend_bg_01.jpg')" routerLink="/recommend/1">
+        <li *ngFor="let act of activity; let i = index" class="recommend-item" [style.background-image]="'url(../assets/img/' + act.act_main_img + '.jpg)'" routerLink="/recommend/1" (click)="onClick(act)">
           <div class="top">
-            <p class="title">あなたにしか取れない写真を撮りに行こう</p>
+            <p class="title">{{ act.act_label }}</p>
             <div class="info">
               <span>あなたへのおすすめ度</span>
               <span></span>
@@ -13,69 +13,7 @@
           </div>
           <div class="bottom">
             <ul>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-            </ul>
-          </div>
-        </li>
-        <li class="recommend-item" style="background-image: url('../assets/img/recommend_bg_02.jpg')" routerLink="/recommend/1">
-          <div class="top">
-            <p class="title">自分のお部屋を自分なりにアレンジ！</p>
-            <div class="info">
-              <span>あなたへのおすすめ度</span>
-              <span></span>
-            </div>
-          </div>
-          <div class="bottom">
-            <ul>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-            </ul>
-          </div>
-        </li>
-        <li class="recommend-item" style="background-image: url('../assets/img/recommend_bg_01.jpg')" routerLink="/recommend/1">
-          <div class="top">
-            <p class="title">あなたにしか取れない写真を撮りに行こう</p>
-            <div class="info">
-              <span>あなたへのおすすめ度</span>
-              <span></span>
-            </div>
-          </div>
-          <div class="bottom">
-            <ul>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-            </ul>
-          </div>
-        </li>
-        <li class="recommend-item" style="background-image: url('../assets/img/recommend_bg_02.jpg')" routerLink="/recommend/1">
-          <div class="top">
-            <p class="title">自分のお部屋を自分なりにアレンジ！</p>
-            <div class="info">
-              <span>あなたへのおすすめ度</span>
-              <span></span>
-            </div>
-          </div>
-          <div class="bottom">
-            <ul>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
-              <li>嗜好性ラベル</li>
+              <li *ngFor="let pref of act.preferences" >{{ pref.label }}</li>
             </ul>
           </div>
         </li>

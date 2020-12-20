@@ -31,10 +31,10 @@ import { NonEssenceQuestionsComponent } from './test/non-essence/non-essence-que
 import { NonEssencePreferencesComponent } from './test/non-essence/non-essence-preferences/non-essence-preferences.component';
 
 import { RecommendComponent } from './recommend/recommend.component';
-import { RecommendDetailComponent } from './recommend/recommend-detail/recommend-detail.component';
-import { RecommendListComponent } from './recommend/recommend-list/recommend-list.component';
 
 import { TestModule } from './test/test.component.module';
+import { RecommendModule } from './recommend/recommend.component.module';
+
 
 
 
@@ -46,6 +46,7 @@ import { TestModule } from './test/test.component.module';
     Intro02Component,
     Intro03Component,
     TestComponent,
+    RecommendComponent,
     //EssenceComponent,
     //QuestionsComponent,
     //EpisodesComponent,
@@ -56,9 +57,6 @@ import { TestModule } from './test/test.component.module';
     //NonEssenceQuestionsComponent,
     //NonEssencePreferencesComponent,
     // BasicComponent,
-    RecommendComponent,
-    RecommendDetailComponent,
-    RecommendListComponent,
     CommonComponent,
     HeaderComponent,
     ProgressBarComponent
@@ -71,6 +69,7 @@ import { TestModule } from './test/test.component.module';
     FormsModule,
     ReactiveFormsModule,
     TestModule,
+    RecommendModule
   ],
   providers: [],
   bootstrap: [AppComponent]

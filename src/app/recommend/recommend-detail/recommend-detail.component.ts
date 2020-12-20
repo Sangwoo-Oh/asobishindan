@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecommendService } from "../recommend.service";
 
 @Component({
   selector: 'app-recommend-detail',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommend-detail.component.css']
 })
 export class RecommendDetailComponent implements OnInit {
+  actData: any;
 
-  constructor() { }
+  constructor(
+    private recommendService: RecommendService
+  ) {
+    this.actData = this.recommendService.getData();
+  }
 
   ngOnInit(): void {
   }
