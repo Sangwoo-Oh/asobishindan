@@ -3,7 +3,7 @@
     <div class="recommend-list">
       <p class="main">あなたにおすすめする遊びを<br><span>{{ activity.length }}</span>件見つけました</p>
       <ul class="recommendations">
-        <li *ngFor="let act of activity; let i = index" class="recommend-item" [style.background-image]="'url(../assets/img/' + act.act_main_img + '.jpg)'" routerLink="/recommend/1" (click)="onClick(act)">
+        <li *ngFor="let act of activity[0]; let i = index" class="recommend-item" [style.background-image]="'url(../assets/img/' + act.act_main_img + '.jpg)'" routerLink="/recommend/{{ act.act_id }}" (click)="onClick(act)">
           <div class="top">
             <p class="title">{{ act.act_label }}</p>
             <div class="info">
@@ -13,7 +13,7 @@
           </div>
           <div class="bottom">
             <ul>
-              <li *ngFor="let pref of act.preferences" >{{ pref.label }}</li>
+              <li *ngFor="let pref of act.preferences" >{{ pref.pref_label }}</li>
             </ul>
           </div>
         </li>

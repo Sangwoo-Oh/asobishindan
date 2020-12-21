@@ -113,7 +113,17 @@ export class ResultComponent implements OnInit {
     this.form.value.preference.length = 0;
   }
   next() {
-    this.router.navigate(['/recommend'])
+    this.router.navigate(
+      ['/recommend'],
+      {
+        queryParams: {
+          cor_pref1: this.form.value.preference[0].id,
+          cor_pref2: this.form.value.preference[1].id,
+          cor_pref3: this.form.value.preference[2].id,
+        }
+      }
+    )
+
   }
 
 }
