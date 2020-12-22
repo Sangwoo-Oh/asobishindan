@@ -13,10 +13,8 @@ export class RecommendDetailComponent implements OnInit {
     private recommendService: RecommendService
   ) {
     this.actData = this.recommendService.getData();
-    console.log(this.actData)
   }
 
   ngOnInit(): void {
   }
-
 }

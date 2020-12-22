@@ -3,6 +3,8 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { RecommendModel } from './model/recommend.model';
 import { PreferenceModel } from './model/preference.model';
+import { ActInfoModel } from './model/actinfo.model';
+
 
 
 
@@ -13,7 +15,7 @@ const URL_TEST = 'http://127.0.0.1:8000';
 export class RecommendService {
   data: any;
   prefs: any;
-
+  actinfos: any;
   constructor(
     private http: HttpClient
   ) {
@@ -42,5 +44,17 @@ export class RecommendService {
   }
   public getPrefsData():any{
     return this.prefs;
+  }
+  /**
+   * アクティビティIDからアクティビティ情報を取得
+  **/
+  public getActInfo(id: number): Observable<ActInfoModel> {
+    return this.http.get<ActInfoModel>(URL_PROD + '/api/getActInfo/' + id)
+  }
+  public setActInfoData(actinfos: any) {
+    this.actinfos = actinfos
+  }
+  public getActInfoData():any{
+    return this.actinfos;
   }
 }

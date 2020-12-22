@@ -4,4 +4,5 @@ export interface RecommendModel {
   act_copy: string;
   act_main_img: string;
   preferences: [];
+  actinfos: [];
 }
