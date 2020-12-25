@@ -1000,17 +1000,17 @@ main .wrap-recommend .recommend-detail .blocks {
   display: block;
   margin: 0 auto; }
   main .wrap-recommend .recommend-detail .blocks li {
-    margin-bottom: 30px; }
+    margin-bottom: 15px; }
     main .wrap-recommend .recommend-detail .blocks li .heading {
-      font-size: 1.3em;
+      font-size: 1.5em;
       font-weight: bold;
-      margin-bottom: 30px; }
+      margin-bottom: 15px; }
     main .wrap-recommend .recommend-detail .blocks li .image {
-      margin-bottom: 30px; }
+      margin-bottom: 15px; }
       main .wrap-recommend .recommend-detail .blocks li .image img {
         width: 100%;
         display: block; }
     main .wrap-recommend .recommend-detail .blocks li .content p {
-      font-size: 1.1em; }
+      font-size: 1.2em; }
 
 /**** 嗜好性選択 ****/

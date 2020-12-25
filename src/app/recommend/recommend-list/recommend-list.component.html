@@ -1,14 +1,14 @@
 <main>
   <div class="wrap-recommend">
     <div class="recommend-list">
-      <p class="main">あなたにおすすめする遊びを<br><span>{{ activity.length }}</span>件見つけました</p>
+      <p class="main">あなたにおすすめする遊びを<br><span>{{ data.length }}</span>件見つけました</p>
       <ul class="recommendations">
         <li *ngFor="let act of activity[0]; let i = index" class="recommend-item" [style.background-image]="'url(../assets/img/' + act.act_main_img + '.jpg)'" routerLink="/recommend/{{ act.act_id }}" (click)="onClick(act)">
           <div class="top">
             <p class="title">{{ act.act_label }}</p>
             <div class="info">
               <span>あなたへのおすすめ度</span>
-              <span></span>
+              <span>{{ act.act_point }}</span>
             </div>
           </div>
           <div class="bottom">

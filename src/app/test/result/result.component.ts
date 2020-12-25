@@ -17,6 +17,8 @@ export class ResultComponent implements OnInit {
   allPrefs: any;
   form: FormGroup;
   checked: boolean;
+  corPref: any;
+  subPref: any;
 
 
   constructor(
@@ -36,6 +38,8 @@ export class ResultComponent implements OnInit {
       ])
     });
     this.checked = false;
+    this.corPref = new Array();
+    this.subPref = new Array();
   }
 
   ngOnInit(): void {
@@ -94,6 +98,7 @@ export class ResultComponent implements OnInit {
     });
     console.log(this.allPrefs)
   }
+
   onChange(pref_label: string, id: number, event: any) {
     let isChecked = <HTMLInputElement>event.target.checked;
     const preferenceFormArray = <FormArray>this.form.controls.preference;
@@ -109,10 +114,35 @@ export class ResultComponent implements OnInit {
       preferenceFormArray.removeAt(index);
     }
   }
+
   reset() {
-    this.form.value.preference.length = 0;
+    this.form.value.preference = new Array();
+    //const preferenceFormArray = new Array();
   }
+
   next() {
+    this.corPref = this.form.value.preference;
+    let corPrefId = new Array();
+    let i = 0;
+    this.corPref.forEach((element: any) => {
+      corPrefId[i] = element['id'];
+      i++;
+    });
+
+    let allPrefId = new Array();
+    let k = 0;
+    this.allPrefs.forEach((element: any) => {
+      allPrefId[k] = element['id'];
+      k++;
+    });
+
+    //二つの配列から共通していない要素を取り出す関数
+    const getArraysDiff = (array01: any, array02: any) => {
+      const arr01 = [...new Set(array01)], arr02 = [...new Set(array02)];
+      return [...arr01, ...arr02].filter(value => !arr01.includes(value) || !arr02.includes(value));
+    }
+    this.subPref = getArraysDiff(allPrefId, corPrefId);
+
     this.router.navigate(
       ['/recommend'],
       {
@@ -120,6 +150,7 @@ export class ResultComponent implements OnInit {
           cor_pref1: this.form.value.preference[0].id,
           cor_pref2: this.form.value.preference[1].id,
           cor_pref3: this.form.value.preference[2].id,
+          sub_pref: this.subPref,
         }
       }
     )
