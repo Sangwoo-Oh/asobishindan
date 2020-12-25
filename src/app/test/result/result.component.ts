@@ -150,11 +150,10 @@ export class ResultComponent implements OnInit {
           cor_pref1: this.form.value.preference[0].id,
           cor_pref2: this.form.value.preference[1].id,
           cor_pref3: this.form.value.preference[2].id,
-          sub_pref: this.subPref,
+          sub_pref: this.subPref
         }
       }
     )
-
   }
 
 }

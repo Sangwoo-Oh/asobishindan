@@ -38,10 +38,12 @@ export class RecommendListComponent implements OnInit {
       this.sub_pref_string = params['subPref'];
     })
     this.sub_pref = new Array();
+    /*
     for (let index = 0; index < this.sub_pref_string.length; index++) {
       const element = this.sub_pref_string[index];
       this.sub_pref[index] = Math.floor(element);
     }
+    */
     this.data = new Array();
     this.prefs = new Array();
     this.actinfos = new Array();
