@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecommendService } from "../recommend.service";
+import { TestService } from "../../test/test.service";
 import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -20,9 +21,11 @@ export class RecommendListComponent implements OnInit {
   actinfos: any;
   corPref: any;
   subPref: any;
+  params: any;
 
   constructor(
     private recommendService: RecommendService,
+    private testService: TestService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
@@ -35,7 +38,7 @@ export class RecommendListComponent implements OnInit {
       this.cor_pref1 = params['cor_pref1'];
       this.cor_pref2 = params['cor_pref2'];
       this.cor_pref3 = params['cor_pref3'];
-      this.sub_pref_string = params['subPref'];
+      this.sub_pref_string = params['sub_pref'];
     })
     this.sub_pref = new Array();
     /*
@@ -47,6 +50,24 @@ export class RecommendListComponent implements OnInit {
     this.data = new Array();
     this.prefs = new Array();
     this.actinfos = new Array();
+    // TODO: サンプルデータ
+    /*
+    this.params = new Array(
+        {
+          "cor_pref1": 2,
+          "cor_pref2": 5,
+          "cor_pref3": 13,
+          "sub_prefs" : [
+            1,
+            3,
+            4,
+            11
+          ]
+        }
+    );
+    */
+    this.params = this.testService.getParams();
+    console.log(this.params);
   }
 
   ngOnInit(): void {
@@ -55,42 +76,19 @@ export class RecommendListComponent implements OnInit {
       return [...new Set(array01)].filter(value => array02.includes(value));
     }
 
-    this.recommendService.getActivity(this.cor_pref1, this.cor_pref2, this.cor_pref3).subscribe(
+    //this.recommendService.getActivity(this.cor_pref1, this.cor_pref2, this.cor_pref3).subscribe(
+    this.recommendService.getActivity(this.params).subscribe(
       response =>  {
         this.data = response;
         for (let index = 0; index < this.data.length; index++) {
           const element = this.data[index];
-          this.data[index].act_main_img = 'recommend_bg_01';
-          //アクティビティごとに割り当てられた嗜好性を取得
-          this.recommendService.getPrefFromAct(this.data[index].act_id).subscribe(
-            response => {
-              this.recommendService.setPrefsData(response);
-              // this.data[index].preferences = this.recommendService.getPrefsData();
-              let pref = [];
-              for (let index = 0; index < this.recommendService.getPrefsData().length; index++) {
-                const element = this.recommendService.getPrefsData()[index];
-                pref[index] = element['id'];
-              }
-              //サブ嗜好性の内マッチしている嗜好性を抽出
-              this.data[index].act_point = this.data[index].act_point + (getArraysIntersect(pref, this.sub_pref).length) * 2;
-              this.data[index].preferences = response;
-              //this.recommendService.setData(this.data);
-              //this.activity.push(this.recommendService.getData());
-            },
-            err => alert(err)
-          )
-          //アクティビティごとのアクティビティ情報を取得
-          this.recommendService.getActInfo(this.data[index].act_id).subscribe(
-            response => {
-              // this.recommendService.setActInfoData(response);
-              // this.data[index].actinfos = this.recommendService.getActInfoData();
-              this.data[index].actinfos = response;
-              this.recommendService.setData(this.data);
-              this.activity.push(this.recommendService.getData());
-            },
-            err => alert(err)
-          )
+          if (index % 2 == 0) {
+            element['act_main_img'] = 'recommend_bg_01';
+          } else {
+            element['act_main_img'] = 'recommend_bg_02';
+          }
         }
+        this.activity.push(this.data);
       },
       err => alert(err)
     )

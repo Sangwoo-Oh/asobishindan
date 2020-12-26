@@ -19,6 +19,7 @@ export class ResultComponent implements OnInit {
   checked: boolean;
   corPref: any;
   subPref: any;
+  params: any;
 
 
   constructor(
@@ -142,18 +143,18 @@ export class ResultComponent implements OnInit {
       return [...arr01, ...arr02].filter(value => !arr01.includes(value) || !arr02.includes(value));
     }
     this.subPref = getArraysDiff(allPrefId, corPrefId);
-
-    this.router.navigate(
-      ['/recommend'],
+    this.params = new Array(
       {
-        queryParams: {
-          cor_pref1: this.form.value.preference[0].id,
-          cor_pref2: this.form.value.preference[1].id,
-          cor_pref3: this.form.value.preference[2].id,
-          sub_pref: this.subPref
-        }
+        "cor_pref1": this.form.value.preference[0].id,
+        "cor_pref2": this.form.value.preference[1].id,
+        "cor_pref3": this.form.value.preference[2].id,
+        "sub_prefs" : this.subPref
       }
     )
-  }
+    console.log(this.params);
+    this.testService.setParams(this.params);
 
+    this.router.navigate(['/recommend']);
+
+  }
 }

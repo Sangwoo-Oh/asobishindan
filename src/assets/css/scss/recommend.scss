@@ -157,6 +157,23 @@ main {
         }
       }
     }
+    .loading {
+      display: block;
+      margin: 0 auto;
+      margin-top: 150px;
+      .message {
+        font-size: 1.7em;
+        font-weight: bold;
+        text-align: center;
+      }
+      .loading-icon {
+        width: 50px;
+        margin: 0 auto;
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 /**** 嗜好性選択 ****/

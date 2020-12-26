@@ -19,6 +19,7 @@ export class TestService {
   modalData: any
   essencePrefs: any;
   nonessencePrefs: any;
+  params: any;
 
   constructor(
     private http: HttpClient
@@ -28,6 +29,7 @@ export class TestService {
     this.datas = new Array();
     this.modalData = new Array();
     this.epiData = new Array();
+    this.params = new Array();
   }
 
   /**
@@ -122,9 +124,18 @@ export class TestService {
   **/
   public saveNonEssencePreferences(nonessencePrefs: any) {
     this.nonessencePrefs = nonessencePrefs;
-    console.log(nonessencePrefs)
   }
   public getNonEssencePreferences() {
     return this.nonessencePrefs;
+  }
+
+  /**
+   * コア嗜好性、サブ嗜好性パラメータgetter/setter
+  **/
+  public setParams(params: any) {
+    this.params = params;
+  }
+  public getParams():any{
+    return this.params;
   }
 }

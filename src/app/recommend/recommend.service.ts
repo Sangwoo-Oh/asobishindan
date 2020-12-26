@@ -24,8 +24,13 @@ export class RecommendService {
   /**
    * 結果に基づいてアクティビティデータを取得
    */
+   /*
   public getActivity(cor_pref1: number, cor_pref2: number, cor_pref3: number): Observable<RecommendModel> {
     return this.http.get<RecommendModel>(URL_PROD + '/api/getPrefAct?cor_pref1=' + cor_pref1 + '&cor_pref2=' + cor_pref2 + '&cor_pref3=' + cor_pref3)
+  }
+  */
+  public getActivity(params: any): Observable<RecommendModel> {
+    return this.http.post<RecommendModel>(URL_PROD + '/api/getPrefAct', params)
   }
   public setData(data: any) {
     this.data = data

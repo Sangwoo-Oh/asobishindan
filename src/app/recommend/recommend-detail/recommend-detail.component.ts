@@ -14,7 +14,6 @@ export class RecommendDetailComponent implements OnInit {
   ) {
     this.actData = this.recommendService.getData();
   }
-
   ngOnInit(): void {
   }
 }

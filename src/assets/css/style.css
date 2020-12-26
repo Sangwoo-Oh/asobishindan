@@ -1013,4 +1013,18 @@ main .wrap-recommend .recommend-detail .blocks {
     main .wrap-recommend .recommend-detail .blocks li .content p {
       font-size: 1.2em; }
 
+main .wrap-recommend .loading {
+  display: block;
+  margin: 0 auto;
+  margin-top: 150px; }
+  main .wrap-recommend .loading .message {
+    font-size: 1.7em;
+    font-weight: bold;
+    text-align: center; }
+  main .wrap-recommend .loading .loading-icon {
+    width: 50px;
+    margin: 0 auto; }
+    main .wrap-recommend .loading .loading-icon img {
+      width: 100%; }
+
 /**** 嗜好性選択 ****/
