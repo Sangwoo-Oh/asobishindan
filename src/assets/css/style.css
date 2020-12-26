@@ -160,6 +160,18 @@ footer {
           background-color: #FFCD1E;
           color: #FFF; }
 
+.errors {
+  margin: 20px auto;
+  text-align: center; }
+  .errors li {
+    font-size: 1.2em;
+    text-align: center;
+    color: #FFF;
+    background-color: #FF786B;
+    display: inline-block;
+    padding: 3px 30px;
+    border-radius: 5px; }
+
 .rate {
   position: relative;
   display: inline-block;

@@ -22,6 +22,7 @@ export class RecommendListComponent implements OnInit {
   corPref: any;
   subPref: any;
   params: any;
+  err: any;
 
   constructor(
     private recommendService: RecommendService,
@@ -29,6 +30,7 @@ export class RecommendListComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
+    this.err = new Array();
     this.activity = new Array();
     this.cor_pref1 = 0
     this.cor_pref2 = 0
@@ -67,7 +69,6 @@ export class RecommendListComponent implements OnInit {
     );
     */
     this.params = this.testService.getParams();
-    console.log(this.params);
   }
 
   ngOnInit(): void {
@@ -90,7 +91,10 @@ export class RecommendListComponent implements OnInit {
         }
         this.activity.push(this.data);
       },
-      err => alert(err)
+      err => {
+        // alert('システムエラーです。最初から診断をやり直してください');
+        this.err.push('エラー: 最初から診断をやり直してください');
+      }
     )
   }
 

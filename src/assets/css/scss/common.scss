@@ -197,6 +197,19 @@ footer {
     }
   }
 }
+.errors {
+  margin: 20px auto;
+  text-align: center;
+  li {
+    font-size: 1.2em;
+    text-align: center;
+    color: #FFF;
+    background-color: #FF786B;
+    display: inline-block;
+    padding: 3px 30px;
+    border-radius: 5px;
+  }
+}
 
 //レート評価 変数
 $starFull: 16px;//星1個の幅

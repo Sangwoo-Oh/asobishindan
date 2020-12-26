@@ -1,5 +1,8 @@
 <main>
   <div class="wrap-recommend">
+    <ul *ngIf="err" class="errors">
+      <li *ngFor="let msg of err">{{ msg }}</li>
+    </ul>
     <div class="recommend-list" *ngIf="activity[0]; else elseActivity">
       <p class="main">あなたにおすすめする遊びを<br><span>{{ data.length }}</span>件見つけました</p>
       <ul class="recommendations">
