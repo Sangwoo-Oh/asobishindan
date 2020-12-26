@@ -11,7 +11,14 @@
             <p class="title">{{ act.act_label }}</p>
             <div class="info">
               <span>あなたへのおすすめ度</span>
-              <span>{{ act.act_point }}</span>
+              <div class="star-flex">
+                <div class="star-wrap">
+                  <span class="rate {{ act.rate_classname }}"></span>
+                </div>
+                <div class="number">
+                  {{ act.recommend_rate }}
+                </div>
+              </div>
             </div>
           </div>
           <div class="bottom">

@@ -40,6 +40,22 @@ main {
               span {
                 font-size: 1.1em;
               }
+              .star-flex {
+                display: flex;
+                align-items: center;
+                .star-wrap {
+                  width: 80px;
+                  .rate {
+                    font-size: 16px;
+                  }
+                }
+                .number {
+                  width: calc(100% - 80px);
+                  font-size: 21px;
+                  text-align: center;
+                  font-weight: bold;
+                }
+              }
             }
           }
           .bottom {

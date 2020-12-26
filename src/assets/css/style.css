@@ -938,6 +938,18 @@ main .wrap-recommend .recommend-list {
         margin-left: 5%; }
         main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info span {
           font-size: 1.1em; }
+        main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex {
+          display: flex;
+          align-items: center; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex .star-wrap {
+            width: 80px; }
+            main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex .star-wrap .rate {
+              font-size: 16px; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex .number {
+            width: calc(100% - 80px);
+            font-size: 21px;
+            text-align: center;
+            font-weight: bold; }
     main .wrap-recommend .recommend-list .recommendations .recommend-item .bottom ul {
       width: 100%;
       overflow-x: auto;

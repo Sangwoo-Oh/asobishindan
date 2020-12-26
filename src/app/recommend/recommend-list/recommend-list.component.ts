@@ -23,6 +23,7 @@ export class RecommendListComponent implements OnInit {
   subPref: any;
   params: any;
   err: any;
+  recommend_rate: any;
 
   constructor(
     private recommendService: RecommendService,
@@ -43,41 +44,30 @@ export class RecommendListComponent implements OnInit {
       this.sub_pref_string = params['sub_pref'];
     })
     this.sub_pref = new Array();
-    /*
-    for (let index = 0; index < this.sub_pref_string.length; index++) {
-      const element = this.sub_pref_string[index];
-      this.sub_pref[index] = Math.floor(element);
-    }
-    */
     this.data = new Array();
     this.prefs = new Array();
     this.actinfos = new Array();
-    // TODO: サンプルデータ
+
+    this.params = this.testService.getParams();
     /*
     this.params = new Array(
-        {
+      {
           "cor_pref1": 2,
-          "cor_pref2": 5,
-          "cor_pref3": 13,
+          "cor_pref2": 8,
+          "cor_pref3": 12,
           "sub_prefs" : [
-            1,
-            3,
-            4,
-            11
+              1,
+              3,
+              4,
+              11
           ]
-        }
+      }
     );
     */
-    this.params = this.testService.getParams();
+    this.recommend_rate = new Array();
   }
 
   ngOnInit(): void {
-    //二つの配列から共通している要素を取り出す関数
-    const getArraysIntersect = (array01: any, array02: any) => {
-      return [...new Set(array01)].filter(value => array02.includes(value));
-    }
-
-    //this.recommendService.getActivity(this.cor_pref1, this.cor_pref2, this.cor_pref3).subscribe(
     this.recommendService.getActivity(this.params).subscribe(
       response =>  {
         this.data = response;
@@ -87,6 +77,32 @@ export class RecommendListComponent implements OnInit {
             element['act_main_img'] = 'recommend_bg_01';
           } else {
             element['act_main_img'] = 'recommend_bg_02';
+          }
+
+          //リコメンド 0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5
+          console.log(element['recommend_rate'])
+          if (element['recommend_rate'] == 5) {
+            element['rate_classname'] = 'rate5';
+          } else if (element['recommend_rate'] < 5 && element['recommend_rate'] > 4.5) {
+            element['rate_classname'] = 'rate4-5';
+          } else if (element['recommend_rate'] <= 4.5 && element['recommend_rate'] > 4) {
+            element['rate_classname'] = 'rate4';
+          } else if (element['recommend_rate'] <= 4 && element['recommend_rate'] > 3.5) {
+            element['rate_classname'] = 'rate3-5';
+          } else if (element['recommend_rate'] <= 3.5 && element['recommend_rate'] > 3) {
+            element['rate_classname'] = 'rate3';
+          } else if (element['recommend_rate'] <= 3 && element['recommend_rate'] > 2.5) {
+            element['rate_classname'] = 'rate2-5';
+          } else if (element['recommend_rate'] <= 2.5 && element['recommend_rate'] > 2) {
+            element['rate_classname'] = 'rate2';
+          } else if (element['recommend_rate'] <= 2 && element['recommend_rate'] > 1.5) {
+            element['rate_classname'] = 'rate1-5';
+          } else if (element['recommend_rate'] <= 1.5 && element['recommend_rate'] > 1) {
+            element['rate_classname'] = 'rate1';
+          } else if (element['recommend_rate'] <= 1 && element['recommend_rate'] > 0.5) {
+            element['rate_classname'] = 'rate0';
+          } else {
+            element['rate_classname'] = 'rate0';
           }
         }
         this.activity.push(this.data);
