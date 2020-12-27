@@ -48,8 +48,7 @@ export class RecommendListComponent implements OnInit {
     this.prefs = new Array();
     this.actinfos = new Array();
 
-    this.params = this.testService.getParams();
-    /*
+    // this.params = this.testService.getParams();
     this.params = new Array(
       {
           "cor_pref1": 2,
@@ -63,7 +62,6 @@ export class RecommendListComponent implements OnInit {
           ]
       }
     );
-    */
     this.recommend_rate = new Array();
   }
 
@@ -71,6 +69,7 @@ export class RecommendListComponent implements OnInit {
     this.recommendService.getActivity(this.params).subscribe(
       response =>  {
         this.data = response;
+        console.log(response)
         for (let index = 0; index < this.data.length; index++) {
           const element = this.data[index];
           if (index % 2 == 0) {
@@ -78,9 +77,7 @@ export class RecommendListComponent implements OnInit {
           } else {
             element['act_main_img'] = 'recommend_bg_02';
           }
-
           //リコメンド 0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5
-          console.log(element['recommend_rate'])
           if (element['recommend_rate'] == 5) {
             element['rate_classname'] = 'rate5';
           } else if (element['recommend_rate'] < 5 && element['recommend_rate'] > 4.5) {

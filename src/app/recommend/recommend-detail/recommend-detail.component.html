@@ -6,7 +6,11 @@
       </div>
       <div class="info-wrap">
         <div class="top">
-          <p class="title">あなたにしか取れない写真を撮りに行こう</p>
+          <div class="title-copy">
+            <p class="title">遊びジャンル：{{ actData.act_label }}</p>
+            <span class="bar"></span>
+            <p class="copy">{{ actData.act_copy }}</p>
+          </div>
           <div class="info">
             <span>あなたへのおすすめ度</span>
             <div class="star-flex">
@@ -23,6 +27,12 @@
           <ul>
             <li *ngFor="let pref of actData.preferences">{{ pref.pref_label }}</li>
           </ul>
+        </div>
+      </div>
+      <div class="overview">
+        <div class="text">
+          <span>遊びの概要</span>
+          {{ actData.act_overview }}
         </div>
       </div>
       <ul class="blocks">

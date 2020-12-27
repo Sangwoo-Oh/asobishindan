@@ -8,7 +8,11 @@
       <ul class="recommendations">
         <li *ngFor="let act of activity[0]; let i = index" class="recommend-item" [style.background-image]="'url(../assets/img/' + act.act_main_img + '.jpg)'" routerLink="/recommend/{{ act.act_id }}" (click)="onClick(act)">
           <div class="top">
-            <p class="title">{{ act.act_label }}</p>
+            <div class="title-copy">
+              <p class="title">遊びジャンル：{{ act.act_label }}</p>
+              <span class="bar"></span>
+              <p class="copy">{{ act.act_copy }}</p>
+            </div>
             <div class="info">
               <span>あなたへのおすすめ度</span>
               <div class="star-flex">
