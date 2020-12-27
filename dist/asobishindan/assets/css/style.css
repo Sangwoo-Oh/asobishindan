@@ -160,6 +160,18 @@ footer {
           background-color: #FFCD1E;
           color: #FFF; }
 
+.errors {
+  margin: 20px auto;
+  text-align: center; }
+  .errors li {
+    font-size: 1.2em;
+    text-align: center;
+    color: #FFF;
+    background-color: #FF786B;
+    display: inline-block;
+    padding: 3px 30px;
+    border-radius: 5px; }
+
 .rate {
   position: relative;
   display: inline-block;
@@ -926,6 +938,18 @@ main .wrap-recommend .recommend-list {
         margin-left: 5%; }
         main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info span {
           font-size: 1.1em; }
+        main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex {
+          display: flex;
+          align-items: center; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex .star-wrap {
+            width: 80px; }
+            main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex .star-wrap .rate {
+              font-size: 16px; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex .number {
+            width: calc(100% - 80px);
+            font-size: 21px;
+            text-align: center;
+            font-weight: bold; }
     main .wrap-recommend .recommend-list .recommendations .recommend-item .bottom ul {
       width: 100%;
       overflow-x: auto;
@@ -1000,17 +1024,47 @@ main .wrap-recommend .recommend-detail .blocks {
   display: block;
   margin: 0 auto; }
   main .wrap-recommend .recommend-detail .blocks li {
-    margin-bottom: 30px; }
+    margin-bottom: 15px; }
     main .wrap-recommend .recommend-detail .blocks li .heading {
-      font-size: 1.3em;
+      font-size: 1.5em;
       font-weight: bold;
-      margin-bottom: 30px; }
+      margin-bottom: 15px; }
     main .wrap-recommend .recommend-detail .blocks li .image {
-      margin-bottom: 30px; }
+      margin-bottom: 15px; }
       main .wrap-recommend .recommend-detail .blocks li .image img {
         width: 100%;
         display: block; }
     main .wrap-recommend .recommend-detail .blocks li .content p {
-      font-size: 1.1em; }
+      font-size: 1.2em; }
+
+main .wrap-recommend .loading {
+  display: block;
+  margin: 0 auto;
+  margin-top: 150px; }
+  main .wrap-recommend .loading .message {
+    font-size: 1.7em;
+    font-weight: bold;
+    text-align: center; }
+  main .wrap-recommend .loading .loading-icon {
+    width: 50px;
+    margin: 0 auto; }
+    main .wrap-recommend .loading .loading-icon img {
+      width: 100%; }
+
+main .wrap-recommend .loading2 {
+  width: 100%;
+  height: calc(100vh - 64px);
+  background: radial-gradient(73.01% 73.01% at 50% 26.99%, #262628 0%, #262628 18.8%, #000000 100%); }
+  main .wrap-recommend .loading2 .message {
+    font-size: 1.7em;
+    font-weight: bold;
+    text-align: center;
+    color: #FFF; }
+  main .wrap-recommend .loading2 .loading-icon {
+    width: 170px;
+    margin: 0 auto;
+    padding-top: 100px; }
+    main .wrap-recommend .loading2 .loading-icon img {
+      width: 100%; }
 
 /**** 嗜好性選択 ****/

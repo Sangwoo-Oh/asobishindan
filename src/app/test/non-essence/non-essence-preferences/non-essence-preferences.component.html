@@ -1,22 +1,73 @@
 <main>
   <div class="wrap-non-essence">
     <div class="question">
-      <p class="main">先ほど記入したエピソードのどういう所が楽しかったり充実感に繋がっていましたか</p>
-      <p class="alert">○個以上選んでください。</p>
+      <p class="main">先ほど回答した遊びが楽しいと<br>思えた理由を教えてください。</p>
     </div>
-    <div class="preferences">
+    <div class="answer confirm">
       <form [formGroup]="form">
         <ul>
-          <li>
-            <ul class="preference-list" formArrayName="preference">
-              <li *ngFor="let data of datas">
-                <input id="{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.pref_label ,data.id, $event)">
-                <label for="{{ data.id }}">
-                  <div class="checkmark"></div>
-                  <p class="label">{{ data.pref_label }}</p>
-                </label>
-              </li>
-            </ul>
+          <li *ngIf="episodes[0]">
+            <div class="content-area">
+              <p class="q-mark">回答その1</p>
+              <p class="q-title">よく遊んでいた人たちやグループを教えてください</p>
+              <textarea placeholder="ひとり・家族・バスケ部の同期・サークルの同期" name="name" rows="8" cols="80" readonly>{{ episodes[0].group }}</textarea>
+              <p class="q-title">思い出に残ってる遊びを教えてください</p>
+              <textarea placeholder="旅行先でいろんな種類の温泉に入ったこと" name="name" rows="8" cols="80" readonly>{{ episodes[0].asobi }}</textarea>
+              <button type="button" name="button">この回答の理由を答える</button>
+              <div class="preferences">
+                <ul class="preference-list" formArrayName="preference1">
+                  <li *ngFor="let data of datas">
+                    <input id="1-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange1(data.pref_label ,data.id, $event)">
+                    <label for="1-{{ data.id }}">
+                      <div class="checkmark"></div>
+                      <p class="label">{{ data.pref_label }}</p>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li *ngIf="episodes[1]">
+            <div class="content-area">
+              <p class="q-mark">回答その2</p>
+              <p class="q-title">よく遊んでいた人たちやグループを教えてください</p>
+              <textarea placeholder="ひとり・家族・バスケ部の同期・サークルの同期" name="name" rows="8" cols="80" readonly>{{ episodes[1].group }}</textarea>
+              <p class="q-title">思い出に残ってる遊びを教えてください</p>
+              <textarea placeholder="旅行先でいろんな種類の温泉に入ったこと" name="name" rows="8" cols="80" readonly>{{ episodes[1].asobi }}</textarea>
+              <button type="button" name="button">この回答の理由を答える</button>
+              <div class="preferences">
+                <ul class="preference-list" formArrayName="preference1">
+                  <li *ngFor="let data of datas">
+                    <input id="2-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange2(data.pref_label ,data.id, $event)">
+                    <label for="2-{{ data.id }}">
+                      <div class="checkmark"></div>
+                      <p class="label">{{ data.pref_label }}</p>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li *ngIf="episodes[2]">
+            <div class="content-area">
+              <p class="q-mark">回答その3</p>
+              <p class="q-title">よく遊んでいた人たちやグループを教えてください</p>
+              <textarea placeholder="ひとり・家族・バスケ部の同期・サークルの同期" name="name" rows="8" cols="80" readonly>{{ episodes[2].group }}</textarea>
+              <p class="q-title">思い出に残ってる遊びを教えてください</p>
+              <textarea placeholder="旅行先でいろんな種類の温泉に入ったこと" name="name" rows="8" cols="80" readonly>{{ episodes[2].asobi }}</textarea>
+              <button type="button" name="button">この回答の理由を答える</button>
+              <div class="preferences">
+                <ul class="preference-list" formArrayName="preference1">
+                  <li *ngFor="let data of datas">
+                    <input id="3-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange3(data.pref_label ,data.id, $event)">
+                    <label for="3-{{ data.id }}">
+                      <div class="checkmark"></div>
+                      <p class="label">{{ data.pref_label }}</p>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
         </ul>
       </form>
@@ -24,5 +75,5 @@
   </div>
 </main>
 <footer>
-  <a href="javascript:void(0)" class="next" (click)="onSubmit()">提案画面へ進む</a>
+  <button class="next" type="button" name="button" (click)="onSubmit()" [disabled]="!form.valid">提案画面へ進む</button>
 </footer>

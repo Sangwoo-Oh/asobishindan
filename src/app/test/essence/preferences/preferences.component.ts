@@ -32,9 +32,15 @@ export class PreferencesComponent implements OnInit {
       this.onSubmit(element['id']);
     });
     this.form = this.formBuilder.group({
-      preference :  new FormArray([
-        //new FormControl('', Validators.required)
-      ])
+      preference1 :  new FormArray([
+        // new FormArray([], Validators.required)
+      ], Validators.required),
+      preference2 :  new FormArray([
+        // new FormArray([], Validators.required)
+      ], Validators.required),
+      preference3 :  new FormArray([
+        // new FormArray([], Validators.required)
+      ], Validators.required)
     });
   }
 
@@ -61,11 +67,11 @@ export class PreferencesComponent implements OnInit {
         )
       });
     });
-    //console.log(new_array);
   }
   public submit() {
-    this.testService.saveEssencePreferences(this.form.value.preference)
-    this.router.navigate(['/test/non-essence'])
+    let prefArray = this.form.value.preference1.concat(this.form.value.preference2, this.form.value.preference3);
+    this.testService.saveEssencePreferences(prefArray);
+    this.router.navigate(['/test/non-essence']);
   }
 
   public onSubmit(id: string):any{
@@ -78,11 +84,12 @@ export class PreferencesComponent implements OnInit {
       err => alert(err)
     );
   }
-  onChange(pref_label: string, id: number, event: any) {
+
+  onChange1(pref_label: string, id: number, event: any) {
     let isChecked = <HTMLInputElement>event.target.checked;
-    const preferenceFormArray = <FormArray>this.form.controls.preference;
+    const preference1FormArray = <FormArray>this.form.controls.preference1;
     if (isChecked) {
-      preferenceFormArray.push(new FormControl(
+      preference1FormArray.push(new FormControl(
         {
           label: pref_label,
           id: id
@@ -90,8 +97,40 @@ export class PreferencesComponent implements OnInit {
       ));
 
     } else {
-      let index = preferenceFormArray.controls.findIndex(x => x.value == pref_label)
-      preferenceFormArray.removeAt(index);
+      let index = preference1FormArray.controls.findIndex(x => x.value == pref_label)
+      preference1FormArray.removeAt(index);
+    }
+  }
+  onChange2(pref_label: string, id: number, event: any) {
+    let isChecked = <HTMLInputElement>event.target.checked;
+    const preference2FormArray = <FormArray>this.form.controls.preference2;
+    if (isChecked) {
+      preference2FormArray.push(new FormControl(
+        {
+          label: pref_label,
+          id: id
+        }
+      ));
+
+    } else {
+      let index = preference2FormArray.controls.findIndex(x => x.value == pref_label)
+      preference2FormArray.removeAt(index);
+    }
+  }
+  onChange3(pref_label: string, id: number, event: any) {
+    let isChecked = <HTMLInputElement>event.target.checked;
+    const preference3FormArray = <FormArray>this.form.controls.preference3;
+    if (isChecked) {
+      preference3FormArray.push(new FormControl(
+        {
+          label: pref_label,
+          id: id
+        }
+      ));
+
+    } else {
+      let index = preference3FormArray.controls.findIndex(x => x.value == pref_label)
+      preference3FormArray.removeAt(index);
     }
   }
 }

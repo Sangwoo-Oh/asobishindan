@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { TestService } from "../../test.service";
 
 @Component({
   selector: 'app-non-essence-questions',
@@ -10,15 +12,19 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@ang
 export class NonEssenceQuestionsComponent implements OnInit {
   form: FormGroup;
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private testService: TestService
   ) {
     this.form = this.formBuilder.group({
-      options: this.formBuilder.array([
-        {
-          group: ['', Validators.required],
-          asobi: ['', Validators.required]
-        }
-      ])
+      options: [
+        this.formBuilder.array([
+          {
+            group: [''],
+            asobi: ['']
+          }
+        ])
+      ]
     });
   }
 
@@ -34,8 +40,8 @@ export class NonEssenceQuestionsComponent implements OnInit {
   }
   get optionForm(): FormGroup {
     return this.formBuilder.group({
-      group: [''],
-      asobi: ['']
+      group: ['', Validators.required],
+      asobi: ['', Validators.required]
     });
   }
   get options(): FormArray {
@@ -50,5 +56,11 @@ export class NonEssenceQuestionsComponent implements OnInit {
   // removeAtでインデックスを指定することで、FormArrayのフォームを削除します。
   removeOptionForm(idx: number) {
     this.options.removeAt(idx);
+  }
+
+  next() {
+    console.log(this.form.value);
+    this.testService.setnonessenceEpis(this.form.value.options);
+    this.router.navigate(['test/non-essence/preferences']);
   }
 }

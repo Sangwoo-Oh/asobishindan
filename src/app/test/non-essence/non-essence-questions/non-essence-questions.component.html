@@ -1,20 +1,20 @@
 <main>
   <div class="wrap-non-essence">
     <div class="question">
-      <p class="main">学生の時に頑張ったことを教えて！！<br>エピソードを三つ選んで！</p>
+      <p class="main">あなたがこれまでに経験してきた<br>遊びについて教えてください。</p>
     </div>
     <div class="answer">
-      <form [formGroup]="form">
-        <ul formArrayName="options">
+      <form [formGroup]="form" required>
+        <ul formArrayName="options" required>
           <li *ngFor="let option of options.controls; let i = index">
             <div class="content-area" [formGroupName]="i">
               <p class="q-mark">回答その{{ i + 1 }}</p>
               <p class="q-title">よく遊んでいた人たちやグループを教えてください</p>
-              <textarea placeholder="ひとり・家族・バスケ部の同期・サークルの同期" name="name" rows="8" cols="80" formControlName="group"></textarea>
+              <textarea placeholder="ひとり・家族・バスケ部の同期・サークルの同期" name="name" rows="8" cols="80" formControlName="group" required></textarea>
               <p class="q-title">思い出に残ってる遊びを教えてください</p>
-              <textarea placeholder="旅行先でいろんな種類の温泉に入ったこと" name="name" rows="8" cols="80" formControlName="asobi"></textarea>
+              <textarea placeholder="旅行先でいろんな種類の温泉に入ったこと" name="name" rows="8" cols="80" formControlName="asobi" required></textarea>
             </div>
-            <a href="javascript:void(0)" *ngIf="this.options.length >= 2" (click)="removeOptionForm(i)" class="remove-q">回答欄を減らす</a>
+            <a href="javascript:void(0)" *ngIf="this.options.length >= 2" (click)="removeOptionForm(i)" class="remove-q">回答その{{ i + 1 }}を減らす</a>
           </li>
         </ul>
       </form>
@@ -23,6 +23,5 @@
   </div>
 </main>
 <footer>
-  <!-- <a class="next" routerLink="preferences">嗜好性選択画面へ進む</a> -->
-  <button class="next" type="button" name="button" routerLink="preferences">嗜好性選択画面へ進む</button>
+  <button class="next" type="button" name="button" (click)="next()" [disabled]="!form.valid">嗜好性選択画面へ進む</button>
 </footer>

@@ -190,6 +190,26 @@ main {
         }
       }
     }
+    .loading2 {
+      width: 100%;
+      height: calc(100vh - 64px);
+      //background: #000;
+      background: radial-gradient(73.01% 73.01% at 50% 26.99%, #262628 0%, #262628 18.8%, #000000 100%);
+      .message {
+        font-size: 1.7em;
+        font-weight: bold;
+        text-align: center;
+        color: #FFF;
+      }
+      .loading-icon {
+        width: 170px;
+        margin: 0 auto;
+        padding-top: 100px;
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 /**** 嗜好性選択 ****/

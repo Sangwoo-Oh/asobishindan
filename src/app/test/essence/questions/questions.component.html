@@ -4,7 +4,7 @@
       <p class="main">あなたが大学時代に頑張った<br>活動カテゴリーを選んでください。</p>
       <p class="alert">あとエピソードを<span>{{ 3 - form.value.episode.length }}</span>つ選んでね</p>
     </div>
-    <div class="answer">
+    <div class="answer" *ngIf="episodes">
       <form [formGroup]="form">
         <ul class="epi-categories">
           <li>
@@ -95,5 +95,15 @@
         </ul>
       </form>
     </div>
+    <!--
+    <ng-template #loading>
+      <div class="loading">
+        <p class="message">診断中です...</p>
+        <div class="loading-icon">
+          <img src="../assets/img/icon_loader.gif" alt="">
+        </div>
+      </div>
+    </ng-template>
+    -->
   </div>
 </main>

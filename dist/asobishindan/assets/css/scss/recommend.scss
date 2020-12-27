@@ -40,6 +40,22 @@ main {
               span {
                 font-size: 1.1em;
               }
+              .star-flex {
+                display: flex;
+                align-items: center;
+                .star-wrap {
+                  width: 80px;
+                  .rate {
+                    font-size: 16px;
+                  }
+                }
+                .number {
+                  width: calc(100% - 80px);
+                  font-size: 21px;
+                  text-align: center;
+                  font-weight: bold;
+                }
+              }
             }
           }
           .bottom {
@@ -136,14 +152,14 @@ main {
         display: block;
         margin: 0 auto;
         li {
-          margin-bottom: 30px;
+          margin-bottom: 15px;
           .heading {
-            font-size: 1.3em;
+            font-size: 1.5em;
             font-weight: bold;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
           }
           .image {
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             img {
               width: 100%;
               display: block;
@@ -151,9 +167,46 @@ main {
           }
           .content {
             p {
-              font-size: 1.1em;
+              font-size: 1.2em;
             }
           }
+        }
+      }
+    }
+    .loading {
+      display: block;
+      margin: 0 auto;
+      margin-top: 150px;
+      .message {
+        font-size: 1.7em;
+        font-weight: bold;
+        text-align: center;
+      }
+      .loading-icon {
+        width: 50px;
+        margin: 0 auto;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .loading2 {
+      width: 100%;
+      height: calc(100vh - 64px);
+      //background: #000;
+      background: radial-gradient(73.01% 73.01% at 50% 26.99%, #262628 0%, #262628 18.8%, #000000 100%);
+      .message {
+        font-size: 1.7em;
+        font-weight: bold;
+        text-align: center;
+        color: #FFF;
+      }
+      .loading-icon {
+        width: 170px;
+        margin: 0 auto;
+        padding-top: 100px;
+        img {
+          width: 100%;
         }
       }
     }

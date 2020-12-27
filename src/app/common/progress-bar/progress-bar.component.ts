@@ -17,14 +17,12 @@ export class ProgressBarComponent implements OnInit {
     this.router.events.subscribe(event => {
       if(event instanceof NavigationEnd) {
         // ここにページ遷移ごとに実行するメソッド
-        console.log(this.router.url)
         this.url = this.router.url;
       }
     });
   }
 
   ngOnInit(): void {
-    console.log(this.router.url)
   }
 
 }

@@ -15,6 +15,8 @@ export class NonEssencePreferencesComponent implements OnInit {
   datas: any;
   form: FormGroup;
   prefArray: any;
+  episodes: any;
+  i: Array<number>;
 
   constructor(
     private testService: TestService,
@@ -36,34 +38,94 @@ export class NonEssencePreferencesComponent implements OnInit {
       },
       err => alert(err)
     );
+    this.episodes = this.testService.getnonessenceEpis();
     this.form = this.formBuilder.group({
-      preference :  new FormArray([
-        // new FormControl('',Validators.required)
-      ])
+      preference1 :  new FormArray([
+      ], Validators.required)
     });
+    if (this.episodes.length == 1) {
+      this.form = this.formBuilder.group({
+        preference1 :  new FormArray([
+        ], Validators.required)
+      });
+    } else if (this.episodes.length == 2) {
+      this.form = this.formBuilder.group({
+        preference1 :  new FormArray([
+        ], Validators.required),
+        preference2 :  new FormArray([
+        ], Validators.required)
+      });
+    } else if (this.episodes.length == 3) {
+      this.form = this.formBuilder.group({
+        preference1 :  new FormArray([
+        ], Validators.required),
+        preference2 :  new FormArray([
+        ], Validators.required),
+        preference3 :  new FormArray([
+        ], Validators.required),
+      });
+    }
+    this.i = new Array(1,2,3);
   }
 
   ngOnInit(): void {
   }
 
-  onChange(pref_label: string, pref_id: number, event: any) {
+  onChange1(pref_label: string, pref_id: number, event: any) {
     let isChecked = <HTMLInputElement>event.target.checked;
-    const preferenceFormArray = <FormArray>this.form.controls.preference;
+    const preferenceFormArray1 = <FormArray>this.form.controls.preference1;
     if (isChecked) {
-      preferenceFormArray.push(new FormControl(
+      preferenceFormArray1.push(new FormControl(
         {
           label: pref_label,
           id: pref_id
         }
       ));
     } else {
-      let index = preferenceFormArray.controls.findIndex(x => x.value == pref_id)
-      preferenceFormArray.removeAt(index);
+      let index = preferenceFormArray1.controls.findIndex(x => x.value == pref_id)
+      preferenceFormArray1.removeAt(index);
+    }
+  }
+  onChange2(pref_label: string, pref_id: number, event: any) {
+    let isChecked = <HTMLInputElement>event.target.checked;
+    const preferenceFormArray2 = <FormArray>this.form.controls.preference2;
+    if (isChecked) {
+      preferenceFormArray2.push(new FormControl(
+        {
+          label: pref_label,
+          id: pref_id
+        }
+      ));
+    } else {
+      let index = preferenceFormArray2.controls.findIndex(x => x.value == pref_id)
+      preferenceFormArray2.removeAt(index);
+    }
+  }
+  onChange3(pref_label: string, pref_id: number, event: any) {
+    let isChecked = <HTMLInputElement>event.target.checked;
+    const preferenceFormArray3 = <FormArray>this.form.controls.preference3;
+    if (isChecked) {
+      preferenceFormArray3.push(new FormControl(
+        {
+          label: pref_label,
+          id: pref_id
+        }
+      ));
+    } else {
+      let index = preferenceFormArray3.controls.findIndex(x => x.value == pref_id)
+      preferenceFormArray3.removeAt(index);
     }
   }
 
   onSubmit() {
-    this.testService.saveNonEssencePreferences(this.form.value.preference)
+    let prefArray = this.form.value.preference1
+    if (this.form.value.preference2) {
+      let prefArray = this.form.value.preference1.concat(this.form.value.preference2)
+    } else if (this.form.value.preference3) {
+      let prefArray = this.form.value.preference1.concat(this.form.value.preference2, this.form.value.preference3)
+    }
+    console.log(prefArray)
+    this.testService.saveNonEssencePreferences(prefArray)
     this.router.navigate(
       ['/test/result']/*,
       {

@@ -721,24 +721,26 @@ main .wrap-non-essence .answer {
   max-width: 90%;
   margin: 0 auto;
   margin-bottom: 70px; }
-  main .wrap-non-essence .answer ul li .content-area {
-    background-color: #F3F3F3;
-    padding: 15px; }
-    main .wrap-non-essence .answer ul li .content-area .q-mark {
-      font-weight: bold;
-      font-size: 1.5em; }
-    main .wrap-non-essence .answer ul li .content-area .q-title {
-      font-weight: bold;
-      font-size: 1.4em;
-      margin: 7px 0; }
-    main .wrap-non-essence .answer ul li .content-area textarea {
-      resize: none;
-      border: 1px solid #eee;
-      width: calc(100% - 18px);
-      height: 70px;
-      border-radius: 5px;
-      font-size: 1.3em;
-      padding: 9px; }
+  main .wrap-non-essence .answer ul li {
+    margin-bottom: 20px; }
+    main .wrap-non-essence .answer ul li .content-area {
+      background-color: #F3F3F3;
+      padding: 15px; }
+      main .wrap-non-essence .answer ul li .content-area .q-mark {
+        font-weight: bold;
+        font-size: 1.5em; }
+      main .wrap-non-essence .answer ul li .content-area .q-title {
+        font-weight: bold;
+        font-size: 1.4em;
+        margin: 7px 0; }
+      main .wrap-non-essence .answer ul li .content-area textarea {
+        resize: none;
+        border: 1px solid #eee;
+        width: calc(100% - 18px);
+        height: 70px;
+        border-radius: 5px;
+        font-size: 1.3em;
+        padding: 9px; }
   main .wrap-non-essence .answer .add-q {
     background-color: #FFCD1E;
     display: block;
@@ -756,6 +758,51 @@ main .wrap-non-essence .answer {
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px; }
+  main .wrap-non-essence .answer.confirm ul li .content-area {
+    background-color: #F3F3F3;
+    padding: 15px; }
+    main .wrap-non-essence .answer.confirm ul li .content-area .q-mark {
+      font-weight: bold;
+      font-size: 1.5em; }
+    main .wrap-non-essence .answer.confirm ul li .content-area .q-title {
+      font-weight: bold;
+      font-size: 1.4em;
+      margin: 7px 0; }
+    main .wrap-non-essence .answer.confirm ul li .content-area textarea {
+      resize: none;
+      border: 1px solid #eee;
+      width: calc(100% - 18px);
+      height: 70px;
+      border-radius: 5px;
+      font-size: 1.3em;
+      padding: 9px;
+      background: #F3F3F3;
+      color: #888; }
+    main .wrap-non-essence .answer.confirm ul li .content-area .preferences ul.preference-list li {
+      padding: 0px 0px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px; }
+      main .wrap-non-essence .answer.confirm ul li .content-area .preferences ul.preference-list li input {
+        display: none; }
+        main .wrap-non-essence .answer.confirm ul li .content-area .preferences ul.preference-list li input:checked + label .checkmark {
+          border-left: 3px solid #F95344;
+          border-bottom: 3px solid #F95344; }
+        main .wrap-non-essence .answer.confirm ul li .content-area .preferences ul.preference-list li input:checked + label .label {
+          color: #F95344; }
+      main .wrap-non-essence .answer.confirm ul li .content-area .preferences ul.preference-list li label {
+        display: flex;
+        align-items: center; }
+        main .wrap-non-essence .answer.confirm ul li .content-area .preferences ul.preference-list li label .checkmark {
+          width: 13px;
+          height: 5px;
+          border-left: 3px solid #C4C4C4;
+          border-bottom: 3px solid #C4C4C4;
+          transform: rotate(-45deg); }
+        main .wrap-non-essence .answer.confirm ul li .content-area .preferences ul.preference-list li label .label {
+          font-size: 1.3em;
+          font-weight: bold;
+          margin-left: 10px; }
 
 main .wrap-non-essence .preferences {
   max-width: 90%;
@@ -1049,6 +1096,22 @@ main .wrap-recommend .loading {
     width: 50px;
     margin: 0 auto; }
     main .wrap-recommend .loading .loading-icon img {
+      width: 100%; }
+
+main .wrap-recommend .loading2 {
+  width: 100%;
+  height: calc(100vh - 64px);
+  background: radial-gradient(73.01% 73.01% at 50% 26.99%, #262628 0%, #262628 18.8%, #000000 100%); }
+  main .wrap-recommend .loading2 .message {
+    font-size: 1.7em;
+    font-weight: bold;
+    text-align: center;
+    color: #FFF; }
+  main .wrap-recommend .loading2 .loading-icon {
+    width: 170px;
+    margin: 0 auto;
+    padding-top: 100px; }
+    main .wrap-recommend .loading2 .loading-icon img {
       width: 100%; }
 
 /**** 嗜好性選択 ****/

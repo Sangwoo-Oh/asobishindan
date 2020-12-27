@@ -10,8 +10,8 @@
           <li>
             <p class="episode" >{{ selectedEpisode[0].label }}{{ this.toChild(selectedEpisode[0].id) }}</p>
             <ul class="preference-list">
-              <li *ngFor="let data of this.data[0]" formArrayName="preference">
-                <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.pref_label, data.id, $event)">
+              <li *ngFor="let data of this.data[0]" formArrayName="preference1">
+                <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange1(data.pref_label, data.id, $event)" required>
                 <label for="{{data.epi_id}}-{{ data.id }}">
                   <div class="checkmark"></div>
                   <p class="label">{{ data.pref_label }}</p>
@@ -22,8 +22,8 @@
           <li>
             <p class="episode" >{{ selectedEpisode[1].label }}{{ this.toChild(selectedEpisode[1].id) }}</p>
             <ul class="preference-list">
-              <li *ngFor="let data of this.data[1]" formArrayName="preference">
-                <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.pref_label, data.id, $event)">
+              <li *ngFor="let data of this.data[1]" formArrayName="preference2">
+                <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange2(data.pref_label, data.id, $event)" required>
                 <label for="{{data.epi_id}}-{{ data.id }}">
                   <div class="checkmark"></div>
                   <p class="label">{{ data.pref_label }}</p>
@@ -34,8 +34,8 @@
           <li>
             <p class="episode" >{{ selectedEpisode[2].label }}{{ this.toChild(selectedEpisode[2].id) }}</p>
             <ul class="preference-list">
-              <li *ngFor="let data of this.data[2]" formArrayName="preference">
-                <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange(data.pref_label, data.id, $event)">
+              <li *ngFor="let data of this.data[2]" formArrayName="preference3">
+                <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange3(data.pref_label, data.id, $event)" required>
                 <label for="{{data.epi_id}}-{{ data.id }}">
                   <div class="checkmark"></div>
                   <p class="label">{{ data.pref_label }}</p>
@@ -50,5 +50,5 @@
 </main>
 
 <footer>
-  <button class="next" type="button" name="button" ontouchstart="" (click)="submit()">非本質質問へ進む</button>
+  <button class="next" type="button" name="button" ontouchstart="" (click)="submit()" [disabled]="!form.valid">非本質質問へ進む</button>
 </footer>

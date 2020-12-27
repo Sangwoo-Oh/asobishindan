@@ -20,6 +20,7 @@ export class TestService {
   essencePrefs: any;
   nonessencePrefs: any;
   params: any;
+  nonessenceEpis: any;
 
   constructor(
     private http: HttpClient
@@ -127,6 +128,16 @@ export class TestService {
   }
   public getNonEssencePreferences() {
     return this.nonessencePrefs;
+  }
+
+  /**
+   * 遊びエピソードgetter/setter
+  **/
+  public setnonessenceEpis(nonessenceEpis: any) {
+    this.nonessenceEpis = nonessenceEpis;
+  }
+  public getnonessenceEpis() {
+    return this.nonessenceEpis;
   }
 
   /**

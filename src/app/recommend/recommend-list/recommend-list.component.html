@@ -3,7 +3,7 @@
     <ul *ngIf="err" class="errors">
       <li *ngFor="let msg of err">{{ msg }}</li>
     </ul>
-    <div class="recommend-list" *ngIf="activity[0]; else elseActivity">
+    <div class="recommend-list" *ngIf="activity[0]; else loading">
       <p class="main">あなたにおすすめする遊びを<br><span>{{ data.length }}</span>件見つけました</p>
       <ul class="recommendations">
         <li *ngFor="let act of activity[0]; let i = index" class="recommend-item" [style.background-image]="'url(../assets/img/' + act.act_main_img + '.jpg)'" routerLink="/recommend/{{ act.act_id }}" (click)="onClick(act)">
@@ -29,13 +29,21 @@
         </li>
       </ul>
     </div>
-    <ng-template #elseActivity>
+    <ng-template #loading>
       <div class="loading">
         <p class="message">診断中です...</p>
         <div class="loading-icon">
           <img src="../assets/img/icon_loader.gif" alt="">
         </div>
       </div>
+      <!--
+      <div class="loading2">
+        <div class="loading-icon">
+          <img src="../assets/img/intro_treasure_big.png" alt="">
+        </div>
+        <p class="message">診断中です...</p>
+      </div>
+      -->
     </ng-template>
   </div>
 </main>
