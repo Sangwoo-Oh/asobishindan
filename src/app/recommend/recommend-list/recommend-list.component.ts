@@ -72,11 +72,14 @@ export class RecommendListComponent implements OnInit {
         console.log(response)
         for (let index = 0; index < this.data.length; index++) {
           const element = this.data[index];
+          /*
           if (index % 2 == 0) {
-            element['act_main_img'] = 'recommend_bg_01';
+            // element['act_main_img'] = 'recommend_bg_01';
+            element['act_main_img'] = 'activity/main/act_main_img_17';
           } else {
             element['act_main_img'] = 'recommend_bg_02';
           }
+          */
           //リコメンド 0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5
           if (element['recommend_rate'] == 5) {
             element['rate_classname'] = 'rate5';

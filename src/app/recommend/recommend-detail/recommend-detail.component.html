@@ -2,7 +2,7 @@
   <div class="wrap-recommend">
     <div class="recommend-detail">
       <div class="fv">
-        <img src="../assets/img/{{ actData.act_main_img }}.jpg" alt="">
+        <img src="../assets/img/activity/main/{{ actData.act_main_img }}.jpg" alt="">
       </div>
       <div class="info-wrap">
         <div class="top">
@@ -39,7 +39,7 @@
         <li *ngFor="let info of actData.actinfos">
           <h2 class="heading">{{ info.act_heading }}</h2>
           <div class="image">
-            <img src="../assets/img/recommend_datail_01.jpg" alt="">
+            <img src="../assets/img/activity/sub/{{ info.act_img }}.jpg" alt="">
           </div>
           <div class="content">
             <p>{{ info.act_text }}</p>

@@ -6,7 +6,7 @@
     <div class="recommend-list" *ngIf="activity[0]; else loading">
       <p class="main">あなたにおすすめする遊びを<br><span>{{ data.length }}</span>件見つけました</p>
       <ul class="recommendations">
-        <li *ngFor="let act of activity[0]; let i = index" class="recommend-item" [style.background-image]="'url(../assets/img/' + act.act_main_img + '.jpg)'" routerLink="/recommend/{{ act.act_id }}" (click)="onClick(act)">
+        <li *ngFor="let act of activity[0]; let i = index" class="recommend-item" [style.background-image]="'url(../assets/img/activity/main/' + act.act_main_img + '.jpg)'" routerLink="/recommend/{{ act.act_id }}" (click)="onClick(act)">
           <div class="top">
             <div class="title-copy">
               <p class="title">遊びジャンル：{{ act.act_label }}</p>
