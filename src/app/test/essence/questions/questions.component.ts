@@ -44,16 +44,16 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     },
     {
       id: 3,
-      label: '学業関連（研究・留学など）'
-    },
-    {
-      id: 4,
       label: 'ソーシャル系課外活動'
     },
     {
-      id: 5,
+      id: 4,
       label: 'ビジネス系課外活動'
-    }
+    },
+    {
+      id: 5,
+      label: '学業関連（研究・留学など）'
+    },
   ]
   data: any;
   subscription = new Subscription();
@@ -159,6 +159,7 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     this.testService.getEpisode(id).subscribe(
       response =>  {
         this.episode_0 = response;
+        console.log(response)
         this.testService.setData(response);
         this.testService.getData();
       },
@@ -216,14 +217,15 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     }
   }
 
-  onChange(epi_label_2: string, id: number, event: any) {
+  onChange(epi_label_2: string, id: number, event: any, epi_cat) {
     let isChecked = <HTMLInputElement>event.target.checked;
     const preferenceFormArray = <FormArray>this.form.controls.episode;
     if (isChecked) {
       preferenceFormArray.push(new FormControl(
         {
           label: epi_label_2,
-          id: id
+          id: id,
+          epicat: epi_cat
         }
       ));
 

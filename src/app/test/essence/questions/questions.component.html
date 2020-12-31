@@ -4,6 +4,7 @@
       <p class="main">あなたが大学時代に頑張った<br>活動カテゴリーを選んでください。</p>
       <p class="alert">あとエピソードを<span>{{ 3 - form.value.episode.length }}</span>つ選んでね</p>
     </div>
+    {{ this.form.value.episode | json }}
     <div class="answer" *ngIf="episodes">
       <form [formGroup]="form">
         <ul class="epi-categories">
@@ -15,7 +16,7 @@
             <ng-container *ngIf="episode_0">
               <ul>
                 <li *ngFor="let item of episode_0" formArrayName="episode">
-                  <input id="{{ episodeCats[0].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event)">
+                  <input id="{{ episodeCats[0].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event, item.epi_cat)">
                   <label for="{{ episodeCats[0].id }}{{ item.id }}">
                     <div class="checkmark"></div>
                     <p class="label">{{ item.epi_label_2 }}</p>
@@ -29,10 +30,10 @@
               <div class="label" id="{{ episodeCats[1].id }}">{{ episodeCats[1].label }}</div>
               <div class="rectangle" id="{{ episodeCats[1].id }}"></div>
             </a>
-            <ng-container *ngIf="episodes[1]">
+            <ng-container *ngIf="episode_1">
               <ul>
-                <li *ngFor="let item of episodes[1]" formArrayName="episode">
-                  <input id="{{ episodeCats[1].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event)">
+                <li *ngFor="let item of episode_1" formArrayName="episode">
+                  <input id="{{ episodeCats[1].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event, item.epi_cat)">
                   <label for="{{ episodeCats[1].id }}{{ item.id }}">
                     <div class="checkmark"></div>
                     <p class="label">{{ item.epi_label_2 }}</p>
@@ -46,10 +47,10 @@
               <div class="label" id="{{ episodeCats[2].id }}">{{ episodeCats[2].label }}</div>
               <div class="rectangle" id="{{ episodeCats[2].id }}"></div>
             </a>
-            <ng-container *ngIf="episodes[2]">
+            <ng-container *ngIf="episode_2">
               <ul>
-                <li *ngFor="let item of episodes[2]" formArrayName="episode">
-                  <input id="{{ episodeCats[2].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event)">
+                <li *ngFor="let item of episode_2" formArrayName="episode">
+                  <input id="{{ episodeCats[2].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event, item.epi_cat)">
                   <label for="{{ episodeCats[2].id }}{{ item.id }}">
                     <div class="checkmark"></div>
                     <p class="label">{{ item.epi_label_2 }}</p>
@@ -63,10 +64,10 @@
               <div class="label" id="{{ episodeCats[3].id }}">{{ episodeCats[3].label }}</div>
               <div class="rectangle" id="{{ episodeCats[3].id }}"></div>
             </a>
-            <ng-container *ngIf="episodes[3]">
+            <ng-container *ngIf="episode_3">
               <ul>
-                <li *ngFor="let item of episodes[3]" formArrayName="episode">
-                  <input id="{{ episodeCats[3].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event)">
+                <li *ngFor="let item of episode_3" formArrayName="episode">
+                  <input id="{{ episodeCats[3].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event, item.epi_cat)">
                   <label for="{{ episodeCats[3].id }}{{ item.id }}">
                     <div class="checkmark"></div>
                     <p class="label">{{ item.epi_label_2 }}</p>
@@ -80,10 +81,10 @@
               <div class="label" id="{{ episodeCats[4].id }}">{{ episodeCats[4].label }}</div>
               <div class="rectangle" id="{{ episodeCats[4].id }}"></div>
             </a>
-            <ng-container *ngIf="episodes[4]">
+            <ng-container *ngIf="episode_4">
               <ul>
-                <li *ngFor="let item of episodes[4]" formArrayName="episode">
-                  <input id="{{ episodeCats[4].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event)">
+                <li *ngFor="let item of episode_4" formArrayName="episode">
+                  <input id="{{ episodeCats[4].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event, item.epi_cat)">
                   <label for="{{ episodeCats[4].id }}{{ item.id }}">
                     <div class="checkmark"></div>
                     <p class="label">{{ item.epi_label_2 }}</p>

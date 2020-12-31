@@ -4,9 +4,36 @@
       <p class="main">こちらの三つを選びました</p>
       <p class="alert">間違いないですか？</p>
       <ul class="select-episode">
-        <li *ngFor="let episode of selectedEpisodes">
-          {{ episode.label }}
-        </li>
+        <ng-container *ngIf="epicat_1.length > 0">
+          <p>体育会系部活・サークル</p>
+          <li *ngFor="let episode of epicat_1">
+            {{ episode.label }}
+          </li>
+        </ng-container>
+        <ng-container *ngIf="epicat_2.length > 0">
+          <p>文化系部活・サークル</p>
+          <li *ngFor="let episode of epicat_2">
+            {{ episode.label }}
+          </li>
+        </ng-container>
+        <ng-container *ngIf="epicat_3.length > 0">
+          <p>ソーシャル系課外活動</p>
+          <li *ngFor="let episode of epicat_3">
+            {{ episode.label }}
+          </li>
+        </ng-container>
+        <ng-container *ngIf="epicat_4.length > 0">
+          <p>ビジネス系課外活動</p>
+          <li *ngFor="let episode of epicat_4">
+            {{ episode.label }}
+          </li>
+        </ng-container>
+        <ng-container *ngIf="epicat_5.length > 0">
+          <p>学業関連（研究・留学など）</p>
+          <li *ngFor="let episode of epicat_5">
+            {{ episode.label }}
+          </li>
+        </ng-container>
       </ul>
     </div>
   </div>
