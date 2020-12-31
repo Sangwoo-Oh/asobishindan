@@ -12,9 +12,9 @@
               <div class="label" id="{{ episodeCats[0].id }}">{{ episodeCats[0].label }}</div>
               <div class="rectangle" id="{{ episodeCats[0].id }}"></div>
             </a>
-            <ng-container *ngIf="episodes[0]">
+            <ng-container *ngIf="episode_0">
               <ul>
-                <li *ngFor="let item of episodes[0]" formArrayName="episode">
+                <li *ngFor="let item of episode_0" formArrayName="episode">
                   <input id="{{ episodeCats[0].id }}{{ item.id }}" type="checkbox" name="episode" [value]="item.epi_label_2" (change)="onChange(item.epi_label_2, item.id, $event)">
                   <label for="{{ episodeCats[0].id }}{{ item.id }}">
                     <div class="checkmark"></div>

@@ -14,6 +14,9 @@ import { ActivatedRoute } from '@angular/router';
 export class PreferencesComponent implements OnInit {
   selectedEpisode: any[];
   data: any[];
+  data_0: any;
+  data_1: any;
+  data_2: any;
   preferences: any[];
   index: number;
   form: FormGroup;
@@ -25,11 +28,21 @@ export class PreferencesComponent implements OnInit {
     private router: Router) {
     this.selectedEpisode = new Array();
     this.data = new Array();
+    this.data_0 = new Array();
+    this.data_1 = new Array();
+    this.data_2 = new Array();
     this.preferences = new Array();
     this.index = 0;
     this.selectedEpisode = this.testService.getEpiArrayData();
     this.selectedEpisode.forEach(element => {
-      this.onSubmit(element['id']);
+      if (this.index == 0) {
+        this.onSubmit_0(element['id']);
+      } else if (this.index == 1) {
+        this.onSubmit_1(element['id']);
+      } else if (this.index == 2){
+        this.onSubmit_2(element['id']);
+      }
+      this.index++;
     });
     this.form = this.formBuilder.group({
       preference1 :  new FormArray([
@@ -74,12 +87,35 @@ export class PreferencesComponent implements OnInit {
     this.router.navigate(['/test/non-essence']);
   }
 
-  public onSubmit(id: string):any{
+  public onSubmit_0(id: string):any{
     this.testService.getEpiPreferences(id).subscribe(
       response =>  {
-        this.data.push(response);
-        this.testService.setEpiArrayData(this.data);
-        return this.data;
+        // this.data.push(response);
+        this.data_0 = response;
+        // this.testService.setEpiArrayData(this.data);
+        // return this.data;
+      },
+      err => alert(err)
+    );
+  }
+  public onSubmit_1(id: string):any{
+    this.testService.getEpiPreferences(id).subscribe(
+      response =>  {
+        // this.data.push(response);
+        this.data_1 = response;
+        // this.testService.setEpiArrayData(this.data);
+        // return this.data;
+      },
+      err => alert(err)
+    );
+  }
+  public onSubmit_2(id: string):any{
+    this.testService.getEpiPreferences(id).subscribe(
+      response =>  {
+        // this.data.push(response);
+        this.data_2 = response;
+        // this.testService.setEpiArrayData(this.data);
+        // return this.data;
       },
       err => alert(err)
     );

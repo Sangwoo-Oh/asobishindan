@@ -58,6 +58,11 @@ export class QuestionsComponent implements OnInit, OnDestroy {
   data: any;
   subscription = new Subscription();
   episodes: any;
+  episode_0: any;
+  episode_1: any;
+  episode_2: any;
+  episode_3: any;
+  episode_4: any;
   i: number;
   opened: string[];
   public form: FormGroup;
@@ -70,10 +75,22 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder) {
     this.data = new Array()
     this.episodes = new Array()
+    this.episode_0 = new Array()
+    this.episode_1 = new Array()
+    this.episode_2 = new Array()
+    this.episode_3 = new Array()
+    this.episode_4 = new Array()
     this.i = 0;
+    /*
     this.episodeCats.forEach(element => {
       this.getEpi(element['id'])
     });
+    */
+    this.getEpi_0(this.episodeCats[0]['id']);
+    this.getEpi_1(this.episodeCats[1]['id']);
+    this.getEpi_2(this.episodeCats[2]['id']);
+    this.getEpi_3(this.episodeCats[3]['id']);
+    this.getEpi_4(this.episodeCats[4]['id']);
     this.subscription = this.testService.data.subscribe((data: any) => {
       this.episodes.push(data);
     });
@@ -93,6 +110,7 @@ export class QuestionsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   }
+
 
   /**
    * 終了処理
@@ -137,10 +155,50 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     );
     this.router.navigate(['/test/essence/episodes/'+ event.target.id]);
   }
-  public getEpi(id: number) {
+  public getEpi_0(id: number) {
     this.testService.getEpisode(id).subscribe(
       response =>  {
-        this.data = response;
+        this.episode_0 = response;
+        this.testService.setData(response);
+        this.testService.getData();
+      },
+      err => alert(err)
+    );
+  }
+  public getEpi_1(id: number) {
+    this.testService.getEpisode(id).subscribe(
+      response =>  {
+        this.episode_1 = response;
+        this.testService.setData(response);
+        this.testService.getData();
+      },
+      err => alert(err)
+    );
+  }
+  public getEpi_2(id: number) {
+    this.testService.getEpisode(id).subscribe(
+      response =>  {
+        this.episode_2 = response;
+        this.testService.setData(response);
+        this.testService.getData();
+      },
+      err => alert(err)
+    );
+  }
+  public getEpi_3(id: number) {
+    this.testService.getEpisode(id).subscribe(
+      response =>  {
+        this.episode_3 = response;
+        this.testService.setData(response);
+        this.testService.getData();
+      },
+      err => alert(err)
+    );
+  }
+  public getEpi_4(id: number) {
+    this.testService.getEpisode(id).subscribe(
+      response =>  {
+        this.episode_4 = response;
         this.testService.setData(response);
         this.testService.getData();
       },
