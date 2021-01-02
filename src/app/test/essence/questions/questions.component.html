@@ -1,7 +1,7 @@
 <main>
   <div class="wrap-essence">
     <div class="question">
-      <p class="main">あなたが大学時代に頑張った<br>活動カテゴリーを選んでください。</p>
+      <p class="main">あなたが大学時代に力を注いだ、エピソードを以下のカテゴリーから3つ選んでください。</p>
       <p class="alert">あとエピソードを<span>{{ 3 - form.value.episode.length }}</span>つ選んでね</p>
     </div>
     <!-- {{ this.form.value.episode | json }} -->
@@ -10,7 +10,7 @@
         <ul class="epi-categories">
           <li>
             <a href="javascript:void(0);" (click)="addClass(0)" [class]="opened[0]">
-              <div class="label" id="{{ episodeCats[0].id }}">{{ episodeCats[0].label }}</div>
+              <div class="label" id="{{ episodeCats[0].id }}">{{ episodeCats[0].label }}<span>から選ぶ</span></div>
               <div class="rectangle" id="{{ episodeCats[0].id }}"></div>
             </a>
             <ng-container *ngIf="episode_0">
@@ -27,7 +27,7 @@
           </li>
           <li>
             <a href="javascript:void(0);" (click)="addClass(1)" [class]="opened[1]">
-              <div class="label" id="{{ episodeCats[1].id }}">{{ episodeCats[1].label }}</div>
+              <div class="label" id="{{ episodeCats[1].id }}">{{ episodeCats[1].label }}<span>から選ぶ</span></div>
               <div class="rectangle" id="{{ episodeCats[1].id }}"></div>
             </a>
             <ng-container *ngIf="episode_1">
@@ -44,7 +44,7 @@
           </li>
           <li>
             <a href="javascript:void(0);" (click)="addClass(2)" [class]="opened[2]">
-              <div class="label" id="{{ episodeCats[2].id }}">{{ episodeCats[2].label }}</div>
+              <div class="label" id="{{ episodeCats[2].id }}">{{ episodeCats[2].label }}<span>から選ぶ</span></div>
               <div class="rectangle" id="{{ episodeCats[2].id }}"></div>
             </a>
             <ng-container *ngIf="episode_2">
@@ -61,7 +61,7 @@
           </li>
           <li>
             <a href="javascript:void(0);" (click)="addClass(3)" [class]="opened[3]">
-              <div class="label" id="{{ episodeCats[3].id }}">{{ episodeCats[3].label }}</div>
+              <div class="label" id="{{ episodeCats[3].id }}">{{ episodeCats[3].label }}<span>から選ぶ</span></div>
               <div class="rectangle" id="{{ episodeCats[3].id }}"></div>
             </a>
             <ng-container *ngIf="episode_3">
@@ -78,7 +78,7 @@
           </li>
           <li>
             <a href="javascript:void(0);" (click)="addClass(4)" [class]="opened[4]">
-              <div class="label" id="{{ episodeCats[4].id }}">{{ episodeCats[4].label }}</div>
+              <div class="label" id="{{ episodeCats[4].id }}">{{ episodeCats[4].label }}<span>から選ぶ</span></div>
               <div class="rectangle" id="{{ episodeCats[4].id }}"></div>
             </a>
             <ng-container *ngIf="episode_4">

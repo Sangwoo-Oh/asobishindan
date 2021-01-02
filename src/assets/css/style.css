@@ -457,81 +457,86 @@ main .wrap-basic .answer {
   height: 480px; }
   main .wrap-basic .answer::-webkit-scrollbar {
     display: none; }
-  main .wrap-basic .answer ul.question-list li.question-index p.title {
-    text-align: center;
-    font-size: 1.7em;
-    font-weight: bold; }
-    main .wrap-basic .answer ul.question-list li.question-index p.title span {
-      font-size: 1.6em;
-      font-weight: bold;
-      margin-right: 10px; }
-  main .wrap-basic .answer ul.question-list li.question-index ul.choices {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px; }
-    main .wrap-basic .answer ul.question-list li.question-index ul.choices li input[type=radio] {
-      display: none;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-    main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio {
-      display: block;
-      margin: 0 auto;
-      position: relative;
-      width: auto;
-      width: 50px;
-      height: 50px;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-      main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio::before {
-        background: #FFF;
-        border: 3px solid #E4E4E4;
-        border-radius: 50%;
-        content: '';
-        display: block;
-        height: 30px;
-        width: 30px;
-        position: absolute;
-        top: 44%;
-        right: 0;
-        left: 0;
-        margin: 0 auto; }
-      main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio::after {
-        background: #FFCD1E;
-        border-radius: 50%;
-        content: '';
-        display: block;
-        height: 30px;
-        width: 30px;
-        left: 3px;
-        opacity: 0;
-        position: absolute;
-        top: 50%;
-        transform: scale3d(0.3, 0.3, 1);
-        transition: transform .2s ease-in-out, opacity .2s ease-in-out;
-        right: 0;
-        left: 0;
-        margin: 0 auto; }
-    main .wrap-basic .answer ul.question-list li.question-index ul.choices li input[type=radio]:checked + .radio::after {
-      opacity: 1;
-      transform: scale3d(1, 1, 1); }
-    main .wrap-basic .answer ul.question-list li.question-index ul.choices li p {
+  main .wrap-basic .answer ul.question-list li.question-index {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #F9F9F9;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); }
+    main .wrap-basic .answer ul.question-list li.question-index p.title {
       text-align: center;
-      margin-top: 14px;
-      font-size: 1.2em; }
-  main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(3) .radio::before {
-    width: 20px;
-    height: 20px;
-    top: 51%; }
-  main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(3) .radio::after {
-    width: 20px;
-    height: 20px;
-    top: 57%; }
-  main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(1) .radio::before, main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(5) .radio::before {
-    width: 40px;
-    height: 40px;
-    top: 34%; }
-  main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(1) .radio::after, main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(5) .radio::after {
-    width: 40px;
-    height: 40px;
-    top: 40%; }
+      font-size: 1.5em;
+      font-weight: bold; }
+      main .wrap-basic .answer ul.question-list li.question-index p.title span {
+        font-size: 1.6em;
+        font-weight: bold;
+        margin-right: 10px; }
+    main .wrap-basic .answer ul.question-list li.question-index ul.choices {
+      display: flex;
+      justify-content: space-between; }
+      main .wrap-basic .answer ul.question-list li.question-index ul.choices li input[type=radio] {
+        display: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+      main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        width: auto;
+        width: 50px;
+        height: 50px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+        main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio::before {
+          background: #FFF;
+          border: 3px solid #E4E4E4;
+          border-radius: 50%;
+          content: '';
+          display: block;
+          height: 30px;
+          width: 30px;
+          position: absolute;
+          top: 44%;
+          right: 0;
+          left: 0;
+          margin: 0 auto; }
+        main .wrap-basic .answer ul.question-list li.question-index ul.choices li .radio::after {
+          background: #FFCD1E;
+          border-radius: 50%;
+          content: '';
+          display: block;
+          height: 30px;
+          width: 30px;
+          left: 3px;
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          transform: scale3d(0.3, 0.3, 1);
+          transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+          right: 0;
+          left: 0;
+          margin: 0 auto; }
+      main .wrap-basic .answer ul.question-list li.question-index ul.choices li input[type=radio]:checked + .radio::after {
+        opacity: 1;
+        transform: scale3d(1, 1, 1); }
+      main .wrap-basic .answer ul.question-list li.question-index ul.choices li p {
+        text-align: center;
+        margin-top: 14px;
+        font-size: 1.2em; }
+    main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(3) .radio::before {
+      width: 20px;
+      height: 20px;
+      top: 51%; }
+    main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(3) .radio::after {
+      width: 20px;
+      height: 20px;
+      top: 57%; }
+    main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(1) .radio::before, main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(5) .radio::before {
+      width: 40px;
+      height: 40px;
+      top: 34%; }
+    main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(1) .radio::after, main .wrap-basic .answer ul.question-list li.question-index ul.five li:nth-child(5) .radio::after {
+      width: 40px;
+      height: 40px;
+      top: 40%; }
 
 /**** 嗜好性選択 ****/
 /********************
@@ -570,15 +575,20 @@ main .wrap-essence .answer {
       align-items: center;
       padding: 14px 20px; }
       main .wrap-essence .answer ul.epi-categories > li a .label {
-        font-size: 2em;
+        font-size: 1.8em;
         font-weight: bold;
         width: 95%; }
+        main .wrap-essence .answer ul.epi-categories > li a .label span {
+          font-size: 0.7em;
+          margin-left: 5px;
+          font-weight: 300; }
       main .wrap-essence .answer ul.epi-categories > li a .rectangle {
-        width: 18px;
-        height: 18px;
-        border-left: 4px solid #C4C4C4;
-        border-bottom: 4px solid #C4C4C4;
-        transform: rotate(225deg); }
+        width: 15px;
+        height: 15px;
+        border-left: 3px solid #C4C4C4;
+        border-bottom: 3px solid #C4C4C4;
+        transform: rotate(225deg);
+        transition: .1s; }
       main .wrap-essence .answer ul.epi-categories > li a.opened .rectangle {
         transform: rotate(315deg); }
       main .wrap-essence .answer ul.epi-categories > li a.opened + ul {
@@ -658,7 +668,10 @@ main .wrap-essence .confirm {
   main .wrap-essence .confirm .select-episode {
     margin-top: 30px; }
     main .wrap-essence .confirm .select-episode p {
-      text-decoration: underline; }
+      text-decoration: underline;
+      margin-bottom: 15px;
+      font-size: 1.2em;
+      font-weight: bold; }
     main .wrap-essence .confirm .select-episode li {
       font-size: 1.5em;
       color: #FFF;

@@ -27,10 +27,15 @@ main {
         &.question-list {
           li {
             &.question-index {
+              padding: 15px;
+              border-radius: 10px;
+              background-color: #F9F9F9;
+              margin-bottom: 40px;
+              box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
               p {
                 &.title {
                   text-align: center;
-                  font-size: 1.7em;
+                  font-size: 1.5em;
                   font-weight: bold;
                   span {
                     font-size: 1.6em;
@@ -43,7 +48,6 @@ main {
                 &.choices {
                   display: flex;
                   justify-content: space-between;
-                  margin-bottom: 40px;
                   li {
                     input[type=radio] {
                       display: none;

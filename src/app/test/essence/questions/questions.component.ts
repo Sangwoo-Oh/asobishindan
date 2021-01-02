@@ -44,11 +44,11 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     },
     {
       id: 3,
-      label: 'ソーシャル系課外活動'
+      label: 'ボランティア・NPO・学生団体'
     },
     {
       id: 4,
-      label: 'ビジネス系課外活動'
+      label: 'アルバイト・インターン・起業'
     },
     {
       id: 5,
