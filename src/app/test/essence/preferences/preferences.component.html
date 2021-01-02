@@ -13,7 +13,6 @@
               <li *ngFor="let data of data_0" formArrayName="preference1">
                 <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange1(data.pref_label, data.id, $event)" required>
                 <label for="{{data.epi_id}}-{{ data.id }}">
-                  <div class="checkmark"></div>
                   <p class="label">{{ data.pref_label }}</p>
                 </label>
               </li>
@@ -25,7 +24,6 @@
               <li *ngFor="let data of data_1" formArrayName="preference2">
                 <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange2(data.pref_label, data.id, $event)" required>
                 <label for="{{data.epi_id}}-{{ data.id }}">
-                  <div class="checkmark"></div>
                   <p class="label">{{ data.pref_label }}</p>
                 </label>
               </li>
@@ -37,7 +35,6 @@
               <li *ngFor="let data of data_2" formArrayName="preference3">
                 <input id="{{data.epi_id}}-{{ data.id }}" type="checkbox" name="preference" [value]="data.pref_label" (change)="onChange3(data.pref_label, data.id, $event)" required>
                 <label for="{{data.epi_id}}-{{ data.id }}">
-                  <div class="checkmark"></div>
                   <p class="label">{{ data.pref_label }}</p>
                 </label>
               </li>
@@ -45,9 +42,9 @@
           </li>
         </ul>
       </form>
-    </div>
-    <div class="button-area">
-      <button class="next" type="button" name="button" ontouchstart="" (click)="submit()" [disabled]="!form.valid">STEP3へ進む</button>
+      <div class="button-area">
+        <button class="next" type="button" name="button" ontouchstart="" (click)="submit()" [disabled]="!form.valid">STEP3へ進む</button>
+      </div>
     </div>
   </div>
 </main>
