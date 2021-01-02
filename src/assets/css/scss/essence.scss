@@ -27,6 +27,9 @@ main {
       }
     }
     .answer {
+      margin: 0 auto;
+      overflow-y: auto;
+      height: 480px;
       ul.epi-categories {
         & > li {
           background-color: #F3F3F3;
@@ -170,11 +173,18 @@ main {
       }
       .select-episode {
         margin-top: 30px;
+        p {
+          text-decoration: underline;
+        }
         li {
           font-size: 1.5em;
           color: #FFF;
           font-weight: bold;
           margin-bottom: 10px;
+          list-style: disc;
+          text-indent: -1em;
+          padding-left: 1em;
+          margin-left: 1em;
         }
       }
     }

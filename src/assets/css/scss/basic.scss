@@ -18,8 +18,12 @@ main {
     .answer {
       width: 85%;
       margin: 0 auto;
+      overflow-y: auto;
+      height: 480px;
+      &::-webkit-scrollbar {
+        display:none;
+      }
       ul {
-        margin-bottom: 80px;
         &.question-list {
           li {
             &.question-index {

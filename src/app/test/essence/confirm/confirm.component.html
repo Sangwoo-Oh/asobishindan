@@ -1,6 +1,7 @@
 <main>
   <div class="wrap-essence">
     <div class="confirm">
+      <p class="main">あなたが大学時代に頑張った<br>活動カテゴリーを選んでください。</p>
       <p class="main">こちらの三つを選びました</p>
       <p class="alert">間違いないですか？</p>
       <ul class="select-episode">
@@ -35,11 +36,15 @@
           </li>
         </ng-container>
       </ul>
+      <div class="button-area">
+        <button class="next" routerLink="/test/preferences">次へ進む</button>
+        <button class="back" routerLink="/test/essence">エピソードを選び直す</button>
+      </div>
     </div>
   </div>
 </main>
 
-<footer class="half">
+<!-- <footer class="half">
   <a href="#" class="back" routerLink="/test/essence">選び直す</a>
   <a href="#" class="next" routerLink="/test/preferences">次へ</a>
-</footer>
+</footer> -->

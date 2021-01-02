@@ -140,9 +140,12 @@
           </li>
         </ul>
       </form>
+       <div class="button-area flex">
+         <button class="next" [disabled]="!form.valid" type="submit" name="button" ontouchstart="" (click)="register(form)">STEP2へ進む</button>
+       </div>
     </div>
   </div>
 </main>
-<footer>
+<!-- <footer>
   <button class="next" [disabled]="!form.valid" type="submit" name="button" ontouchstart="" (click)="register(form)">次へ</button>
-</footer>
+</footer> -->

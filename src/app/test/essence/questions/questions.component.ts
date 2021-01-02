@@ -217,7 +217,7 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     }
   }
 
-  onChange(epi_label_2: string, id: number, event: any, epi_cat) {
+  onChange(epi_label_2: string, id: number, event: any, epi_cat:any) {
     let isChecked = <HTMLInputElement>event.target.checked;
     const preferenceFormArray = <FormArray>this.form.controls.episode;
     if (isChecked) {

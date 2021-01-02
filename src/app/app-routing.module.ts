@@ -43,21 +43,20 @@ const routes: Routes = [
           animation: 'intro01'
         },
       },
-      {
-        path: '02',
-        component: Intro02Component,
-        data: {
-          animation: 'intro02'
-        },
-      },
-      {
-        path: '03',
-        component: Intro03Component,
-        data: {
-          animation: 'intro03'
-        },
-      },
-
+      // {
+      //   path: '02',
+      //   component: Intro02Component,
+      //   data: {
+      //     animation: 'intro02'
+      //   },
+      // },
+      // {
+      //   path: '03',
+      //   component: Intro03Component,
+      //   data: {
+      //     animation: 'intro03'
+      //   },
+      // },
     ]
   },
   {

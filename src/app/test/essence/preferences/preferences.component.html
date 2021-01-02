@@ -46,9 +46,12 @@
         </ul>
       </form>
     </div>
+    <div class="button-area">
+      <button class="next" type="button" name="button" ontouchstart="" (click)="submit()" [disabled]="!form.valid">STEP3へ進む</button>
+    </div>
   </div>
 </main>
 
-<footer>
+<!-- <footer>
   <button class="next" type="button" name="button" ontouchstart="" (click)="submit()" [disabled]="!form.valid">非本質質問へ進む</button>
-</footer>
+</footer> -->

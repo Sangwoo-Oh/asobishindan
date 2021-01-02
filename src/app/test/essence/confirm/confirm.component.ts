@@ -27,7 +27,7 @@ export class ConfirmComponent implements OnInit {
     this.epicat_3 = new Array();
     this.epicat_4 = new Array();
     this.epicat_5 = new Array();
-    this.selectedEpisodes.forEach(element => {
+    this.selectedEpisodes.forEach((element: any) => {
       if (element['epicat'] == 1) {
         this.epicat_1.push(element);
       } else if (element['epicat'] == 2) {

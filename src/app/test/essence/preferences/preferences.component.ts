@@ -34,7 +34,7 @@ export class PreferencesComponent implements OnInit {
     this.preferences = new Array();
     this.index = 0;
     this.selectedEpisode = this.testService.getEpiArrayData();
-    this.selectedEpisode.forEach(element => {
+    this.selectedEpisode.forEach((element: any) => {
       if (this.index == 0) {
         this.onSubmit_0(element['id']);
       } else if (this.index == 1) {

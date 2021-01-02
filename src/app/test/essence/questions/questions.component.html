@@ -4,7 +4,7 @@
       <p class="main">あなたが大学時代に頑張った<br>活動カテゴリーを選んでください。</p>
       <p class="alert">あとエピソードを<span>{{ 3 - form.value.episode.length }}</span>つ選んでね</p>
     </div>
-    {{ this.form.value.episode | json }}
+    <!-- {{ this.form.value.episode | json }} -->
     <div class="answer" *ngIf="episodes">
       <form [formGroup]="form">
         <ul class="epi-categories">
