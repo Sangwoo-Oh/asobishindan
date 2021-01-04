@@ -1048,55 +1048,57 @@ main .wrap-recommend .recommend-list {
   main .wrap-recommend .recommend-list .recommendations .recommend-item {
     background-position: center;
     background-size: cover;
-    color: #FFF;
-    padding: 140px 15px 10px 15px; }
-    main .wrap-recommend .recommend-list .recommendations .recommend-item .top {
-      display: flex;
-      align-items: flex-end;
-      margin-bottom: 10px; }
-      main .wrap-recommend .recommend-list .recommendations .recommend-item .top .title-copy {
-        width: 60%; }
-        main .wrap-recommend .recommend-list .recommendations .recommend-item .top .title-copy .bar {
-          width: 100%;
-          height: 2px;
-          display: block;
-          background: linear-gradient(to right, #FFF 50%, transparent);
-          margin: 3px 0 6px; }
-        main .wrap-recommend .recommend-list .recommendations .recommend-item .top .title-copy .copy {
-          font-size: 1.7em;
-          font-weight: bold; }
-      main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info {
-        width: 35%;
-        margin-left: 5%; }
-        main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info span {
-          font-size: 1.1em; }
-        main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex {
-          display: flex;
-          align-items: center; }
-          main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex .star-wrap {
-            width: 80px; }
-            main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex .star-wrap .rate {
-              font-size: 16px; }
-          main .wrap-recommend .recommend-list .recommendations .recommend-item .top .info .star-flex .number {
-            width: calc(100% - 80px);
-            font-size: 21px;
-            text-align: center;
+    color: #FFF; }
+    main .wrap-recommend .recommend-list .recommendations .recommend-item .filter {
+      padding: 140px 15px 10px 15px;
+      background: linear-gradient(0deg, #333, 20%, transparent); }
+      main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 10px; }
+        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .title-copy {
+          width: 60%; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .title-copy .bar {
+            width: 100%;
+            height: 2px;
+            display: block;
+            background: linear-gradient(to right, #FFF 50%, transparent);
+            margin: 3px 0 6px; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .title-copy .copy {
+            font-size: 1.7em;
             font-weight: bold; }
-    main .wrap-recommend .recommend-list .recommendations .recommend-item .bottom ul {
-      width: 100%;
-      overflow-x: auto;
-      white-space: nowrap;
-      display: flex; }
-      main .wrap-recommend .recommend-list .recommendations .recommend-item .bottom ul::-webkit-scrollbar {
-        /* Chrome, Safari 対応 */
-        display: none; }
-      main .wrap-recommend .recommend-list .recommendations .recommend-item .bottom ul li {
-        background-color: #FFCD1E;
-        border-radius: 50px;
-        margin-right: 7px;
-        padding: 2px 8px;
-        font-size: 1.1em;
-        font-weight: bold; }
+        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info {
+          width: 35%;
+          margin-left: 5%; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info span {
+            font-size: 1.1em; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex {
+            display: flex;
+            align-items: center; }
+            main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex .star-wrap {
+              width: 80px; }
+              main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex .star-wrap .rate {
+                font-size: 16px; }
+            main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex .number {
+              width: calc(100% - 80px);
+              font-size: 21px;
+              text-align: center;
+              font-weight: bold; }
+      main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .bottom ul {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex; }
+        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .bottom ul::-webkit-scrollbar {
+          /* Chrome, Safari 対応 */
+          display: none; }
+        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .bottom ul li {
+          background-color: #FFCD1E;
+          border-radius: 50px;
+          margin-right: 7px;
+          padding: 2px 8px;
+          font-size: 1.1em;
+          font-weight: bold; }
 
 main .wrap-recommend .recommend-detail .fv {
   margin-bottom: 30px; }
