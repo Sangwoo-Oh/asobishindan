@@ -16,6 +16,7 @@ export class RecommendService {
   data: any;
   prefs: any;
   actinfos: any;
+  resultId: any;
   constructor(
     private http: HttpClient
   ) {
@@ -61,5 +62,18 @@ export class RecommendService {
   }
   public getActInfoData():any{
     return this.actinfos;
+  }
+
+  /**
+   * 診断結果を取得
+  **/
+  public getResult(id: any): Observable<any> {
+    return this.http.get<any>(URL_PROD + '/api/result/' + id);
+  }
+  public setResultId(id: any){
+    this.resultId = id;
+  }
+  public getResultId(): any {
+    return this.resultId;
   }
 }

@@ -5,4 +5,5 @@ export interface RecommendModel {
   act_main_img: string;
   preferences: [];
   actinfos: [];
+  json_type_column: [];
 }

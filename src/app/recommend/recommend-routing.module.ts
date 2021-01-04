@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { RecommendComponent } from './recommend.component';
+import { RecommendLoadComponent } from './recommend-list/recommend-load.component';
 import { RecommendListComponent } from './recommend-list/recommend-list.component';
 import { RecommendDetailComponent } from './recommend-detail/recommend-detail.component';
 const routes: Routes = [
@@ -10,14 +11,18 @@ const routes: Routes = [
     component: RecommendComponent,
     children: [
       {
-        path: '',
-        component: RecommendListComponent
+        path: 'load',
+        component: RecommendLoadComponent
       },
       {
-        path: ':id',
-        component: RecommendDetailComponent
+        path: '',
+        component: RecommendListComponent,
       },
-    ]
+    ],
+  },
+  {
+    path: 'recommend/detail/:id',
+    component: RecommendDetailComponent,
   }
 ];
 

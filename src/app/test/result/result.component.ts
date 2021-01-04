@@ -154,7 +154,7 @@ export class ResultComponent implements OnInit {
     console.log(this.params);
     this.testService.setParams(this.params);
 
-    this.router.navigate(['/recommend']);
+    this.router.navigate(['/recommend/load']);
 
   }
 }

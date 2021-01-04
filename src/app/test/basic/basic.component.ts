@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+// jqueryの$変数を宣言
+declare var $:any;
+
 @Component({
   selector: 'app-basic',
   templateUrl: './basic.component.html',
@@ -32,4 +35,5 @@ export class BasicComponent implements OnInit {
     console.log(form.value)
     this.router.navigate(['/test/essence'])
   }
+
 }

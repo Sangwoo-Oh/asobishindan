@@ -24,6 +24,7 @@ export class RecommendListComponent implements OnInit {
   params: any;
   err: any;
   recommend_rate: any;
+  resultId: any;
 
   constructor(
     private recommendService: RecommendService,
@@ -48,25 +49,15 @@ export class RecommendListComponent implements OnInit {
     this.prefs = new Array();
     this.actinfos = new Array();
 
-    // this.params = this.testService.getParams();
-    this.params = new Array(
-      {
-          "cor_pref1": 2,
-          "cor_pref2": 8,
-          "cor_pref3": 12,
-          "sub_prefs" : [
-              1,
-              3,
-              4,
-              11
-          ]
-      }
-    );
     this.recommend_rate = new Array();
   }
 
   ngOnInit(): void {
-    this.recommendService.getActivity(this.params).subscribe(
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.resultId = params['id'];
+    })
+    console.log(this.resultId)
+    this.recommendService.getResult(this.resultId).subscribe(
       response =>  {
         this.data = response;
         console.log(response)

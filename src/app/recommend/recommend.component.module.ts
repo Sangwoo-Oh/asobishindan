@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { RecommendRoutingModule } from './recommend-routing.module';
 //import { RecommendComponent } from './recommend.component';
+import { RecommendLoadComponent } from './recommend-list/recommend-load.component'
 import { RecommendListComponent } from './recommend-list/recommend-list.component';
 import { RecommendDetailComponent } from './recommend-detail/recommend-detail.component';
 
@@ -11,6 +12,7 @@ import { RecommendDetailComponent } from './recommend-detail/recommend-detail.co
 @NgModule({
   declarations: [
     //RecommendComponent,
+    RecommendLoadComponent,
     RecommendListComponent,
     RecommendDetailComponent
   ],
