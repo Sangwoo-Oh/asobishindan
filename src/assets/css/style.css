@@ -1045,157 +1045,164 @@ main .wrap-recommend .recommend-list {
     main .wrap-recommend .recommend-list p.main span {
       font-size: 1.5em;
       color: #FF786B; }
-  main .wrap-recommend .recommend-list .recommendations .recommend-item {
-    background-position: center;
-    background-size: cover;
-    color: #FFF; }
-    main .wrap-recommend .recommend-list .recommendations .recommend-item .filter {
-      padding: 140px 15px 10px 15px;
-      background: linear-gradient(0deg, #333, 20%, transparent); }
-      main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top {
-        display: flex;
-        align-items: flex-end;
-        margin-bottom: 10px; }
-        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .title-copy {
-          width: 60%; }
-          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .title-copy .bar {
-            width: 100%;
-            height: 2px;
-            display: block;
-            background: linear-gradient(to right, #FFF 50%, transparent);
-            margin: 3px 0 6px; }
-          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .title-copy .copy {
-            font-size: 1.7em;
-            font-weight: bold; }
-        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info {
-          width: 35%;
-          margin-left: 5%; }
-          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info span {
-            font-size: 1.1em; }
-          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex {
-            display: flex;
-            align-items: center; }
-            main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex .star-wrap {
-              width: 80px; }
-              main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex .star-wrap .rate {
-                font-size: 16px; }
-            main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex .number {
-              width: calc(100% - 80px);
-              font-size: 21px;
-              text-align: center;
-              font-weight: bold; }
-      main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .bottom ul {
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-        display: flex; }
-        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .bottom ul::-webkit-scrollbar {
-          /* Chrome, Safari 対応 */
-          display: none; }
-        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .bottom ul li {
-          background-color: #FFCD1E;
-          border-radius: 50px;
-          margin-right: 7px;
-          padding: 2px 8px;
-          font-size: 1.1em;
-          font-weight: bold; }
-
-main .wrap-recommend .recommend-detail .fv {
-  margin-bottom: 30px; }
-  main .wrap-recommend .recommend-detail .fv img {
-    width: 100%;
-    display: block; }
-
-main .wrap-recommend .recommend-detail .info-wrap {
-  width: 90%;
-  display: block;
-  margin: 0 auto; }
-  main .wrap-recommend .recommend-detail .info-wrap .top {
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 10px; }
-    main .wrap-recommend .recommend-detail .info-wrap .top .title-copy {
-      width: 60%; }
-      main .wrap-recommend .recommend-detail .info-wrap .top .title-copy .title {
-        font-size: 1em; }
-      main .wrap-recommend .recommend-detail .info-wrap .top .title-copy .bar {
-        width: 100%;
-        height: 2px;
-        display: block;
-        background: linear-gradient(to right, #000 50%, transparent);
-        margin: 3px 0 6px; }
-      main .wrap-recommend .recommend-detail .info-wrap .top .title-copy .copy {
-        font-size: 1.7em;
-        font-weight: bold; }
-    main .wrap-recommend .recommend-detail .info-wrap .top .info {
-      width: 35%;
-      margin-left: 5%; }
-      main .wrap-recommend .recommend-detail .info-wrap .top .info span {
-        font-size: 1.1em; }
-      main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex {
-        display: flex;
-        align-items: center; }
-        main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex .star-wrap {
-          width: 80px; }
-          main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex .star-wrap .rate {
-            font-size: 16px; }
-        main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex .number {
-          width: calc(100% - 80px);
-          font-size: 21px;
-          text-align: center;
-          font-weight: bold; }
-  main .wrap-recommend .recommend-detail .info-wrap .bottom ul {
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex; }
-    main .wrap-recommend .recommend-detail .info-wrap .bottom ul::-webkit-scrollbar {
-      /* Chrome, Safari 対応 */
-      display: none; }
-    main .wrap-recommend .recommend-detail .info-wrap .bottom ul li {
-      background-color: #FFCD1E;
-      border-radius: 50px;
-      margin-right: 7px;
-      padding: 2px 8px;
-      font-size: 1.1em;
-      font-weight: bold;
+  main .wrap-recommend .recommend-list .recommendations {
+    overflow-y: auto;
+    height: 520px; }
+    main .wrap-recommend .recommend-list .recommendations .recommend-item {
+      background-position: top;
+      background-size: cover;
       color: #FFF; }
+      main .wrap-recommend .recommend-list .recommendations .recommend-item .filter {
+        padding: 140px 15px 10px 15px;
+        background: linear-gradient(0deg, #333, 20%, transparent); }
+        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top {
+          display: flex;
+          align-items: flex-end;
+          margin-bottom: 10px; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .title-copy {
+            width: 60%; }
+            main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .title-copy .bar {
+              width: 100%;
+              height: 2px;
+              display: block;
+              background: linear-gradient(to right, #FFF 50%, transparent);
+              margin: 3px 0 6px; }
+            main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .title-copy .copy {
+              font-size: 1.7em;
+              font-weight: bold; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info {
+            width: 35%;
+            margin-left: 5%; }
+            main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info span {
+              font-size: 1.1em; }
+            main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex {
+              display: flex;
+              align-items: center; }
+              main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex .star-wrap {
+                width: 80px; }
+                main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex .star-wrap .rate {
+                  font-size: 16px; }
+              main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .top .info .star-flex .number {
+                width: calc(100% - 80px);
+                font-size: 21px;
+                text-align: center;
+                font-weight: bold; }
+        main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .bottom ul {
+          width: 100%;
+          overflow-x: auto;
+          white-space: nowrap;
+          display: flex; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .bottom ul::-webkit-scrollbar {
+            /* Chrome, Safari 対応 */
+            display: none; }
+          main .wrap-recommend .recommend-list .recommendations .recommend-item .filter .bottom ul li {
+            background-color: #FFCD1E;
+            border-radius: 50px;
+            margin-right: 7px;
+            padding: 2px 8px;
+            font-size: 1.1em;
+            font-weight: bold; }
 
-main .wrap-recommend .recommend-detail .overview {
-  width: 90%;
-  display: block;
-  margin: 0 auto;
-  background-color: #F3F3F3;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 20px; }
-  main .wrap-recommend .recommend-detail .overview .text {
-    padding: 10px;
-    font-size: 1.2em; }
-    main .wrap-recommend .recommend-detail .overview .text span {
-      display: block;
-      font-size: 1.1em;
-      border-bottom: solid 1px;
-      margin-bottom: 7px;
-      font-weight: bold; }
-
-main .wrap-recommend .recommend-detail .blocks {
-  width: 90%;
-  display: block;
-  margin: 0 auto; }
-  main .wrap-recommend .recommend-detail .blocks li {
-    margin-bottom: 15px; }
-    main .wrap-recommend .recommend-detail .blocks li .heading {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-bottom: 15px; }
-    main .wrap-recommend .recommend-detail .blocks li .image {
-      margin-bottom: 15px; }
-      main .wrap-recommend .recommend-detail .blocks li .image img {
-        width: 100%;
-        display: block; }
-    main .wrap-recommend .recommend-detail .blocks li .content p {
+main .wrap-recommend .recommend-detail {
+  overflow-y: auto;
+  height: 610px; }
+  main .wrap-recommend .recommend-detail .fv {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 200px;
+    background-position: top;
+    background-size: cover; }
+    main .wrap-recommend .recommend-detail .fv img {
+      width: 100%;
+      display: block; }
+  main .wrap-recommend .recommend-detail .info-wrap {
+    width: 90%;
+    display: block;
+    margin: 0 auto; }
+    main .wrap-recommend .recommend-detail .info-wrap .top {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 10px; }
+      main .wrap-recommend .recommend-detail .info-wrap .top .title-copy {
+        width: 60%; }
+        main .wrap-recommend .recommend-detail .info-wrap .top .title-copy .title {
+          font-size: 1em; }
+        main .wrap-recommend .recommend-detail .info-wrap .top .title-copy .bar {
+          width: 100%;
+          height: 2px;
+          display: block;
+          background: linear-gradient(to right, #000 50%, transparent);
+          margin: 3px 0 6px; }
+        main .wrap-recommend .recommend-detail .info-wrap .top .title-copy .copy {
+          font-size: 1.7em;
+          font-weight: bold; }
+      main .wrap-recommend .recommend-detail .info-wrap .top .info {
+        width: 35%;
+        margin-left: 5%; }
+        main .wrap-recommend .recommend-detail .info-wrap .top .info span {
+          font-size: 1.1em; }
+        main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex {
+          display: flex;
+          align-items: center; }
+          main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex .star-wrap {
+            width: 80px; }
+            main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex .star-wrap .rate {
+              font-size: 16px; }
+          main .wrap-recommend .recommend-detail .info-wrap .top .info .star-flex .number {
+            width: calc(100% - 80px);
+            font-size: 21px;
+            text-align: center;
+            font-weight: bold; }
+    main .wrap-recommend .recommend-detail .info-wrap .bottom ul {
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      display: flex; }
+      main .wrap-recommend .recommend-detail .info-wrap .bottom ul::-webkit-scrollbar {
+        /* Chrome, Safari 対応 */
+        display: none; }
+      main .wrap-recommend .recommend-detail .info-wrap .bottom ul li {
+        background-color: #FFCD1E;
+        border-radius: 50px;
+        margin-right: 7px;
+        padding: 2px 8px;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #FFF; }
+  main .wrap-recommend .recommend-detail .overview {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    background-color: #F3F3F3;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    main .wrap-recommend .recommend-detail .overview .text {
+      padding: 10px;
       font-size: 1.2em; }
+      main .wrap-recommend .recommend-detail .overview .text span {
+        display: block;
+        font-size: 1.1em;
+        border-bottom: solid 1px;
+        margin-bottom: 7px;
+        font-weight: bold; }
+  main .wrap-recommend .recommend-detail .blocks {
+    width: 90%;
+    display: block;
+    margin: 0 auto; }
+    main .wrap-recommend .recommend-detail .blocks li {
+      margin-bottom: 15px; }
+      main .wrap-recommend .recommend-detail .blocks li .heading {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 15px; }
+      main .wrap-recommend .recommend-detail .blocks li .image {
+        margin-bottom: 15px; }
+        main .wrap-recommend .recommend-detail .blocks li .image img {
+          width: 100%;
+          display: block; }
+      main .wrap-recommend .recommend-detail .blocks li .content p {
+        font-size: 1.2em; }
 
 main .wrap-recommend .loading {
   display: block;

@@ -18,12 +18,16 @@ const routes: Routes = [
         path: '',
         component: RecommendListComponent,
       },
+      {
+        path: 'detail/:id',
+        component: RecommendDetailComponent,
+      }
     ],
   },
-  {
-    path: 'recommend/detail/:id',
-    component: RecommendDetailComponent,
-  }
+  // {
+  //   path: 'recommend/detail/:id',
+  //   component: RecommendDetailComponent,
+  // }
 ];
 
 @NgModule({

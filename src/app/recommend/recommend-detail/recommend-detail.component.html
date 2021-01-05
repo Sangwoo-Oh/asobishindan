@@ -1,8 +1,8 @@
 <main>
   <div class="wrap-recommend">
     <div class="recommend-detail">
-      <div class="fv">
-        <img src="../assets/img/activity/main/{{ actData.act_main_img }}.jpg" alt="">
+      <div class="fv" [style.background-image]="'url(../assets/img/activity/main/' + actData.act_main_img + '.jpg)'">
+        <!-- <img src="../assets/img/activity/main/{{ actData.act_main_img }}.jpg" alt=""> -->
       </div>
       <div class="info-wrap">
         <div class="top">
